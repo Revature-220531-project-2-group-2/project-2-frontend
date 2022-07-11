@@ -6,6 +6,12 @@ export const environment = {
   production: false
 };
 
+// this url represents where our Spring Boot can receive HTTP requests
+export const url = `http://localhost:5000/api`;
+
+// url for DnD api
+export const dndUrl = `https://api.open5e.com/`;
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
