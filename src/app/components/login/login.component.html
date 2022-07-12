@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div>   
+
+    <div>
+        <h2 class="card-header text-center">Login</h2>
+    </div>
+
+    <div class="card-body">
+
+        <form>
+            <div class="col-md-6 mb-3 mx-auto">
+                <label for="inputUsername" class="form-label">Username</label>
+                <input [(ngModel)]="username" name="username" type="text" class="form-control" id="inputUsername">
+            </div>
+            <div class="col-md-6 mb-3 mx-auto">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword">
+            </div>
+            <div class="col-md-6 mb-3 mx-auto">
+
+            <!-- Hide the button when the request is loading -->
+                <button *ngIf="!isLoading" (click)="login()" type="submit" class="btn-primary btn" >Log in</button>
+            </div>
+
+            <!-- When the login error message changes -->
+            <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+                {{clientMessage.message}}
+            </div>
+        </form>
+
+    </div>
+
+
+</div>

@@ -2,31 +2,22 @@ export class User {
 
     // classes enforce behavior around how an object can be initialized
     id: number;
-    firstName: string;
-    lastName: string;
     username: string;
     password: string;
     email: string;
-    addresses: Address[];
 
     // CTRL + SHIFT + P > TypeScript Constructor Generator
 
     constructor(
         id: number,
-        firstName: string,
-        lastName: string,
         username: string,
         password: string,
         email: string,
-        addresses: Address[]
     ) {
         this.id = id
-        this.firstName = firstName
-        this.lastName = lastName
         this.username = username
         this.password = password
         this.email = email
-        this.addresses = addresses
     }
 
 }
