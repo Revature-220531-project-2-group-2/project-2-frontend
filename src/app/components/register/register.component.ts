@@ -12,17 +12,15 @@ import { UserService } from 'src/app/services/user.service';
 export class RegisterComponent {
 
   title = 'Register User';
-  user: User = new User(0, '', '', '', '', '', []);
-  address: Address = new Address('', '', '', '', '');
+  user: User = new User(0, '', '', '');
   clientMessage: ClientMessage = new ClientMessage('');
 
   constructor(private userService: UserService) { }
 
   registerUser(): void {
-    this.user.addresses.push(this.address);
 
     this.userService.registerUser(this.user)
-      .subscribe(data => this.clientMessage.message = `Successfully Registered ${data.firstName}`, error => this.clientMessage.message = `Soemthing went wrong Error ${error}`)
+      .subscribe(data => this.clientMessage.message = `Successfully Registered ${data.username}`, error => this.clientMessage.message = `Soemthing went wrong Error ${error}`)
   }
 
 }
