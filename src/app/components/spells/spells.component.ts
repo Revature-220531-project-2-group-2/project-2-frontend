@@ -20,24 +20,27 @@ export class SpellsComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllSpells()
-    console.log(this.filteredSpells)
   }
 
   findAllSpells() {
-    this.spellsService.findAllSpells()
-    .subscribe(data => {
-      this.spells = data.results
-      this.filteredSpells = this.spells})
-
+    this.spells = this.spellsService.findAllSpells()
+    this.filteredSpells = this.spells
+    console.log(this.spells)
   }
 
   filterSpells() {
-    let regex = new RegExp(`.*${this.search}.*`, 'mi')
+    let regex = new RegExp(`.*${this.search.toLowerCase()}.*`, 'mi')
     this.filteredSpells = this.spells.filter(s => {
-      return (regex.test(s.name) ||
-        regex.test(s.level) ||
-        regex.test(s.school) ||
-        regex.test(s.dnd_class))
+      let classNames = []
+      for (let c of s.classes) {
+        classNames.push(c.name)
+      }
+      
+      return (regex.test(s.name.toLowerCase()) ||
+          regex.test(s.level.toString()) ||
+          regex.test(s.school.name.toLowerCase()) ||
+          regex.test(classNames.join(''))
+        )
     })
   }
 

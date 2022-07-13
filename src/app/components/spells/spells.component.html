@@ -11,11 +11,10 @@
   
     <div class="card-body">
       <app-spell *ngFor="let spell of filteredSpells" [spell]="spell"></app-spell>
-      <!-- IF there are no users, display the client message -->
+
+      
       <div *ngIf="filteredSpells.length == 0">
-  
           {{clientMessage.message}}
-  
       </div>
   
     </div>

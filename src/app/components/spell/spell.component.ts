@@ -9,10 +9,19 @@ import { Spell } from 'src/app/models/Spell';
 export class SpellComponent implements OnInit {
 
   @Input() spell!: Spell
+  classesNames: string[] = []
+  
 
   constructor() { }
 
   ngOnInit(): void {
+    this.setClassesNames()
+  }
+
+  setClassesNames() {
+    for (let c of this.spell.classes) {
+      this.classesNames.push(` ${c.name}`)
+    }
   }
 
 }

@@ -3,13 +3,19 @@
         <div class="shadow-lg">
             <div class="spell">
                 <h3>{{ spell.name }}</h3>
-                <p>{{spell.level}} {{spell.school}} | {{spell.dnd_class}}</p>
+                <p>
+                    <span *ngIf="spell.level == 0">Cantrip</span>
+                    <span *ngIf="spell.level == 1">1st-level</span> 
+                    <span *ngIf="spell.level == 2">2nd-level</span> 
+                    <span *ngIf="spell.level == 3">3rd-level</span> 
+                    <span *ngIf="spell.level > 3">{{spell.level}}rd-level</span> 
+                    {{spell.school.name}} | {{classesNames}}</p>
                 <p><strong>Range: </strong>{{spell.range}}</p>
                 <p><strong>Casting Time: </strong>{{spell.casting_time}}</p>
                 <p><strong>Duration: </strong>{{spell.duration}}</p>
                 <p><strong>Components: </strong>{{spell.components}}</p>
                 <p>{{spell.desc}}</p>
-                <p *ngIf="spell.higher_level"><strong>At higher levels: </strong>{{spell.higher_level}}</p>
+                <p *ngIf="spell.higher_level.length > 0"><strong>At higher levels: </strong>{{spell.higher_level}}</p>
             </div>
         </div>
     </div>
