@@ -1,0 +1,10 @@
+.my-card {
+    margin-top: 12.5%;
+    
+}
+
+@media (min-width: 1000px) {
+    .my-card {
+        width: 50%;
+    }
+}

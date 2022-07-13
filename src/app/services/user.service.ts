@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, catchError, Observer } from 'rxjs';
 import { User } from '../models/User';
+import { Campaign } from '../models/Campaign';
 
 // http://localhost:5000/api/users
 const userUrl = url + `/users`
@@ -18,11 +19,17 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  // registers a new User on the site
   registerUser(user: User): Observable<User> {
 
     // 3 params for POST: url, request body, options (headers)
     return this.http.post<User>(`${userUrl}/add`, user, this.httpOptions)
       .pipe(catchError(this.handleError));
+  }
+
+  // Get's all Campaigns a User is signed up in
+  findCampaignsByUser(user: User): Observable<Campaign[]> {
+    return this.http.get<Campaign[]>(`${url}/${user.id}/campaigns`, this.httpOptions).pipe(catchError(this.handleError));
   }
 
   private handleError(httpError: HttpErrorResponse) {

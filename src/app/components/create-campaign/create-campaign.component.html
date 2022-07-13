@@ -1,33 +1,42 @@
 
-<div>
+<div class="container my-auto">
+    <div class="card border-0 mx-auto my-card">
+        <div class="shadow-lg">
+            <div>
 
-    <div>
-        <h2 class="card-header text-center">{{title}}</h2>
+                <div>
+                    <h2 class="card-header text-center">{{title}}</h2>
+                </div>
+            
+                <div class="card-body">
+                    
+                    <form>
+                        
+                      <!-- In order to enable ngModel (2 way data binding a.k.a banana box) you MUST go to the GLUE of your application
+                          app.module.ts and import the FormsModule-->
+                        <div class="col-md-6 mb-3 mx-auto">
+                          <label for="inputUsername" class="form-label">Campaign Name</label>
+                          <input [(ngModel)]="campaign.name" name="username" type="text" class="form-control" id="inputUsername">
+                        </div>
+                        
+                        
+                        
+                        <div class="col-md-6 mb-3 mx-auto">
+                            <button type="submit" class="btn-primary btn" (click)="createCampaign()">Create</button>
+                        </div>
+            
+                        <!-- If there is a message, show it -->
+                        <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+                            {{clientMessage.message}}
+                        </div>
+            
+                    </form>
+                </div>
+            
+            </div>
+            
+        </div>
     </div>
-
-    <div class="card-body">
-        
-        <form>
-            
-          <!-- In order to enable ngModel (2 way data binding a.k.a banana box) you MUST go to the GLUE of your application
-              app.module.ts and import the FormsModule-->
-            <div class="col-md-6 mb-3 mx-auto">
-              <label for="inputUsername" class="form-label">Campaign Name</label>
-              <input name="username" type="text" class="form-control" id="inputUsername">
-            </div>
-            
-            
-            
-            <div class="col-md-6 mb-3 mx-auto">
-                <button type="submit" class="btn-primary btn" (click)="createCampaign()">Create</button>
-            </div>
-
-            <!-- If there is a message, show it -->
-            <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
-                {{clientMessage.message}}
-            </div>
-
-        </form>
-    </div>
-
 </div>
+
+

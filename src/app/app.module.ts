@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
+import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { CreateCampaignComponent } from './components/create-campaign/create-cam
     RegisterComponent,
     LoginComponent,
     CreateCampaignComponent,
+    CampaignsListComponent,
 
   ],
   imports: [
