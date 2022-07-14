@@ -1,0 +1,72 @@
+
+<div class="container my-auto">
+    <div class="card border-0 mx-auto my-card w-100">
+        <div class="shadow-lg">
+            <div>
+
+                <div>
+                    <h2 class="card-header text-center">{{title}}</h2>
+                </div>
+            
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr class="table-row">
+                            <th scope="col" style="width: 10.66%">Campaign ID</th>
+                            <th scope="col" style="width: 25%">Name</th>
+                            <th scope="col" style="width: 15%">DM</th>
+                            <th scope="col" style="width:  8.33%">Players</th>
+                            <th scope="col" style="width:  8.33%"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="table-row">
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm">Join</button>
+                            </td>
+                          </tr>
+                          <tr class="table-row">
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm">Join</button>
+                            </td>
+                          </tr>
+                          <tr class="table-row">
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm">Join</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                        
+                      <!-- In order to enable ngModel (2 way data binding a.k.a banana box) you MUST go to the GLUE of your application
+                          app.module.ts and import the FormsModule-->
+                        
+            
+                        <!-- If there is a message, show it -->
+                        <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+                            {{clientMessage.message}}
+                        </div>
+            
+                    
+                </div>
+            
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+

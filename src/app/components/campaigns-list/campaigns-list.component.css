@@ -3,6 +3,10 @@
     
 }
 
+.table-row {
+    vertical-align: middle;
+}
+
 @media (min-width: 1000px) {
     .my-card {
         width: 50%;

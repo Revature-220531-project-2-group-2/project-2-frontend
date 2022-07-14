@@ -1,17 +1,16 @@
-import { url } from './../../environments/environment';
 import { Injectable } from '@angular/core';
+import { url } from './../../environments/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, catchError, Observer } from 'rxjs';
 import { User } from '../models/User';
 import { Campaign } from '../models/Campaign';
 
-// http://localhost:5000/api/users
-const userUrl = url + `/users`
+const campaignUrl = url + `/campaigns`
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class CampaignService {
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,17 +18,16 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  // registers a new User on the site
-  registerUser(user: User): Observable<User> {
-
+  // creates a new Campaign on the server. Passes the form attr as request body
+  createCampaign(campaign: Campaign): Observable<Campaign> {
     // 3 params for POST: url, request body, options (headers)
-    return this.http.post<User>(`${userUrl}/add`, user, this.httpOptions)
+    return this.http.post<Campaign>(`${campaignUrl}/add`, campaign, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 
-  // Get's all Campaigns a User is signed up in
-  findCampaignsByUser(user: User): Observable<Campaign[]> {
-    return this.http.get<Campaign[]>(`${url}/${user.id}/campaigns`, this.httpOptions).pipe(catchError(this.handleError));
+  // get's all active campaigns available on server
+  getAllCampaigns(): Observable<Campaign> {
+    return this.http.get<Campaign>(campaignUrl, this.httpOptions).pipe(catchError(this.handleError));
   }
 
   private handleError(httpError: HttpErrorResponse) {
@@ -43,5 +41,4 @@ export class UserService {
     }
     return throwError(() => new Error('something went horribly wrong'))
   }
-
 }

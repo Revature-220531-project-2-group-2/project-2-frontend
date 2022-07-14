@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SpellComponent } from './components/spell/spell.component';
 
 
+import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
+import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { SpellComponent } from './components/spell/spell.component';
     RegisterComponent,
     LoginComponent,
     SpellsComponent,
-    SpellComponent
+    SpellComponent,
+    CreateCampaignComponent,
+    CampaignsListComponent,
 
   ],
   imports: [
