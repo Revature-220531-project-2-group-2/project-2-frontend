@@ -10,7 +10,7 @@ export const environment = {
 export const url = `http://localhost:5000/api`;
 
 // url for DnD api
-export const dndUrl = `https://api.open5e.com/`;
+export const dndUrl = `https://www.dnd5eapi.co/api/`;
 
 /*
  * For easier debugging in development mode, you can import the following file
