@@ -23,6 +23,7 @@ export class SpellsService {
 
   constructor(private http: HttpClient) { }
 
+  
   private findSpellList(): Observable<IndexList> {
     return this.http.get<IndexList>(spellsUrl, this.httpOptions)
     .pipe(catchError(this.handleError))
