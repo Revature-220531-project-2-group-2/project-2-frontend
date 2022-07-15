@@ -1,7 +1,63 @@
 
-/* .character-sheet-grid {
+.character-sheet-grid {
+    padding: 20px;
+}
+
+
+/*======================= GRID LAYOUT =======================*/
+
+.character-sheet-grid {
     display: grid;
-} */
+    grid-template-columns: 25% 40% auto;
+    grid-template-rows: auto auto auto auto;
+    gap: 25px;
+}
+
+.name-container {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.hitpoints-container {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.attributes-container {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.proficiencies-languages-container {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.skills-table {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.grid-item {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+
+
+/*======================= END OF GRID LAYOUT =======================*/
 
 /*======================= CHARACER NAME Component =======================*/
 
@@ -67,7 +123,7 @@ h2 {
 
 .attributes-container {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     padding-bottom: 15px;   /* If you change translateY() below, must also change this */
 }
 
@@ -166,18 +222,18 @@ h2 {
 
 /*=================PROFICIENCIES Component ======================== */
 
-#proficiencies-languages-container {
+.proficiencies-languages-container {
     border: 1px solid black;
-    height: 300px;
+    height: 400px;
     overflow: scroll;
 }
 
-#proficiencies-languages-container .proficiences-languages-item *{
+.proficiencies-languages-container .proficiences-languages-item *{
     margin: 5px 0;
     padding: 0 5px;
 }
 
-#proficiencies-languages-container {
+.proficiencies-languages-container {
     width: 260px;
    
 }
