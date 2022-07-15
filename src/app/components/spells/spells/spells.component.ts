@@ -1,4 +1,4 @@
-import { SpellsService } from './../../services/spells.service';
+import { SpellsService } from '../../../services/spells.service';
 import { Component, OnInit } from '@angular/core';
 import { ClientMessage } from 'src/app/models/ClientMessage';
 import { Spell } from 'src/app/models/Spell';
