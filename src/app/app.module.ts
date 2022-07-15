@@ -14,6 +14,12 @@ import { CreateCampaignComponent } from './components/create-campaign/create-cam
 import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
 import { RaceComponent } from './components/races/race/race.component';
 import { RacesComponent } from './components/races/races/races.component';
+import { MatTabsModule } from '@angular/material/tabs';
+
+
+import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CharacterSheetTabsComponent } from './components/character-sheet-tabs/character-sheet-tabs.component';
 
 
 @NgModule({
@@ -27,13 +33,17 @@ import { RacesComponent } from './components/races/races/races.component';
     CampaignsListComponent,
     RaceComponent,
     RacesComponent,
+    CharacterSheetComponent,
+    CharacterSheetTabsComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

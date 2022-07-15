@@ -1,0 +1,280 @@
+
+<div class="character-sheet-container">
+
+    <div class="character-sheet-grid">
+
+        <div class="name-container">
+            <img id="character-image" src="assets/elf.jpeg" alt="">
+            <div class="description">
+                <div class="title">
+                    <h2 id="username">Andy's</h2>
+                    <h2 id="char-name">Mysterious Elf</h2>
+                </div>
+                <div class="race-class">
+                    <h3 id="race">Half-Elf</h3>
+                    <h3 id="class">Druid</h3>
+                </div>
+                <div class="level-heading">
+                    <h4 id="level">Level 2</h4>
+                </div>
+            </div>
+        </div>
+        <div class="attributes-container">
+
+            <div class="attribute-container">
+                <div class="attribute-name">
+                    <h3>STRENGTH</h3>
+                </div>
+                <div class="attribute-modifier-value" id="strength-attribute-modifier">
+                    <h2>-1</h2>
+                </div>
+                <div class="attribute-score" id="strength-attribute-score">
+                    <h3>9</h3>
+                </div>
+            </div>
+            <div class="attribute-container">
+                <div class="attribute-name">
+                    <h3>DEXTERITY</h3>
+                </div>
+                <div class="attribute-modifier-value" id="dexterity-attribute-modifier">
+                    <h2>-1</h2>
+                </div>
+                <div class="attribute-score" id="dexterity-attribute-score">
+                    <h3>9</h3>
+                </div>
+            </div>
+            <div class="attribute-container">
+                <div class="attribute-name">
+                    <h3>CONSTITUTION</h3>
+                </div>
+                <div class="attribute-modifier-value" id="constitution-attribute-modifier">
+                    <h2>+1</h2>
+                </div>
+                <div class="attribute-score" id="constitution-attribute-score">
+                    <h3>13</h3>
+                </div>
+            </div>
+            <div class="attribute-container">
+                <div class="attribute-name">
+                    <h3>INTELLIGENCE</h3>
+                </div>
+                <div class="attribute-modifier-value" id="intelligence-attribute-modifier">
+                    <h2>-1</h2>
+                </div>
+                <div class="attribute-score" id="intelligence-attribute-score">
+                    <h3>9</h3>
+                </div>
+            </div>
+            <div class="attribute-container">
+                <div class="attribute-name">
+                    <h3>WISDOM</h3>
+                </div>
+                <div class="attribute-modifier-value" id="wisdom-attribute-modifier">
+                    <h2>+2</h2>
+                </div>
+                <div class="attribute-score" id="wisdom-attribute-score">
+                    <h3>15</h3>
+                </div>
+            </div>
+            <div class="attribute-container">
+                <div class="attribute-name">
+                    <h3>CHARISMA</h3>
+                </div>
+                <div class="attribute-modifier-value" id="charisma-attribute-modifier">
+                    <h2>-1</h2>
+                </div>
+                <div class="attribute-score" id="charisma-attribute-score">
+                    <h3>9</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="hitpoints-container">
+            <div class="hitpoints-top">
+                <div class="hitpoints-current">
+                    <h2 class="top">CURRENT</h2>
+                    <h1 class="bottom" id="hitpoints-current">15</h1>
+                </div>
+                <h2 class="hitpoints-divider">/</h2>
+                <div class="hitpoints-max">
+                    <h2 class="top">MAX</h2>
+                    <h1 class="bottom" id="hitpoints-max">15</h1>
+                </div>
+            </div>
+            <div class="hitpoints-bottom">
+                HIT POINTS
+            </div>
+        </div>
+
+        <div class="proficiencies-languages-container">
+
+            <div class="proficiences-languages-item">
+                <div class="proficiences-languages-item-header">
+                    <h2>ARMOR</h2>
+                </div>
+                <div class="proficiences-languages-item-list">
+                    <p id="armor-proficiencies">Light Armor, Medium Armor, Shields</p>
+                </div>
+            </div>
+            <hr>
+            <div class="proficiences-languages-item">
+                <div class="proficiences-languages-item-header">
+                    <h2>WEAPONS</h2>
+                </div>
+                <div class="proficiences-languages-item-list">
+                    <p id="weapon-proficiences">Club, Dagger, Dart, Javelin, Mace, Quarterstaff, Scimitar, Sickle, Sling, Spear</p>
+                </div>
+    
+    
+            </div>
+            <hr>
+            <div class="proficiences-languages-item">
+                <div class="proficiences-languages-item-header">
+                    <h2>TOOLS</h2>
+                </div>
+                <div class="proficiences-languages-item-list">
+                    <p id="tool-proficiences">Herbalism Kit</p>
+                </div>
+    
+    
+            </div>
+            <hr>
+            <div class="proficiences-languages-item">
+                <div class="proficiences-languages-item-header">
+                    <h2>LANGUAGES</h2>
+                </div>
+                <div class="proficiences-languages-item-list">
+                    <p id="language-proficiencies">Common, Druidic, Elvish</p>
+                </div>
+    
+            </div>
+    
+    
+        </div>
+
+        <table class="skills-table">
+            <thead id="skills-table-heading">
+                <tr >
+                    <th>PROF</th>
+                    <th>MOD</th>
+                    <th>SKILL</th>
+                    <th>BONUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="prof-acrobatics">✅</td>
+                    <td class="skills-table-modifier">DEX</td>
+                    <td class="skills-table-skill">Acrobatics</td>
+                    <td id="prof-acrobatics-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-animalhandling"></td>
+                    <td class="skills-table-modifier">WIS</td>
+                    <td class="skills-table-skill">Animal Handling</td>
+                    <td id="prof-animalhandling-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-arcana"></td>
+                    <td class="skills-table-modifier">INT</td>
+                    <td class="skills-table-skill">Arcana</td>
+                    <td id="prof-arcana-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-athletics">✅</td>
+                    <td class="skills-table-modifier">STR</td>
+                    <td class="skills-table-skill">Athletics</td>
+                    <td id="prof-athletics-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-deception"></td>
+                    <td class="skills-table-modifier">CHA</td>
+                    <td class="skills-table-skill">Deception</td>
+                    <td id="prof-deception-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-history"></td>
+                    <td class="skills-table-modifier">INT</td>
+                    <td class="skills-table-skill">History</td>
+                    <td id="prof-history-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-insight"></td>
+                    <td class="skills-table-modifier">WIS</td>
+                    <td class="skills-table-skill">Insight</td>
+                    <td id="prof-insight-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-intimidation"></td>
+                    <td class="skills-table-modifier">CHA</td>
+                    <td class="skills-table-skill">Intimidation</td>
+                    <td id="prof-intimidation-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-investigation"></td>
+                    <td class="skills-table-modifier">INT</td>
+                    <td class="skills-table-skill">Investigation</td>
+                    <td id="prof-investigation-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-medicine"></td>
+                    <td class="skills-table-modifier">WIS</td>
+                    <td class="skills-table-skill">Medicine</td>
+                    <td id="prof-medicine-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-nature"></td>
+                    <td class="skills-table-modifier">INT</td>
+                    <td class="skills-table-skill">Nature</td>
+                    <td id="prof-nature-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-perception"></td>
+                    <td class="skills-table-modifier">WIS</td>
+                    <td class="skills-table-skill">Perception</td>
+                    <td id="prof-perception-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-performance"></td>
+                    <td class="skills-table-modifier">CHA</td>
+                    <td class="skills-table-skill">Performance</td>
+                    <td id="prof-performance-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-persuasion"></td>
+                    <td class="skills-table-modifier">CHA</td>
+                    <td class="skills-table-skill">Persuasion</td>
+                    <td id="prof-persuasion-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-religion"></td>
+                    <td class="skills-table-modifier">INT</td>
+                    <td class="skills-table-skill">Religion</td>
+                    <td id="prof-religion-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-slightofhand"></td>
+                    <td class="skills-table-modifier">DEX</td>
+                    <td class="skills-table-skill">Slight of Hand</td>
+                    <td id="prof-slightofhand-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-stealth"></td>
+                    <td class="skills-table-modifier">DEX</td>
+                    <td class="skills-table-skill">Stealth</td>
+                    <td id="prof-stealth-bonus">-1</td>
+                </tr>
+                <tr >
+                    <td id="prof-survival"></td>
+                    <td class="skills-table-modifier">WIS</td>
+                    <td class="skills-table-skill">Survival</td>
+                    <td id="prof-survival-bonus">-1</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <app-character-sheet-tabs class="grid-item"></app-character-sheet-tabs>
+
+    </div>
+</div>
