@@ -8,10 +8,13 @@ import { LoginComponent } from './components/login/login.component';
 import { SpellsComponent } from './components/spells/spells.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpellComponent } from './components/spell/spell.component';
-
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
 import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
+import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CharacterSheetTabsComponent } from './components/character-sheet-tabs/character-sheet-tabs.component';
 
 
 @NgModule({
@@ -23,13 +26,17 @@ import { CampaignsListComponent } from './components/campaigns-list/campaigns-li
     SpellComponent,
     CreateCampaignComponent,
     CampaignsListComponent,
+    CharacterSheetComponent,
+    CharacterSheetTabsComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

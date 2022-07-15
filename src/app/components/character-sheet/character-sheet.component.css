@@ -1,0 +1,217 @@
+
+/* .character-sheet-grid {
+    display: grid;
+} */
+
+/*======================= CHARACER NAME Component =======================*/
+
+#character-image {
+    width: 80px;
+}
+
+.title {
+    display: flex;
+}
+
+.description {
+    width: 250px;
+
+}
+
+h2 {
+    font-size: 16px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.race-class {
+    display: flex;
+    
+}
+
+#username {
+    margin-right: 10px;
+}
+
+#race {
+    margin-right: 10px;
+}
+
+.race-class h3 {
+    font-size: 12px;
+}
+
+.level-heading h4 {
+    font-size: 12px;
+}
+
+.description div * {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+    background-color: azure;
+    width: 250px;
+    border: 1px solid black;
+}
+
+/*======================= END CHARACTER NAME Component =======================*/
+
+/*====================== ATTRIBUTE SCORES Component ======================== */
+
+.attributes-container {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 15px;   /* If you change translateY() below, must also change this */
+}
+
+.attribute-container {
+    width: 80px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.attribute-score {
+    width: 60px;
+      height: 30px;
+      background: red;
+      border-radius: 30px / 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(10px);
+}
+
+.attribute-name h3 {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.attribute-modifier-value {
+    width: 80%;
+    
+}
+
+.attribute-modifier-value h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+/*====================== END OF ATTRIBUTE SCORES Component ======================== */
+
+/*====================== Hit Points Component ======================== */
+
+.hitpoints-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.hitpoints-container h1, .hitpoints-container h2 {
+    margin: 0;
+}
+
+.hitpoints-current {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+}
+
+.hitpoints-max {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+
+
+}
+
+.hitpoints-top {
+    display: flex;
+    column-gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.hitpoints-current h2, .hitpoints-max h2 {
+    font-size: 14px;
+}
+
+.hitpoints-divider {
+    font-size: 24px;
+    align-self: flex-end;
+}
+
+.hitpoints-bottom {
+    margin-top: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+/*====================== END OF Hit Points Component ======================== */
+
+/*=================PROFICIENCIES Component ======================== */
+
+#proficiencies-languages-container {
+    border: 1px solid black;
+    height: 300px;
+    overflow: scroll;
+}
+
+#proficiencies-languages-container .proficiences-languages-item *{
+    margin: 5px 0;
+    padding: 0 5px;
+}
+
+#proficiencies-languages-container {
+    width: 260px;
+   
+}
+
+.proficiences-languages-item-header h2 {
+    font-size: 14px;
+}
+
+.proficiences-languages-item {
+    
+    min-height: 40px;
+    
+}
+
+/*====================== END OF PROFICIENCIES Component ======================== */
+
+/*============================== SKILLS Component ======================== */
+
+.skills-table, .skills-table th, .skills-table td {
+    border: 1px solid black;
+}
+
+#skills-table-heading th {
+    font-size: 10px;
+}
+
+.skills-table-skill {
+    font-size: 12px;
+}
+
+.skills-table-modifier {
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*====================== END OF SKILLS Component ======================== */
