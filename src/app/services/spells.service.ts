@@ -1,5 +1,5 @@
 import { Index } from '../models/Index';
-import { dndUrl } from './../../environments/environment';
+import { dndUrlPrimary } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
@@ -8,13 +8,13 @@ import { IndexList } from '../models/IndexList';
 
 
 
-const spellsUrl = dndUrl + 'spells/'
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpellsService {
-
+  
+  spellsUrl = dndUrlPrimary + 'spells/'
   spellList!: Index[]
 
   httpOptions = {
@@ -25,12 +25,12 @@ export class SpellsService {
 
   
   private findSpellList(): Observable<IndexList> {
-    return this.http.get<IndexList>(spellsUrl, this.httpOptions)
+    return this.http.get<IndexList>(this.spellsUrl, this.httpOptions)
     .pipe(catchError(this.handleError))
   }
 
   findSpell(index: string): Observable<Spell> {
-    return this.http.get<Spell>(spellsUrl + index, this.httpOptions)
+    return this.http.get<Spell>(this.spellsUrl + index, this.httpOptions)
     .pipe(catchError(this.handleError))
   }
 
