@@ -4,6 +4,7 @@ import { AppComponent } from 'src/app/app.component';
 import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,19 @@ export class LoginComponent {
   loginErrMsg: string = '';
   isLoading: boolean = false;
 
-  constructor(private authService: AuthService, private appComponent: AppComponent) { }
+  constructor(public dialog: MatDialog, private authService: AuthService, private appComponent: AppComponent) { }
+
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+  //     width: '250px',
+  //     data: {name: this.name, animal: this.animal},
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //     this.animal = result;
+  //   });
+  // }
 
   // pass thru the username & string from the template,
   // and call teh auth service
@@ -62,3 +75,5 @@ export class LoginComponent {
   }
 
 }
+
+

@@ -20,6 +20,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CharacterSheetTabsComponent } from './components/character-sheet-tabs/character-sheet-tabs.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { AppNavComponent } from './components/app-nav/app-nav.component';
+import { RegisterModalComponent } from './components/register-modal/register-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -35,6 +41,9 @@ import { CharacterSheetTabsComponent } from './components/character-sheet-tabs/c
     RacesComponent,
     CharacterSheetComponent,
     CharacterSheetTabsComponent,
+    HomepageComponent,
+    AppNavComponent,
+    RegisterModalComponent,
 
   ],
   imports: [
@@ -43,7 +52,10 @@ import { CharacterSheetTabsComponent } from './components/character-sheet-tabs/c
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

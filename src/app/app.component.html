@@ -1,14 +1,16 @@
 
 <!-- Directives help us display dynamic data in html.
     The router outlet will display the compoennt that is correlated with thge path-->
-
-
-    <div class="container mt-auto">
+  
+    <app-nav></app-nav>
+    <app-homepage *ngIf="!isLoggedIn"></app-homepage>
+    <div class="container mt-auto" *ngIf="isLoggedIn">
       <div class="card border-0 mx-auto" id="register-card">
           <div class="shadow-lg">
             <app-races></app-races>
-              <router-outlet></router-outlet>
+              
           </div>
       </div>
   </div>
+  <router-outlet></router-outlet>
 
