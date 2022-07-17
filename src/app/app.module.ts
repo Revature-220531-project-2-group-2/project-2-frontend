@@ -26,6 +26,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { CreateCharacterComponent } from './components/create-character/create-character.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     AppNavComponent,
     RegisterModalComponent,
     UserDashboardComponent,
+    CreateCharacterComponent,
 
   ],
   imports: [

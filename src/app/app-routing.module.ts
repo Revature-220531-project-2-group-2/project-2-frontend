@@ -7,11 +7,13 @@ import { CharacterSheetComponent } from './components/character-sheet/character-
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { CreateCharacterComponent } from './components/create-character/create-character.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterModalComponent },
   { path: '', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'new-character', component: CreateCharacterComponent },
   { path: 'new-campaign', component: CreateCampaignComponent },  // will take this path out
   { path: 'campaigns', component: CampaignsListComponent },  // will take this path out
   { path: 'character-sheet', component: CharacterSheetComponent },
