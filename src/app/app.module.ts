@@ -25,6 +25,7 @@ import { RegisterModalComponent } from './components/register-modal/register-mod
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HomepageComponent,
     AppNavComponent,
     RegisterModalComponent,
+    UserDashboardComponent,
 
   ],
   imports: [
@@ -58,7 +60,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   providers: [AppComponent, {
     provide: MatDialogRef,
     useValue: {}
-  }],
+  }, UserDashboardComponent, {
+      provide: MatDialogRef,
+      useValue: {}
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

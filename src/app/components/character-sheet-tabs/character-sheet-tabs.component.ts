@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Character } from 'src/app/models/Character';
 
 @Component({
   selector: 'app-character-sheet-tabs',
@@ -8,9 +9,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class CharacterSheetTabsComponent implements OnInit {
 
-  constructor() { }
+  @Input() charisma: number | undefined;
+
+  constructor() {
+    console.log(this.charisma + 'Here\n\n');
+
+  }
 
   ngOnInit(): void {
+
+
   }
 
 }

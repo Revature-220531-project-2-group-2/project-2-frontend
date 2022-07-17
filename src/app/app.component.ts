@@ -13,7 +13,7 @@ export class AppComponent {
   public isLoggedIn: boolean = false;
   public user: User = new User('', '', '');
 
-  username: string = this.user.username;
+  username: string = '';
 
   // update the username (user info) based on whoever is stored in the session
   updateUserData(username: string): void {

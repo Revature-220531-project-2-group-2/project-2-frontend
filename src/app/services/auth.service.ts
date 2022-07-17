@@ -20,11 +20,11 @@ export class AuthService {
   }
 
   loginUrl = url + '/login'
+  username: String = '';
 
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-
     // this represents the body of the response
     const payload = { username, password }  // (claims)
 

@@ -35,7 +35,7 @@ export class LoginComponent {
 
   onClick(): void {
     this.login();
-    this.router.navigate(['dashboard']);
+
 
     this.dialogRef.close();
   }
@@ -43,6 +43,9 @@ export class LoginComponent {
   // pass thru the username & string from the template,
   // and call teh auth service
   login() {
+
+
+
     // first check for empty values
     if (!this.username.trim() || !this.password.trim()) {
       this.loginErrMsg = 'Failed Login';
@@ -54,6 +57,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password)
       .subscribe(
         // if we're successful, this is the callback that's invoked
+
         (response) => {
           this.isLoading = false;
 
@@ -65,6 +69,11 @@ export class LoginComponent {
 
           // pass the property that the user is logged in to the root component
           this.appComponent.isLoggedIn = true;
+          this.appComponent.username = response.body.username;
+
+
+
+          console.log(this.appComponent.username);
 
           // send User object back to app.component
 

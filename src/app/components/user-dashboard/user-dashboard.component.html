@@ -1,0 +1,35 @@
+
+<div class="user-dashboard-container">
+    <div class="user-dashboard-left">
+        <div class="user-dashboard-create-char user-dashboard">
+            <button class="user-dashboard-button">Create a Character</button>
+        </div>
+        <div class="user-dashboard-view-chars user-dashboard">
+            
+            <div *ngIf="characters.length == 0">
+
+                {{clientMessage.message}}
+            
+            </div>
+            <button (click)="findCharacters()" class="user-dashboard-button">Fetch User's Characters</button>
+        </div>
+        <ul class="list-group" *ngFor="let c of characters">
+
+            <!-- Display each user's id, firstname, lastname...-->
+                <li class="list-group-item"><a routerLink="chars/{{c.charId}}">Character Id: {{c.charId}}</a> <span>Name: {{c.charName}}</span></li>
+
+                
+                <!-- 
+                    THESE LAST 2 require another ngFor
+                    <li class="list-group-item">Spells: {{u.username}}</li>
+                <li class="list-group-item">Equipment: {{u.email}}</li> -->
+        
+        </ul>
+    </div>
+    <div class="user-dashboard-right">
+        <div class="user-dashboard-view-campaigns user-dashboard">
+            <button class="user-dashboard-button">View Campaigns</button>
+        </div>
+    </div>
+    
+</div>
