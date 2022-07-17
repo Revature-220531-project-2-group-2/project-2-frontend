@@ -18,7 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CharacterSheetTabsComponent } from './components/character-sheet-tabs/character-sheet-tabs.component';
+
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AppNavComponent } from './components/app-nav/app-nav.component';
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
@@ -39,7 +39,6 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     RaceComponent,
     RacesComponent,
     CharacterSheetComponent,
-    CharacterSheetTabsComponent,
     HomepageComponent,
     AppNavComponent,
     RegisterModalComponent,
