@@ -1,43 +1,17 @@
 
-<div class="container my-auto">
-    <div class="card border-0 mx-auto my-card">
-        <div class="shadow-lg">
-            <div>   
 
-                <div>
-                    <h2 class="card-header text-center">Login</h2>
-                </div>
-            
-                <div class="card-body">
-            
-                    <form>
-                        <div class="col-md-6 mb-3 mx-auto">
-                            <label for="inputUsername" class="form-label">Username</label>
-                            <input [(ngModel)]="username" name="username" type="text" class="form-control" id="inputUsername">
-                        </div>
-                        <div class="col-md-6 mb-3 mx-auto">
-                            <label for="inputPassword" class="form-label">Password</label>
-                            <input [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword">
-                        </div>
-                        <div class="col-md-6 mb-3 mx-auto">
-            
-                        <!-- Hide the button when the request is loading -->
-                            <button *ngIf="!isLoading" (click)="login()" type="submit" class="btn-primary btn" >Log in</button>
-                        </div>
-            
-                        <!-- When the login error message changes -->
-                        <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
-                            {{clientMessage.message}}
-                        </div>
-                    </form>
-            
-                </div>
-            
-            
-            </div>
-        </div>
-    </div>
+<h1 mat-dialog-title>Login</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <label for="loginInputUsername" class="form-label">Username</label>
+    <input matInput [(ngModel)]="username" name="username" type="text" class="form-control" id="loginInputUsername">
+    <label for="loginInputPassword" class="form-label">Password</label>
+    <input matInput [(ngModel)]="password" name="password" type="password" class="form-control" id="loginInputPassword">
+  </mat-form-field>
 </div>
 
-
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)="onClick()" cdkFocusInitial>Ok</button>
+  </div>
 

@@ -1,0 +1,47 @@
+<!-- Can add NgIf to check if logged in. -->
+
+<div class="home-container" id="home-grid-container">
+    <div class="home-grid-item" id="home-left-grid-item">
+        <a *ngIf="!appComponent.isLoggedIn" routerLink="login" class="character-card-link" mat-raised-button (click)="openLoginDialog()">    
+            <div class="card orange">
+                <h1>Create a Character Sheet</h1>
+                <p>Choose a character that matches your preferences. All characters can be saved and used another time.</p>
+                
+              </div>
+        </a>
+        <a *ngIf="appComponent.isLoggedIn" routerLink="character-sheet" class="character-card-link" mat-raised-button (click)="loginRedirect()">    
+            <div class="card orange">
+                <h1>Create a Character Sheet</h1>
+                <p>Choose a character that matches your preferences. All characters can be saved and used another time.</p>
+                
+              </div>
+        </a>
+        
+        <a *ngIf="!appComponent.isLoggedIn" routerLink="login" class="character-card-link" mat-raised-button (click)="openLoginDialog()">
+            <div class="card purple">
+                <h1>Create or Join a Campaign</h1>
+                <p>Invite your friends to a Campaign and track your progress online.</p>
+                
+              </div>
+        </a>
+
+        <a *ngIf="appComponent.isLoggedIn" routerLink="login" class="character-card-link" mat-raised-button (click)="openLoginDialog()">
+            <div class="card purple">
+                <h1>Create or Join a Campaign</h1>
+                <p>Invite your friends to a Campaign and track your progress online.</p>
+                
+              </div>
+        </a>
+    </div>
+    
+    <div class="home-center-title home-grid-item">
+        <h1>Dungeon and Dragons</h1>
+        <h2>Play Campaigns with Friends</h2>
+        <h2>Create and Save Character Sheets</h2>
+        <a routerLink="register" class="character-card-link" mat-raised-button (click)="openRegisterDialog()">Register</a>
+        <a routerLink="login" class="character-card-link" mat-raised-button (click)="openLoginDialog()">Login</a>
+    </div>
+
+
+    
+</div>

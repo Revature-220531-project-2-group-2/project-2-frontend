@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { SpellsComponent } from './components/spells/spells/spells.component';
@@ -23,7 +22,7 @@ import { CharacterSheetTabsComponent } from './components/character-sheet-tabs/c
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AppNavComponent } from './components/app-nav/app-nav.component';
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
@@ -31,7 +30,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
     LoginComponent,
     SpellsComponent,
     SpellComponent,
@@ -55,9 +53,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTabsModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
-  providers: [],
+  providers: [AppComponent, {
+    provide: MatDialogRef,
+    useValue: {}
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

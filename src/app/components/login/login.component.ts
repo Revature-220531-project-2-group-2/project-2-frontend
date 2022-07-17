@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ClientMessage } from './../../models/ClientMessage';
 import { AppComponent } from 'src/app/app.component';
 import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -19,19 +23,22 @@ export class LoginComponent {
   loginErrMsg: string = '';
   isLoading: boolean = false;
 
-  constructor(public dialog: MatDialog, private authService: AuthService, private appComponent: AppComponent) { }
+  constructor(
+    private authService: AuthService,
+    private appComponent: AppComponent,
+    public dialogRef: MatDialogRef<LoginComponent>,
+    private router: Router) { }
 
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-  //     width: '250px',
-  //     data: {name: this.name, animal: this.animal},
-  //   });
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //     this.animal = result;
-  //   });
-  // }
+  onClick(): void {
+    this.login();
+    this.router.navigate(['dashboard']);
+
+    this.dialogRef.close();
+  }
 
   // pass thru the username & string from the template,
   // and call teh auth service
@@ -59,8 +66,8 @@ export class LoginComponent {
           // pass the property that the user is logged in to the root component
           this.appComponent.isLoggedIn = true;
 
-          // update userdata on the screen (to be seen by other components)
-          this.appComponent.updateUserData(response.body.username)
+          // send User object back to app.component
+
         },
         (error) => {
           this.isLoading = false;
