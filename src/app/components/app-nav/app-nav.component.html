@@ -8,7 +8,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="spells">Spells</a>
+            <button mat-button [matMenuTriggerFor]="menu">Spells</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'bard', name: 'Bard', url: '/api/classes/bard'}" >Bard Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{ index: 'cleric', name: 'Cleric', url: '/api/classes/cleric'}">Cleric Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'druid', name: 'Druid', url: '/api/classes/druid'}">Druid Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'paladin', name: 'Paladin', url: '/api/classes/paladin'}">Paladin Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'ranger', name: 'Ranger', url: '/api/classes/ranger'}">Ranger Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'sorcerer', name: 'Sorcerer',url: '/api/classes/sorcerer'}">Sorcerer Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'warlock', name: 'Warlock', url: '/api/classes/warlock'}">Warlock Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'wizard', name: 'Wizard', url: '/api/classes/wizard'}">Wizard Spells</button>
+            </mat-menu>
           </li>
           
           

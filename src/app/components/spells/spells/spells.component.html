@@ -1,29 +1,19 @@
 <div>
 
     <div>
-      <h2 class="card-header text-center">{{title}}</h2>
+      <h2 class="card-header text-center">{{charClass.name}} Spells</h2>
     </div>
+
     <div class="container">
       <div class="row">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col">
-          <div class="input-group">
-            <div class="form-outline">
-              <input (keyup)="filterSpells()" [(ngModel)]="search" type="search" id="form1" class="form-control " placeholder="Search"/>
-            </div>
+        <div *ngFor="let level of levels; index as i">
+          <div *ngIf="filterSpellsByLevel(i).length > 0" class="col-4">
+            <h4><strong>{{level}}</strong></h4>
+            <p *ngFor="let s of filterSpellsByLevel(i)"><a (click)="routeToSpell(s)">{{s.name}}</a></p>
           </div>
         </div>
-      </div>
-    </div>
-  
-    <div class="card-body">
-      <app-spell *ngFor="let spell of filteredSpells" [spell]="spell"></app-spell>
 
-      
-      <div *ngIf="filteredSpells.length == 0">
-          {{clientMessage.message}}
       </div>
-  
     </div>
-  </div>
+   
+</div>

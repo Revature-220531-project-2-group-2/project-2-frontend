@@ -3,13 +3,13 @@ export class AlternatePackage {
     count: number
     next: string
     previous: string
-    results: Race[]
+    results: any[]
 
     constructor(
         count: number, 
         next: string, 
         previous: string, 
-        results: Race[]
+        results: any[]
     ) {
         this.count = count
         this.next = next

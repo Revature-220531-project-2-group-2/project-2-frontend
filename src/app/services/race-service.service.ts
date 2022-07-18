@@ -10,19 +10,24 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 })
 export class RaceService {
 
-  constructor(private http: HttpClient) { }
-
   raceUrl = dndUrlAlternate + 'races'
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
   }
 
+  constructor(private http: HttpClient) { }
+
+
   private findRaceList(): Observable<AlternatePackage> {
     return this.http.get<AlternatePackage>(this.raceUrl, this.httpOptions)
     .pipe(catchError(this.handleError))
   }
 
+  /**
+   * 
+   * @returns an array of all races from the alternate api
+   */
   findAllRaces(): Race[] {
     let list: Race[] = []
     this.findRaceList().subscribe(data => {
@@ -33,9 +38,14 @@ export class RaceService {
     return list;
   }
 
-  findRaceByIndex(index: string): Race {
+  /**
+   * 
+   * @param name Race's name
+   * @returns named race
+   */
+  findRaceByName(name: string): Race {
     let race!: Race;
-    this.http.get<Race>(this.raceUrl + index, this.httpOptions)
+    this.http.get<Race>(this.raceUrl + name, this.httpOptions)
       .pipe(catchError(this.handleError))
       .subscribe(data => {
         race = data
