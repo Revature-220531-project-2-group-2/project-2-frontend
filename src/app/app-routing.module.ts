@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'campaigns', component: CampaignsListComponent },  // will take this path out
   { path: 'character-sheet', component: CharacterSheetComponent },
   { path: 'login/profile', component: UserDashboardComponent },
+  { path: 'login/profile/new-character/:username', component: CreateCharacterComponent },
   { path: 'login/profile/chars/:id', component: CharacterSheetComponent }
 
 

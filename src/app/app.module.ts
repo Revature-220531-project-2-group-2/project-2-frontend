@@ -27,6 +27,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { CreateCharacterComponent } from './components/create-character/create-character.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 
 @NgModule({
@@ -57,6 +59,7 @@ import { CreateCharacterComponent } from './components/create-character/create-c
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    FontAwesomeModule,
   ],
   providers: [AppComponent, {
     provide: MatDialogRef,
@@ -67,4 +70,9 @@ import { CreateCharacterComponent } from './components/create-character/create-c
     }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    // Add an icon to the library for convenient access in other components
+    library.addIcons(faCoffee);
+  }
+}

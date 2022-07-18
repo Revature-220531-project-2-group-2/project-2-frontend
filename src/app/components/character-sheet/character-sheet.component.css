@@ -283,3 +283,38 @@ h2 {
 }
 
 /*====================== END OF SKILLS Component ======================== */
+
+.char-sheet-add-icon {
+    font-size: 20px;
+    
+}
+
+.char-sheet-add-spells {
+    border: none;
+    margin: 0 auto;
+}
+
+.char-sheet-add-row {
+    display: flex;
+}
+
+.char-sheet-check-icon {
+    border: none;
+    font-size: 16px;
+}
+
+.char-sheet-x-icon {
+    border: none;
+    font-size: 16px;
+    
+}
+
+.char-sheet-add-spells-confirm {
+    background: greenyellow;
+    
+}
+
+.char-sheet-add-spells-cancel {
+    background: crimson;
+    color: white;
+}

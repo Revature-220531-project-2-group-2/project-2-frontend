@@ -1,9 +1,12 @@
 
 <div class="user-dashboard-container">
     <div class="user-dashboard-left">
+        <!-- Create a new Character-->
         <div class="user-dashboard-create-char user-dashboard">
-            <button class="user-dashboard-button">Create a Character</button>
+            <button routerLink="new-character/{{appComponent.username}}" class="user-dashboard-button">Create a Character</button>
         </div>
+
+        <!-- Fetch/View all a User's Characters-->
         <div class="user-dashboard-view-chars user-dashboard">
             
             <div *ngIf="characters.length == 0">
@@ -13,16 +16,10 @@
             </div>
             <button (click)="findCharacters()" class="user-dashboard-button">Fetch User's Characters</button>
         </div>
+        <!-- Display each Character's ID and Name.-->
         <ul class="list-group" *ngFor="let c of characters">
 
-            <!-- Display each user's id, firstname, lastname...-->
                 <li class="list-group-item"><a routerLink="chars/{{c.charId}}">Character Id: {{c.charId}}</a> <span>Name: {{c.charName}}</span></li>
-
-                
-                <!-- 
-                    THESE LAST 2 require another ngFor
-                    <li class="list-group-item">Spells: {{u.username}}</li>
-                <li class="list-group-item">Equipment: {{u.email}}</li> -->
         
         </ul>
     </div>

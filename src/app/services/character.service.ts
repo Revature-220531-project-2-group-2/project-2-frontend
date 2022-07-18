@@ -19,10 +19,26 @@ export class CharacterService {
 
   constructor(private http: HttpClient) { }
 
+  createCharacter(username: string, char: Character): Observable<Character> {
+    this.requestUrl = this.userBaseUrl;
+    this.requestUrl = this.requestUrl + `/${username}/add-character`;
+    return this.http.post<Character>(this.requestUrl, char, this.httpOptions)
+      .pipe(catchError(this.handleError))
+  }
+
   findAllCharactersBelongingToUser(userName: string): Observable<Character[]> {
     this.requestUrl = this.userBaseUrl;
     this.requestUrl = this.requestUrl + `/${userName}/characters`;
     return this.http.get<Character[]>(this.requestUrl, this.httpOptions)
+      .pipe(catchError(this.handleError))
+  }
+
+  putCharacter(username: string, char: Character): Observable<Character> {
+    console.log(char);
+
+    this.requestUrl = this.userBaseUrl;
+    this.requestUrl = this.requestUrl + `/${username}/update-character-${char.charId}`;
+    return this.http.put<Character>(this.requestUrl, char, this.httpOptions)
       .pipe(catchError(this.handleError))
   }
 

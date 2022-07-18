@@ -290,7 +290,12 @@
                     <!-- <td id="spell-level-1">Cantrip</td> -->
                     <td>{{char.spells[i]}}</td>
                   </tr>
-
+                  <tr class="char-sheet-add-row"><button class="char-sheet-add-spells" (click)="flipAddSpells()"><fa-icon class="char-sheet-add-icon" [icon]="faPlusCircle"></fa-icon></button></tr>
+                  <!-- Display this row only if plus button has been clicked-->
+                  <tr *ngIf="addSpells"><input type="text" [(ngModel)]="additionalSpells">
+                    <button class="char-sheet-add-spells-confirm" (click)="addAdditionalSpells()" ><fa-icon class="char-sheet-check-icon" [icon]="faCheck"></fa-icon></button>
+                    <button class="char-sheet-add-spells-cancel" (click)="flipAddSpells()"><fa-icon class="char-sheet-x-icon" [icon]="faX"></fa-icon></button>
+                    </tr>
                 </tbody>
               </table>
             </mat-tab>
@@ -307,9 +312,17 @@
                     <!-- <td id="equipment-type-1">Gear</td> -->
                     <td>{{char.equipment[i]}}</td>
                   </tr>
+
+                  <tr class="char-sheet-add-row"><button class="char-sheet-add-spells" (click)="flipAddEquipment()"><fa-icon class="char-sheet-add-icon" [icon]="faPlusCircle2"></fa-icon></button></tr>
+                  <!-- Display this row only if plus button has been clicked-->
+                  <tr *ngIf="addEquipment"><input [(ngModel)]="additionalEquipment" type="text">
+                    <button (click)="addAdditionalEquipment()" class="char-sheet-add-spells-confirm"><fa-icon class="char-sheet-check-icon" [icon]="faCheck"></fa-icon></button>
+                    <button (click)="flipAddEquipment()" class="char-sheet-add-spells-cancel"><fa-icon class="char-sheet-x-icon" [icon]="faX"></fa-icon></button>
+                    </tr>
                 </tbody>
               </table>
             </mat-tab>
+            
           </mat-tab-group>
     </div>
 </div>

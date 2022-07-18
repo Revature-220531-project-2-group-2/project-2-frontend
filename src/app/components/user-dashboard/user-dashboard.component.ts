@@ -15,7 +15,7 @@ export class UserDashboardComponent {
   characters: Character[] = [];
   clientMessage: ClientMessage = new ClientMessage('');
 
-  constructor(private charService: CharacterService, private appComponent: AppComponent) { }
+  constructor(private charService: CharacterService, public appComponent: AppComponent) { }
 
   findCharacters() {
     console.log(this.appComponent.username);
