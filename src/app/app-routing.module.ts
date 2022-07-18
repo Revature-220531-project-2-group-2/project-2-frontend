@@ -1,3 +1,4 @@
+import { SpellComponent } from './components/spells/spell/spell.component';
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
 import { NgModule } from '@angular/core';
 import { RegisterComponent } from './components/register/register.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'new-campaign', component: CreateCampaignComponent },  // will take this path out
   { path: 'campaigns', component: CampaignsListComponent },  // will take this path out
-  { path: 'character-sheet', component: CharacterSheetComponent }
+  { path: 'character-sheet', component: CharacterSheetComponent },
+  { path: 'spells', component: SpellComponent}
 
 ]
 
