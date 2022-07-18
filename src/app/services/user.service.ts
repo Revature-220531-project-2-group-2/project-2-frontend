@@ -32,6 +32,13 @@ export class UserService {
     return this.http.get<Campaign[]>(`${url}/${user.id}/campaigns`, this.httpOptions).pipe(catchError(this.handleError));
   }
 
+
+  // have to get All Users and filter right now...
+  findAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${userUrl}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(httpError: HttpErrorResponse) {
     if (httpError.error instanceof ErrorEvent) {
       console.log('an error occurred: ', httpError.error.message)

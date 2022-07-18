@@ -20,32 +20,19 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr class="table-row">
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                          <tr *ngFor="camp of campaigns; let i = index" class="table-row">
+                            <th scope="row">{{campaigns[i+1].campaignId}}</th>
+                            <td>{{campaigns[i+1].campaignName}}</td>
+                            <td>{{campaigns[i+1].users[0]}}</td>
+                            <td><span *ngFor="user of campaigns[i+1].users; let j=index">
+                                {{campaigns[i+1].users[j]}}
+                            </span></td>
+                            
                             <td>
-                                <button class="btn btn-secondary btn-sm">Join</button>
+                                <button *ngIf="appComponent.isLoggedIn" class="btn btn-secondary btn-sm">Join</button>
                             </td>
                           </tr>
-                          <tr class="table-row">
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <button class="btn btn-secondary btn-sm">Join</button>
-                            </td>
-                          </tr>
-                          <tr class="table-row">
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-secondary btn-sm">Join</button>
-                            </td>
-                          </tr>
+                          
                         </tbody>
                       </table>
                         

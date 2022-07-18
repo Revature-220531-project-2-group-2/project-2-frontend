@@ -25,7 +25,10 @@
     </div>
     <div class="user-dashboard-right">
         <div class="user-dashboard-view-campaigns user-dashboard">
-            <button class="user-dashboard-button">View Campaigns</button>
+            <button routerLink="campaigns" class="user-dashboard-button">View Campaigns</button>
+        </div>
+        <div class="user-dashboard-create-campaigns user-dashboard">
+            <button class="user-dashboard-button" routerLink="new-campaign/{{appComponent.username}}" >Create Campaigns</button>
         </div>
     </div>
     

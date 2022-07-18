@@ -22,7 +22,11 @@ const routes: Routes = [
   { path: 'character-sheet', component: CharacterSheetComponent },
   { path: 'login/profile', component: UserDashboardComponent },
   { path: 'login/profile/new-character/:username', component: CreateCharacterComponent },
-  { path: 'login/profile/chars/:id', component: CharacterSheetComponent }
+  { path: 'login/profile/chars/:id', component: CharacterSheetComponent },
+  { path: 'login/profile/new-campaign/:username', component: CreateCampaignComponent },
+  { path: 'login/profile/campaigns', redirectTo: 'campaigns' },
+
+
 
 
 ]

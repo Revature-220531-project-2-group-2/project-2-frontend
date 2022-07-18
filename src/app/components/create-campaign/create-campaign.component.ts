@@ -1,3 +1,5 @@
+import { AppComponent } from 'src/app/app.component';
+import { UserService } from 'src/app/services/user.service';
 import { CampaignService } from './../../services/campaign.service';
 import { Campaign } from './../../models/Campaign';
 import { Component, OnInit } from '@angular/core';
@@ -12,12 +14,16 @@ import { User } from 'src/app/models/User';
 export class CreateCampaignComponent implements OnInit {
   title = 'Create a Campaign'
 
-  constructor(private campaignService: CampaignService) { }
+  constructor(private campaignService: CampaignService, private userService: UserService, private appComponent: AppComponent) {
+    this.getUserByUsername();
+
+
+  }
 
   // will take this out later. need currently logged in user here
   tempUser: User = new User('', '', '');
   // replace tempUser with currently logged in User
-  campaign: Campaign = new Campaign(0, '', this.tempUser, [this.tempUser]);
+  campaign: Campaign = new Campaign(0, '', [this.tempUser]);
 
   private _clientMessage: ClientMessage = new ClientMessage('');
   public get clientMessage(): ClientMessage {
@@ -32,9 +38,52 @@ export class CreateCampaignComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  filterForCurrentUser(users: User[]) {
+
+
+    for (let i = 0; i < users.length; i++) {
+
+
+      if (users[i].username === this.appComponent.username) {
+
+        this.tempUser = users[i];
+
+
+      }
+    }
+
+
+    return this.tempUser;
+  }
+
+  getUserByUsername(): void {
+    this.userService.findAllUsers()
+      .subscribe(data => {
+        this.clientMessage.message = ``;
+        this.filterForCurrentUser(data);
+      }, error => this.clientMessage.message = `Soemthing went wrong Error ${error}`);
+  }
+
+  asyncActions() {
+
+
+    this.campaign.users = [];
+
+    this.campaign.users.push(this.tempUser);
+  }
+
   createCampaign(): void {
+
+    this.asyncActions();
+
+
+
     this.campaignService.createCampaign(this.campaign)
-      .subscribe(data => this.clientMessage.message = `Successfully Created Campaign ID${this.campaign.id}`, error => this.clientMessage.message = `Soemthing went wrong Error ${error}`)
+      .subscribe(data => {
+        this.clientMessage.message = `Successfully Created Campaign ID${this.campaign.campaignId}`;
+
+
+      }, error => this.clientMessage.message = `Soemthing went wrong Error ${error}`)
   }
 
 }
