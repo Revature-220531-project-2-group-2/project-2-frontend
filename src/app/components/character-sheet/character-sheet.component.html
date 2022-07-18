@@ -290,7 +290,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="spells of char.spells; let i = index">
+                  <tr *ngFor="let spells of char.spells; let i = index">
                     <!-- <td id="spell-level-1">Cantrip</td> -->
                     <td>{{char.spells[i]}}</td>
                   </tr>
@@ -312,7 +312,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="equip of char.equipment; let i = index">
+                  <tr *ngFor="let equip of char.equipment; let i = index">
                     <!-- <td id="equipment-type-1">Gear</td> -->
                     <td>
                         {{char.equipment[i]}}</td>
