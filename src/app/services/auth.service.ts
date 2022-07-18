@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { url } from 'src/environments/environment';
+import { AppComponent } from '../app.component';
 import { User } from '../models/User';
 
 /**
@@ -19,11 +20,11 @@ export class AuthService {
   }
 
   loginUrl = url + '/login'
+  username: String = '';
 
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-
     // this represents the body of the response
     const payload = { username, password }  // (claims)
 

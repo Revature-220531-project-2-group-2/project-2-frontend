@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ClientMessage } from './../../models/ClientMessage';
 import { AppComponent } from 'src/app/app.component';
 import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -17,15 +22,35 @@ export class LoginComponent {
   clientMessage: ClientMessage = new ClientMessage('');
   loginErrMsg: string = '';
   isLoading: boolean = false;
+  loginUrl: string = '/login'
 
-  constructor(private authService: AuthService, private appComponent: AppComponent) { }
+  constructor(
+    private authService: AuthService,
+    private appComponent: AppComponent,
+    public dialogRef: MatDialogRef<LoginComponent>,
+    private router: Router) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  onClick(): void {
+    this.login();
+
+
+    this.dialogRef.close();
+  }
 
   // pass thru the username & string from the template,
   // and call teh auth service
   login() {
+
+
+
     // first check for empty values
     if (!this.username.trim() || !this.password.trim()) {
       this.loginErrMsg = 'Failed Login';
+
       return;
     }
 
@@ -34,6 +59,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password)
       .subscribe(
         // if we're successful, this is the callback that's invoked
+
         (response) => {
           this.isLoading = false;
 
@@ -45,9 +71,14 @@ export class LoginComponent {
 
           // pass the property that the user is logged in to the root component
           this.appComponent.isLoggedIn = true;
+          this.appComponent.username = response.body.username;
+          this.router.navigate(['login/profile'])
 
-          // update userdata on the screen (to be seen by other components)
-          this.appComponent.updateUserData(response.body.username)
+
+          console.log(this.appComponent.username);
+
+          // send User object back to app.component
+
         },
         (error) => {
           this.isLoading = false;
@@ -62,3 +93,5 @@ export class LoginComponent {
   }
 
 }
+
+

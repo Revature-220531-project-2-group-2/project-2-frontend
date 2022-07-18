@@ -15,7 +15,7 @@ export class CreateCampaignComponent implements OnInit {
   constructor(private campaignService: CampaignService) { }
 
   // will take this out later. need currently logged in user here
-  tempUser: User = new User(0, '', '', '');
+  tempUser: User = new User('', '', '');
   // replace tempUser with currently logged in User
   campaign: Campaign = new Campaign(0, '', this.tempUser, [this.tempUser]);
 

@@ -23,7 +23,7 @@ export class UserService {
   registerUser(user: User): Observable<User> {
 
     // 3 params for POST: url, request body, options (headers)
-    return this.http.post<User>(`${userUrl}/add`, user, this.httpOptions)
+    return this.http.post<User>(`${userUrl}`, user, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 

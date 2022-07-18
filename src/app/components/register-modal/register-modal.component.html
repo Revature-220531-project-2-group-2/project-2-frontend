@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Register</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <label for="inputUsername" class="form-label">Username</label>
+        <input matInput [(ngModel)]="user.username" name="username" type="text" class="form-control" id="inputUsername">
+        <br>
+        <label for="inputEmail" class="form-label">Email</label>
+        <br>
+
+        <input matInput [(ngModel)]="user.email" name="email" type="email" class="form-control" id="inputEmail">
+        <br>
+
+        <label for="inputPassword" class="form-label">Password</label>
+        <br>
+
+        <input matInput [(ngModel)]="user.pwd" name="password" type="password" class="form-control" id="inputPassword">
+        <br>
+
+        <label for="inputPassword2" class="form-label">Re-enter Password</label>
+        <br>
+
+        <input matInput name="email" [(ngModel)]="confirmPassword" type="password" class="form-control" id="inputPassword2">
+  </mat-form-field>
+</div>
+
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onClick()" cdkFocusInitial>Ok</button>
+</div>
+
+<div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+  {{clientMessage.message}}
+</div>
