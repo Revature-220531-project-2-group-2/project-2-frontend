@@ -20,11 +20,11 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="camp of campaigns; let i = index" class="table-row">
+                          <tr let *ngFor="let camp of campaigns; let i = index" class="table-row">
                             <th scope="row">{{campaigns[i+1].campaignId}}</th>
                             <td>{{campaigns[i+1].campaignName}}</td>
                             <td>{{campaigns[i+1].users[0]}}</td>
-                            <td><span *ngFor="user of campaigns[i+1].users; let j=index">
+                            <td><span *ngFor="let user of campaigns[i+1].users; let j=index">
                                 {{campaigns[i+1].users[j]}}
                             </span></td>
                             
