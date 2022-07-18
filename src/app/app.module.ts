@@ -7,7 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SpellsComponent } from './components/spells/spells/spells.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpellComponent } from './components/spells/spell/spell.component';
-
+import { MatIconModule } from '@angular/material/icon';
 
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
 import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
@@ -60,6 +60,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
     MatFormFieldModule,
     MatInputModule,
     FontAwesomeModule,
+    MatIconModule,
   ],
   providers: [AppComponent, {
     provide: MatDialogRef,

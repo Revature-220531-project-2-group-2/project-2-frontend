@@ -29,3 +29,7 @@
   <button mat-button (click)="onNoClick()">No Thanks</button>
   <button mat-button (click)="onClick()" cdkFocusInitial>Ok</button>
 </div>
+
+<div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+  {{clientMessage.message}}
+</div>
