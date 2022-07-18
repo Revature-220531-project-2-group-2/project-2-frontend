@@ -9,7 +9,7 @@
         <div *ngFor="let level of levels; index as i">
           <div *ngIf="filterSpellsByLevel(i).length > 0" class="col-4">
             <h4><strong>{{level}}</strong></h4>
-            <p *ngFor="let s of filterSpellsByLevel(i)"><a [routerLink]="['/spell']" [state]="s">{{s.name}}</a></p>
+            <p *ngFor="let s of filterSpellsByLevel(i)"><a (click)="routeToSpell(s)">{{s.name}}</a></p>
           </div>
         </div>
 

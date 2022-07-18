@@ -14,7 +14,7 @@ import { CampaignsListComponent } from './components/campaigns-list/campaigns-li
 import { RaceComponent } from './components/races/race/race.component';
 import { RacesComponent } from './components/races/races/races.component';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import {MatMenuModule} from '@angular/material/menu';
 
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -61,6 +61,7 @@ import { CreateCharacterComponent } from './components/create-character/create-c
     MatInputModule,
     FontAwesomeModule,
     MatIconModule,
+    MatMenuModule,
   ],
   providers: [AppComponent, {
     provide: MatDialogRef,

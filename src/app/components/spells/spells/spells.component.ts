@@ -15,15 +15,16 @@ import { Router } from '@angular/router';
 })
 export class SpellsComponent implements OnInit {
 
-  charClass: Index = new Index("paladin", "Paladin", "/api/classes/paladin")
+  charClass!: Index
   levels: string[] = ['Cantrip', '1st-Level', '2nd-Level', '3rd-Level', '4th-Level', '5th-Level', '6th-Level', '7th-Level', '8th-Level', '9th-Level']
   spells: Spell[] = []
   search: string = ''
   clientMessage: ClientMessage = new ClientMessage('Sorry, no spells to display')
 
-  constructor(private spellsService: SpellsService) {  }
+  constructor(private spellsService: SpellsService, private router : Router) {  }
 
   ngOnInit(): void {
+    this.charClass = history.state
     this.setSpells()
 
   }
@@ -40,8 +41,9 @@ export class SpellsComponent implements OnInit {
     return this.spells.filter(s => s.level == level)
   }
 
-  setSpellInSpellService(s: Spell): void {
-
+  routeToSpell(s: Spell): void {
+    console.log("routing to spell")
+    this.router.navigateByUrl('/spell', { state: s });
   }
 
 }
