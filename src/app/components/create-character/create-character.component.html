@@ -1,7 +1,13 @@
 
 <form action="" class="char-create-form">
+    <label for="charName">Name:</label>
+
     <input class="formField" [(ngModel)]="char.charName" type="text" placeholder="Name" id="char-create-form-name" name="charName">
-    <input class="formField" [(ngModel)]="char.race" type="text" id="char-create-form-race" placeholder="Race" name="race">
+    <label for="race">Race:</label>
+
+    <input class="formField" [(ngModel)]="char.race" type="text" id="char-create-form-race" placeholder="Class" name="race">
+    <label for="strength">Class:</label>
+
     <select class="formField" [(ngModel)]="char.charClass" name="charClass" id="char-create-form-class">
         <option value="Barbarian">Barbarian</option>
         <option value="Bard">Bard</option>

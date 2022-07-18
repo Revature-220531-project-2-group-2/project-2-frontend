@@ -7,8 +7,9 @@ import { CharacterSheetComponent } from './components/character-sheet/character-
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
-import { CreateCharacterComponent } from './components/create-character/create-character.component';
+
 import { SpellsComponent } from './components/spells/spells/spells.component';
+import { CreateCharacterComponent } from './components/create-character/create-character.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterModalComponent },

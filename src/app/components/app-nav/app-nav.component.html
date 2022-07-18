@@ -17,7 +17,7 @@
         <form class="d-flex nav-buttons">
           <button *ngIf="!this.appComponent.isLoggedIn" routerLink="register" class="btn btn-primary">Register</button>
           <button *ngIf="!this.appComponent.isLoggedIn" routerLink="login" class="btn btn-secondary">Log In</button>
-          <button *ngIf="this.appComponent.isLoggedIn" routerLink="login" class="btn btn-secondary">Log Out</button>
+          <button *ngIf="this.appComponent.isLoggedIn" (click)="logOut()" class="btn btn-secondary">Log Out</button>
         </form>
       </div>
     </div>
