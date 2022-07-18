@@ -1,0 +1,13 @@
+.char-create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.formField {
+    max-width: 400px;
+}
+
+#char-create-form-class, #char-create-form-race {
+    width: 150px;
+}
