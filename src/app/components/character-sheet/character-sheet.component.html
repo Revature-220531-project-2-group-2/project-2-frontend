@@ -27,10 +27,10 @@
                 </div>
                 <!-- Depends on Race/Class/ other stuff-->
                 <div class="attribute-modifier-value" id="strength-attribute-modifier">
-                    <h2>{{this.strengthAbilityModifier}}</h2>
+                    <h2>{{modifierBonus[this.char.strength]}}</h2>
                 </div>
                 <div class="attribute-score" id="strength-attribute-score">
-                    <input class="attribute-number-field" (focus)="displaySave()" type="number" min="0" max="30" value="{{this.char.strength}}">
+                    <input class="attribute-number-field" [(ngModel)]="this.char.strength" type="number" min="0" max="30" >
                 </div>
             </div>
             <div class="attribute-container">
@@ -38,12 +38,12 @@
                     <h3>DEXTERITY</h3>
                 </div>
                 <div class="attribute-modifier-value" id="dexterity-attribute-modifier">
-                    <h2>{{this.dexterityAbilityModifier}}</h2>
+                    <h2>{{modifierBonus[this.char.dexterity]}}</h2>
                 </div>
                 <div class="attribute-score" id="dexterity-attribute-score">
                     <!-- <h3>{{this.char.dexterity}}</h3> -->
                     
-                        <input class="attribute-number-field" (focus)="displaySave()" type="number" min="0" max="30" value="{{this.char.dexterity}}">
+                        <input class="attribute-number-field" [(ngModel)]="this.char.dexterity" type="number" min="0" max="30" >
                         
                 </div>
             </div>
@@ -52,10 +52,10 @@
                     <h3>CONSTITUTION</h3>
                 </div>
                 <div class="attribute-modifier-value" id="constitution-attribute-modifier">
-                    <h2>{{this.constitutionAbilityModifier}}</h2>
+                    <h2>{{modifierBonus[this.char.constitution]}}</h2>
                 </div>
                 <div class="attribute-score" id="constitution-attribute-score">
-                    <input class="attribute-number-field" (focus)="displaySave()" type="number" min="0" max="30" value="{{this.char.constitution}}">
+                    <input class="attribute-number-field" [(ngModel)]="this.char.constitution" type="number" min="0" max="30" >
                 </div>
             </div>
             <div class="attribute-container">
@@ -63,10 +63,10 @@
                     <h3>INTELLIGENCE</h3>
                 </div>
                 <div class="attribute-modifier-value" id="intelligence-attribute-modifier">
-                    <h2>{{this.intelligenceAbilityModifier}}</h2>
+                    <h2>{{modifierBonus[this.char.intelligence]}}</h2>
                 </div>
                 <div class="attribute-score" id="intelligence-attribute-score">
-                    <input (focus)="displaySave()" class="attribute-number-field" type="number" min="0" max="30" value="{{this.char.intelligence}}">
+                    <input [(ngModel)]="this.char.intelligence" class="attribute-number-field" type="number" min="0" max="30" >
                     
                 </div>
             </div>
@@ -75,10 +75,10 @@
                     <h3>WISDOM</h3>
                 </div>
                 <div class="attribute-modifier-value" id="wisdom-attribute-modifier">
-                    <h2>{{this.wisdomAbilityModifier}}</h2>
+                    <h2>{{modifierBonus[this.char.wisdom]}}</h2>
                 </div>
                 <div class="attribute-score" id="wisdom-attribute-score">
-                    <input (focus)="displaySave()" class="attribute-number-field" type="number" min="0" max="30" value="{{this.char.wisdom}}">
+                    <input [(ngModel)]="this.char.wisdom" class="attribute-number-field" type="number" min="0" max="30" value="{{this.char.wisdom}}">
                 </div>
             </div>
             <div class="attribute-container">
@@ -86,10 +86,10 @@
                     <h3>CHARISMA</h3>
                 </div>
                 <div class="attribute-modifier-value" id="charisma-attribute-modifier">
-                    <h2>{{this.charismaAbilityModifier}}</h2>
+                    <h2>{{modifierBonus[this.char.charisma]}}</h2>
                 </div>
                 <div class="attribute-score" id="charisma-attribute-score">
-                    <input (focus)="displaySave()" class="attribute-number-field" type="number" min="0" max="30" value="{{this.char.charisma}}">
+                    <input [(ngModel)]="this.char.charisma" class="attribute-number-field" type="number" min="0" max="30">
                 </div>
             </div>
         </div>
@@ -171,109 +171,109 @@
                     <td id="prof-acrobatics">✅</td>
                     <td class="skills-table-modifier">DEX</td>
                     <td class="skills-table-skill">Acrobatics</td>
-                    <td id="prof-acrobatics-bonus">{{this.dexterityAbilityModifier}}</td>
+                    <td id="prof-acrobatics-bonus">{{modifierBonus[this.char.dexterity]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-animalhandling"></td>
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Animal Handling</td>
-                    <td id="prof-animalhandling-bonus">{{this.wisdomAbilityModifier}}</td>
+                    <td id="prof-animalhandling-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-arcana"></td>
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">Arcana</td>
-                    <td id="prof-arcana-bonus">{{this.intelligenceAbilityModifier}}</td>
+                    <td id="prof-arcana-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-athletics">✅</td>
                     <td class="skills-table-modifier">STR</td>
                     <td class="skills-table-skill">Athletics</td>
-                    <td id="prof-athletics-bonus">{{this.strengthAbilityModifier}}</td>
+                    <td id="prof-athletics-bonus">{{modifierBonus[this.char.strength]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-deception"></td>
                     <td class="skills-table-modifier">CHA</td>
                     <td class="skills-table-skill">Deception</td>
-                    <td id="prof-deception-bonus">{{this.charismaAbilityModifier}}</td>
+                    <td id="prof-deception-bonus">{{modifierBonus[this.char.charisma]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-history"></td>
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">History</td>
-                    <td id="prof-history-bonus">{{this.intelligenceAbilityModifier}}</td>
+                    <td id="prof-history-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-insight"></td>
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Insight</td>
-                    <td id="prof-insight-bonus">{{this.wisdomAbilityModifier}}</td>
+                    <td id="prof-insight-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-intimidation"></td>
                     <td class="skills-table-modifier">CHA</td>
                     <td class="skills-table-skill">Intimidation</td>
-                    <td id="prof-intimidation-bonus">{{this.charismaAbilityModifier}}</td>
+                    <td id="prof-intimidation-bonus">{{modifierBonus[this.char.charisma]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-investigation"></td>
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">Investigation</td>
-                    <td id="prof-investigation-bonus">{{this.intelligenceAbilityModifier}}</td>
+                    <td id="prof-investigation-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-medicine"></td>
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Medicine</td>
-                    <td id="prof-medicine-bonus">{{this.wisdomAbilityModifier}}</td>
+                    <td id="prof-medicine-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-nature"></td>
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">Nature</td>
-                    <td id="prof-nature-bonus">{{this.intelligenceAbilityModifier}}</td>
+                    <td id="prof-nature-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-perception"></td>
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Perception</td>
-                    <td id="prof-perception-bonus">{{this.wisdomAbilityModifier}}</td>
+                    <td id="prof-perception-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-performance"></td>
                     <td class="skills-table-modifier">CHA</td>
                     <td class="skills-table-skill">Performance</td>
-                    <td id="prof-performance-bonus">{{this.charismaAbilityModifier}}</td>
+                    <td id="prof-performance-bonus">{{modifierBonus[this.char.charisma]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-persuasion"></td>
                     <td class="skills-table-modifier">CHA</td>
                     <td class="skills-table-skill">Persuasion</td>
-                    <td id="prof-persuasion-bonus">{{this.charismaAbilityModifier}}</td>
+                    <td id="prof-persuasion-bonus">{{modifierBonus[this.char.charisma]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-religion"></td>
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">Religion</td>
-                    <td id="prof-religion-bonus">{{this.intelligenceAbilityModifier}}</td>
+                    <td id="prof-religion-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-slightofhand"></td>
                     <td class="skills-table-modifier">DEX</td>
                     <td class="skills-table-skill">Slight of Hand</td>
-                    <td id="prof-slightofhand-bonus">{{this.dexterityAbilityModifier}}</td>
+                    <td id="prof-slightofhand-bonus">{{modifierBonus[this.char.dexterity]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-stealth"></td>
                     <td class="skills-table-modifier">DEX</td>
                     <td class="skills-table-skill">Stealth</td>
-                    <td id="prof-stealth-bonus">{{this.dexterityAbilityModifier}}</td>
+                    <td id="prof-stealth-bonus">{{modifierBonus[this.char.dexterity]}}</td>
                 </tr>
                 <tr >
                     <td id="prof-survival"></td>
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Survival</td>
-                    <td id="prof-survival-bonus">{{this.wisdomAbilityModifier}}</td>
+                    <td id="prof-survival-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 
             </tbody>
