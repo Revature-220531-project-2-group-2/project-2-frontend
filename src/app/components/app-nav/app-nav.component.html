@@ -1,8 +1,10 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
+
       <a *ngIf="!appComponent.isLoggedIn" class="navbar-brand" routerLink="/">Home</a>
       <a *ngIf="appComponent.isLoggedIn" class="navbar-brand" routerLink="/login/profile">Home</a>
+
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,28 +13,28 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <!-- @Scott: I am using mat-menu for the dropdown menu fuctionality. If you know a better way feel free to change it.-->
-            <button mat-button [matMenuTriggerFor]="spells">Spells</button>
+            <button mat-button [matMenuTriggerFor]="spells" class="button1">Spells</button>
             <mat-menu #spells="matMenu">
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'bard', name: 'Bard', url: '/api/classes/bard'}" >Bard Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'cleric', name: 'Cleric', url: '/api/classes/cleric'}">Cleric Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'druid', name: 'Druid', url: '/api/classes/druid'}">Druid Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'paladin', name: 'Paladin', url: '/api/classes/paladin'}">Paladin Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'ranger', name: 'Ranger', url: '/api/classes/ranger'}">Ranger Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'sorcerer', name: 'Sorcerer',url: '/api/classes/sorcerer'}">Sorcerer Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'warlock', name: 'Warlock', url: '/api/classes/warlock'}">Warlock Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'wizard', name: 'Wizard', url: '/api/classes/wizard'}">Wizard Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'bard', name: 'Bard', url: '/api/classes/bard'}" class="button">Bard Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'cleric', name: 'Cleric', url: '/api/classes/cleric'}" class="button">Cleric Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'druid', name: 'Druid', url: '/api/classes/druid'}" class="button">Druid Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'paladin', name: 'Paladin', url: '/api/classes/paladin'}" class="button">Paladin Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'ranger', name: 'Ranger', url: '/api/classes/ranger'}" class="button">Ranger Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'sorcerer', name: 'Sorcerer',url: '/api/classes/sorcerer'}" class="button">Sorcerer Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'warlock', name: 'Warlock', url: '/api/classes/warlock'}" class="button">Warlock Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'wizard', name: 'Wizard', url: '/api/classes/wizard'}" class="button">Wizard Spells</button>
             </mat-menu>
           </li>
           <li>
-            <button mat-button [matMenuTriggerFor]="classes">Classes</button>
+            <button mat-button [matMenuTriggerFor]="classes" class="button1">Classes</button>
             <mat-menu #classes="matMenu">
-              <button mat-menu-item *ngFor="let c of appComponent.classes" [routerLink]="['/class']" [queryParams]="c" >{{c.name}}</button>
+              <button mat-menu-item *ngFor="let c of appComponent.classes" [routerLink]="['/class']" [queryParams]="c" class="button">{{c.name}}</button>
             </mat-menu>
           </li>
           <li>
-            <button mat-button [matMenuTriggerFor]="races">Races</button>
+            <button mat-button [matMenuTriggerFor]="races" class="button1">Races</button>
             <mat-menu #races="matMenu">
-              <button mat-menu-item *ngFor="let r of appComponent.races" [routerLink]="['/race']" [queryParams]="r">{{r.name}}</button>
+              <button mat-menu-item *ngFor="let r of appComponent.races" [routerLink]="['/race']" [queryParams]="r" class="button">{{r.name}}</button>
             </mat-menu>
           </li>
           
@@ -41,10 +43,10 @@
           
         </ul>
         <form class="d-flex nav-buttons">
-          
-          <button *ngIf="!this.appComponent.isLoggedIn" routerLink="register" class="btn btn-primary">Register</button>
-          <button *ngIf="!this.appComponent.isLoggedIn" routerLink="login" class="btn btn-secondary">Log In</button>
-          <button *ngIf="this.appComponent.isLoggedIn" (click)="logOut()" class="btn btn-secondary">Log Out</button>
+
+          <button *ngIf="!this.appComponent.isLoggedIn" routerLink="register" class="btn btn-primary button1">Register</button>
+          <button *ngIf="!this.appComponent.isLoggedIn" routerLink="login" class="btn btn-secondary button1">Log In</button>
+          <button *ngIf="this.appComponent.isLoggedIn" (click)="logOut()" class="btn btn-secondary button1">Log Out</button>
         </form>
       </div>
       

@@ -1,21 +1,22 @@
+<div class="img">
 <div class="container">
-    <div class="card border-0 my-auto w-100">
+    <div>
         <div class="shadow-lg">
-            <div class="spell">
-                <h3>{{ spell.name }}</h3>
-                <p>
+            <div class="spell border">
+                <h3 class="font2">{{ spell.name }}</h3>
+                <p class="font1">
                     <span *ngIf="spell.level == 0">Cantrip</span>
                     <span *ngIf="spell.level == 1">1st-level</span> 
                     <span *ngIf="spell.level == 2">2nd-level</span> 
                     <span *ngIf="spell.level == 3">3rd-level</span> 
                     <span *ngIf="spell.level > 3">{{spell.level}}th-level</span> 
                     {{spell.school.name}} | {{classesNames}}</p>
-                <p><strong>Range: </strong>{{spell.range}}</p>
-                <p><strong>Casting Time: </strong>{{spell.casting_time}}</p>
-                <p><strong>Duration: </strong>{{spell.duration}}</p>
-                <p><strong>Components: </strong>{{spell.components}}</p>
+                <p class="font3"><strong>Range: </strong>{{spell.range}}</p>
+                <p class="font3"><strong>Casting Time: </strong>{{spell.casting_time}}</p>
+                <p class="font3"><strong>Duration: </strong>{{spell.duration}}</p>
+                <p class="font3"><strong>Components: </strong>{{spell.components}}</p>
                 <div *ngFor="let line of this.desc">
-                    <p>
+                    <p class="font1">
                         <span><strong>{{line.bold}}</strong></span>
                         {{line.body}}
                     </p>
@@ -37,4 +38,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

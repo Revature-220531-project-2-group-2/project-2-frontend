@@ -1,0 +1,40 @@
+.input-group {
+    margin-top: .5rem;
+    margin-right: 5px;
+}
+
+.font {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.border{
+    background-color:burlywood;
+    border: 3px solid saddlebrown;
+    padding: 25px;
+    margin-top: 5px;
+}
+
+.font3 {
+    font-family: 'Shrikhand', cursive;
+    color:rgb(75, 37, 11);
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.font1{
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgb(73, 37, 11);
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 5vh;
+}
+
+.font2{
+    font-family: 'Shrikhand', cursive;
+    color: rgb(101, 50, 14);
+    font-size: 30px;
+    padding: 3px;
+}
+
+

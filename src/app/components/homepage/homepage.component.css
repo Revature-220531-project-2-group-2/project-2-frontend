@@ -36,12 +36,10 @@ body {
 .home-center-title {
     height: 400px;
     width: 500px;
-    background: rgba(95, 92, 92, 0.9);
     margin: 0 auto;
     align-self: center;
     color: gold;
     text-align: center;
-
 }
 
 .home-center-title h2{
@@ -76,7 +74,6 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     border-radius: 25px;
     color: gold;
-    box-shadow: 5px 5px 10px #ccc;
     float: left;
   }
 
@@ -101,10 +98,18 @@ body {
 }
 
 .border {
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.border.gold{
     background-color: darkred;
     border: 5px solid gold;
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px #ccc;
+}
+
+.h1{
+    font-family: 'Josefin Sans', sans-serif;
+    color: gold;
 }
 
 
