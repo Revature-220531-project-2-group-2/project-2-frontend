@@ -1,4 +1,5 @@
 
+import { RaceComponent } from './components/race/race.component';
 import { CharClassComponent } from './components/char-class/char-class.component';
 import { SpellComponent } from './components/spells/spell/spell.component';
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
@@ -29,6 +30,11 @@ const routes: Routes = [
 
   { path: 'login/profile/chars/:id', component: CharacterSheetComponent },
   { path: 'class', component: CharClassComponent },
+  { path: 'race', component: RaceComponent },
+
+
+
+
 ]
 
 @NgModule({

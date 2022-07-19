@@ -1,0 +1,42 @@
+<h1>{{currentRace.name}}</h1>
+
+<div *ngFor="let line of desc">
+    <H2>{{line.threeHead}}</H2>
+    <p>{{line.body}}</p>
+</div>
+<div *ngFor="let line of ability">
+    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+</div>
+<div *ngFor="let line of speed">
+    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+</div>
+<div *ngFor="let line of vision">
+    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+</div>
+<div *ngFor="let line of age">
+    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+</div>
+<div *ngFor="let line of alignment">
+    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+</div>
+<div *ngFor="let line of size">
+    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+</div>
+<div *ngFor="let line of languages">
+    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+</div>
+<div *ngFor="let line of traits">
+    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th *ngFor="let col of line.tableHead" class="col">{{col}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of line.tableRow">
+                <td *ngFor="let col of row">{{col}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

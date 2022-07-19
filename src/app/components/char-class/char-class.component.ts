@@ -12,6 +12,8 @@ export class CharClassComponent implements OnInit {
 
   currentClass: any;
   desc: any[] = []
+  equipment: any[] = []
+  table: any[] = []
 
   constructor(private route: ActivatedRoute, private parserServ: DescriptionParsingService) {
   }
@@ -21,6 +23,9 @@ export class CharClassComponent implements OnInit {
     .subscribe(data => {
       this.currentClass = data
       this.desc = this.parserServ.parseDesc(data['desc'])
+      this.equipment = this.parserServ.parseDesc(data['equipment']).slice(1)
+      console.log(this.equipment)
+      this.table = this.parserServ.parseDesc(data['table'])
     })
 
   }

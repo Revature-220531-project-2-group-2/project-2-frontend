@@ -51,8 +51,15 @@ export class DescriptionParsingService {
       } 
       if (/^####/.test(strArr[i])){
         temp.fourHead = strArr[i].slice(4)
-      } else if (/^###/.test(strArr[i])) {
+      } else if (/^##/.test(strArr[i])) {
         temp.threeHead = strArr[i].slice(3)
+      } else if (/^\*\*_/.test(strArr[i])){
+        //                             1    2    3    4
+        let arr = strArr[i].match(/^(\*\*_)(.+)(_\*\*)(.*)/)
+          if(arr){
+            temp.bold = arr[2]
+            temp.body = arr[4]
+          } 
       } else if (/^\*\*/.test(strArr[i])){
         //                             1    2    3    4
         let arr = strArr[i].match(/^(\*\*)(.+)(\*\*)(.*)/)
@@ -62,6 +69,7 @@ export class DescriptionParsingService {
           } 
       } else if(/^(\*)(.*)/.test(strArr[i])) {
         temp.listItem = strArr[i].match(/^(\*)(.*)/)![2];
+        temp.listItem = temp.listItem.split("*").join("")
       }else {
         temp.body = strArr[i]
       }

@@ -11,8 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
 import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
-import { RaceComponent } from './components/races/race/race.component';
-import { RacesComponent } from './components/races/races/races.component';
+import { RaceComponent } from './components/race/race.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
 
@@ -41,7 +40,6 @@ import { CharClassComponent } from './components/char-class/char-class.component
     CreateCampaignComponent,
     CampaignsListComponent,
     RaceComponent,
-    RacesComponent,
     CharacterSheetComponent,
     HomepageComponent,
     AppNavComponent,
