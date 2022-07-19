@@ -28,13 +28,13 @@
           <li>
             <button mat-button [matMenuTriggerFor]="classes" class="button1">Classes</button>
             <mat-menu #classes="matMenu">
-              <button mat-menu-item *ngFor="let c of appComponent.classes" [routerLink]="['/class']" [queryParams]="c" class="button">{{c.name}}</button>
+              <button mat-menu-item *ngFor="let c of appComponent.classes" [routerLink]="['/class']" [queryParams]="{charClass: c.slug}" class="button">{{c.name}}</button>
             </mat-menu>
           </li>
           <li>
             <button mat-button [matMenuTriggerFor]="races" class="button1">Races</button>
             <mat-menu #races="matMenu">
-              <button mat-menu-item *ngFor="let r of appComponent.races" [routerLink]="['/race']" [queryParams]="r" class="button">{{r.name}}</button>
+              <button mat-menu-item *ngFor="let r of appComponent.races" [routerLink]="['/race']" [queryParams]="{race: r.slug}" class="button">{{r.name}}</button>
             </mat-menu>
           </li>
           
