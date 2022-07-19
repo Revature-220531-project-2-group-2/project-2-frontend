@@ -36,7 +36,7 @@ export class RegisterModalComponent {
 
   registerUser(): void {
     let regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-    if (!regex.test(this.user.pwd)){
+    if (!regex.test(this.user.pwd)) {
       this.clientMessage.message = "Password must be at east eight characters long and have one number and one letter"
       return;
     }
@@ -53,6 +53,8 @@ export class RegisterModalComponent {
         this.clientMessage.message = `Successfully Registered ${data.username}`;
         // pass the property that the user is logged in to the root component
         this.appComponent.isLoggedIn = true;
+        this.appComponent.user = this.user;
+        this.appComponent.username = this.user.username;
         this.router.navigateByUrl("/login/profile")
 
         // need to redirect/do something here
