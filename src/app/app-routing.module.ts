@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
+
 import { CharClassComponent } from './components/char-class/char-class.component';
->>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
 import { SpellComponent } from './components/spells/spell/spell.component';
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
 import { NgModule } from '@angular/core';
@@ -28,15 +26,9 @@ const routes: Routes = [
   { path: 'spell', component: SpellComponent},
   { path: 'login/profile', component: UserDashboardComponent },
   { path: 'login/profile/new-character/:username', component: CreateCharacterComponent },
-<<<<<<< HEAD
-  { path: 'login/profile/chars/:id', component: CharacterSheetComponent }
-=======
+
   { path: 'login/profile/chars/:id', component: CharacterSheetComponent },
   { path: 'class', component: CharClassComponent },
-
->>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
-
-
 ]
 
 @NgModule({
