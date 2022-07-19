@@ -16,6 +16,24 @@
 <p><strong>Skills: </strong>{{currentClass.prof_skills}}</p>
 
 <h3>Equipment</h3>
+<ul>
+    <div *ngFor="let item of equipment">
+        <li *ngIf="item.listItem">{{item.listItem}}</li>
+    </div>
+</ul>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th *ngFor="let col of table[0].tableHead" class="col">{{col}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of table[0].tableRow">
+            <td *ngFor="let col of row">{{col}}</td>
+        </tr>
+    </tbody>
+</table>
 
 <div *ngFor="let line of this.desc">
     <h3 *ngIf="line.fourHead"><strong>{{line.fourHead}}</strong></h3>
