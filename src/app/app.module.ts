@@ -1,4 +1,3 @@
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -32,8 +31,6 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { CreateCharacterComponent } from './components/create-character/create-character.component';
 import { CharClassComponent } from './components/char-class/char-class.component';
 
-import { CreateCharacterComponent } from './components/create-character/create-character.component';
-
 
 @NgModule({
   declarations: [
@@ -51,10 +48,7 @@ import { CreateCharacterComponent } from './components/create-character/create-c
     RegisterModalComponent,
     UserDashboardComponent,
     CreateCharacterComponent,
-<<<<<<< HEAD
-=======
     CharClassComponent,
->>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
 
   ],
   imports: [
@@ -67,11 +61,7 @@ import { CreateCharacterComponent } from './components/create-character/create-c
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-<<<<<<< HEAD
-  
-=======
     FontAwesomeModule,
->>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
     MatIconModule,
     MatMenuModule,
   ],
@@ -84,13 +74,9 @@ import { CreateCharacterComponent } from './components/create-character/create-c
     }],
   bootstrap: [AppComponent]
 })
-<<<<<<< HEAD
-
-=======
 export class AppModule {
   constructor(library: FaIconLibrary) {
     // Add an icon to the library for convenient access in other components
     library.addIcons(faCoffee);
   }
 }
->>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
