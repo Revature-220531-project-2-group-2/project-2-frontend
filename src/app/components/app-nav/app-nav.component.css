@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Shrikhand&display=swap');
 
 .text{
@@ -28,15 +27,22 @@ a {
     border-radius: 15px;
 }
 
-
-
-
-
-
-
-=======
-
-.nav-buttons {
-    gap: 20px;
+.button1{
+    font-family: 'Shrikhand', cursive;
+    margin: 5px;
+    color: darkred;
+    background-color: gold;
 }
->>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
+
+.nav{
+    font-family: 'Josefin Sans', sans-serif;
+    color: darkred;
+    background-color:gold;
+}
+
+
+
+
+
+
+

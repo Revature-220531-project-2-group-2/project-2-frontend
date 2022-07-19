@@ -44,7 +44,6 @@ export class SpellsService {
   findAllSpells(): Spell[] {
     let list: Spell[] = []
     this.findSpellAllList()
-<<<<<<< HEAD
       .subscribe(data => {
         for (let si = 0; si < data.results.length; si++) {
           this.findSpell(data.results[si].url)
@@ -59,8 +58,6 @@ export class SpellsService {
   findSpellsByClassName(classIndex:string): Spell[] {
     let list: Spell[] = []
     this.findSpellListByClass(classIndex)
-=======
->>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
       .subscribe(data => {
         for (let si = 0; si < data.results.length; si++) {
           this.findSpell(data.results[si].url)
@@ -72,23 +69,6 @@ export class SpellsService {
     return list
   }
 
-<<<<<<< HEAD
-=======
-  findSpellsByClassName(classIndex:string): Spell[] {
-    let list: Spell[] = []
-    this.findSpellListByClass(classIndex)
-      .subscribe(data => {
-        for (let si = 0; si < data.results.length; si++) {
-          this.findSpell(data.results[si].url)
-          .subscribe(rsp => {
-            list.push(rsp)
-          })
-        }
-      })
-    return list
-  }
-
->>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
 
   private handleError(httpError: HttpErrorResponse) {
 

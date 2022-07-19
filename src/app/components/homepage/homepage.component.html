@@ -4,7 +4,7 @@
     <div class="home-grid-item" id="home-left-grid-item">
         <a *ngIf="!appComponent.isLoggedIn" routerLink="login" class="character-card-link" mat-raised-button >    
             <div class="card orange">
-                <h1>Create a Character Sheet</h1>
+                <h1 class="h1">Create a Character Sheet</h1>
                 <p>Choose a character that matches your preferences. All characters can be saved and used another time.</p>
                 
               </div>
@@ -18,7 +18,7 @@
         </a>
         
         <a *ngIf="!appComponent.isLoggedIn" routerLink="login" class="character-card-link" mat-raised-button>
-            <div class="card purple">
+            <div class="card orange">
                 <h1>Create or Join a Campaign</h1>
                 <p>Invite your friends to a Campaign and track your progress online.</p>
                 
@@ -26,7 +26,7 @@
         </a>
 
         <a *ngIf="appComponent.isLoggedIn" routerLink="login" class="character-card-link" mat-raised-button >
-            <div class="card purple">
+            <div class="card orange">
                 <h1>Create or Join a Campaign</h1>
                 <p>Invite your friends to a Campaign and track your progress online.</p>
                 
@@ -34,10 +34,10 @@
         </a>
     </div>
     
-    <div class="home-center-title home-grid-item">
+    <div class="home-center-title home-grid-item border">
         <h1>Dungeon and Dragons</h1>
-        <h2>Play Campaigns with Friends</h2>
-        <h2>Create and Save Character Sheets</h2>
+        <h2>Join Campaigns with Friends!</h2>
+        <h2>Create and Save Your Character Sheets!</h2>
         <!-- <a routerLink="register" class="character-card-link" mat-raised-button (click)="openRegisterDialog()">Register</a>
         <a  class="character-card-link" mat-raised-button (click)="openLoginDialog()">Login</a> -->
     </div>
