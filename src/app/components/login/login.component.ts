@@ -31,14 +31,12 @@ export class LoginComponent {
     private router: Router) { }
 
   onNoClick(): void {
-    this.dialogRef.close();
   }
 
   onClick(): void {
     this.login();
 
 
-    this.dialogRef.close();
   }
 
   // pass thru the username & string from the template,

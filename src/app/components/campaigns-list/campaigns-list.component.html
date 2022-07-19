@@ -20,32 +20,23 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr class="table-row">
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                          <tr let *ngFor="let camp of campaigns; let i = index" class="table-row">
+                            <th scope="row">{{camp.campaignId}}</th>
+                            <td >{{camp.campaignName}}</td>
+                            <td *ngIf="camp.users[0].username;else camp_content">{{camp.users[0].username}}</td>
+                            <ng-template #camp_content><td>{{camp.users[0]}}</td></ng-template>
+                            <td><span *ngFor="let user of campaigns[i].users; let j=index">
+                                
+                                <span *ngIf="user.username;else camp_content2"><td>{{user.username}}</td></span>
+                                <ng-template class="camp-cell" #camp_content2>{{user}} </ng-template>
+                            </span></td>
+                            
                             <td>
-                                <button class="btn btn-secondary btn-sm">Join</button>
+                                <button *ngIf="appComponent.isLoggedIn" (click)="joinUserToCampaign(camp.campaignId)" class="btn btn-secondary btn-sm">Join</button>
                             </td>
+
                           </tr>
-                          <tr class="table-row">
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <button class="btn btn-secondary btn-sm">Join</button>
-                            </td>
-                          </tr>
-                          <tr class="table-row">
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-secondary btn-sm">Join</button>
-                            </td>
-                          </tr>
+                          
                         </tbody>
                       </table>
                         

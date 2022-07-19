@@ -29,12 +29,15 @@
 
 
 
-<br />
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()" class="button">No Adventuring for Me!</button>
-  <button mat-button (click)="onClick()" cdkFocusInitial class="button">It's Slaying Time!</button>
+  <br />
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" class="button">No Adventuring for Me!</button>
+    <button mat-button (click)="onClick()" cdkFocusInitial class="button">It's Slaying Time!</button>
+    
+  </div>
+  <!-- If there is a message, show it -->
+  <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+    {{clientMessage.message}}
 </div>
 </div>
-</div>
-</div>
-</div>
+

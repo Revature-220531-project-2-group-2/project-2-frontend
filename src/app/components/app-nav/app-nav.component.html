@@ -1,7 +1,11 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand text" routerLink="/">Home</a>
+
+      <a *ngIf="!appComponent.isLoggedIn" class="navbar-brand" routerLink="/">Home</a>
+      <a *ngIf="appComponent.isLoggedIn" class="navbar-brand" routerLink="/login/profile">Home</a>
+
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,13 +39,16 @@
           </li>
           
           
+      <a class="navbar-brand campaigns-nav" routerLink="/campaigns">Campaigns</a>
           
         </ul>
         <form class="d-flex nav-buttons">
+
           <button *ngIf="!this.appComponent.isLoggedIn" routerLink="register" class="btn btn-primary button1">Register</button>
           <button *ngIf="!this.appComponent.isLoggedIn" routerLink="login" class="btn btn-secondary button1">Log In</button>
           <button *ngIf="this.appComponent.isLoggedIn" (click)="logOut()" class="btn btn-secondary button1">Log Out</button>
         </form>
       </div>
+      
     </div>
 </nav>

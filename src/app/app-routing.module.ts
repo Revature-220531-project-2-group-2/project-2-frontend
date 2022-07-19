@@ -24,13 +24,17 @@ const routes: Routes = [
   { path: 'new-campaign', component: CreateCampaignComponent },  // will take this path out
   { path: 'campaigns', component: CampaignsListComponent },  // will take this path out
   { path: 'character-sheet', component: CharacterSheetComponent },
-  { path: 'spell', component: SpellComponent},
+  { path: 'spell', component: SpellComponent },
   { path: 'login/profile', component: UserDashboardComponent },
   { path: 'login/profile/new-character/:username', component: CreateCharacterComponent },
 
   { path: 'login/profile/chars/:id', component: CharacterSheetComponent },
+  { path: 'login/profile/new-campaign/:username', component: CreateCampaignComponent },
+  { path: 'login/profile/campaigns', redirectTo: 'campaigns' },
+
   { path: 'class', component: CharClassComponent },
   { path: 'race', component: RaceComponent },
+
 
 
 
