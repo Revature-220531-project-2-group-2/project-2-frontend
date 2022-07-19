@@ -79,4 +79,8 @@ export class DescriptionParsingService {
     return result
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75

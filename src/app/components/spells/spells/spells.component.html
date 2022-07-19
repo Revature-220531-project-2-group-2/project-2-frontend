@@ -1,5 +1,6 @@
 <div>
 
+<<<<<<< HEAD
   <div>
     <h2 class="card-header text-center">{{charClass.name}} Spells</h2>
   </div>
@@ -16,4 +17,22 @@
     </div>
   </div>
  
+=======
+    <div>
+      <h2 class="card-header text-center">{{charClass.name}} Spells</h2>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let level of levels; index as i">
+          <div *ngIf="filterSpellsByLevel(i).length > 0" class="col-4">
+            <h4><strong>{{level}}</strong></h4>
+            <p *ngFor="let s of filterSpellsByLevel(i)"><a (click)="routeToSpell(s)">{{s.name}}</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+   
+>>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75
 </div>

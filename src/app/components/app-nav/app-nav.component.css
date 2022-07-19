@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Shrikhand&display=swap');
 
 .text{
@@ -33,3 +34,9 @@ a {
 
 
 
+=======
+
+.nav-buttons {
+    gap: 20px;
+}
+>>>>>>> c6de4b0f5ee741ff657d465ea5e2a47ddc7b1a75

@@ -22,6 +22,7 @@ export class LoginComponent {
   clientMessage: ClientMessage = new ClientMessage('');
   loginErrMsg: string = '';
   isLoading: boolean = false;
+  loginUrl: string = '/login'
 
   constructor(
     private authService: AuthService,
@@ -49,6 +50,7 @@ export class LoginComponent {
     // first check for empty values
     if (!this.username.trim() || !this.password.trim()) {
       this.loginErrMsg = 'Failed Login';
+
       return;
     }
 
@@ -70,7 +72,7 @@ export class LoginComponent {
           // pass the property that the user is logged in to the root component
           this.appComponent.isLoggedIn = true;
           this.appComponent.username = response.body.username;
-
+          this.router.navigate(['login/profile'])
 
 
           console.log(this.appComponent.username);
