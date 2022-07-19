@@ -16,7 +16,11 @@ export class UserDashboardComponent {
   characters: Character[] = [];
   clientMessage: ClientMessage = new ClientMessage('');
 
-  constructor(private charService: CharacterService, public appComponent: AppComponent, private router: Router) { }
+  constructor(private charService: CharacterService, public appComponent: AppComponent, private router: Router) { 
+    if(!this.appComponent.isLoggedIn) {
+      this.router.navigateByUrl('/')
+    }
+  }
 
   findCharacters() {
     console.log(this.appComponent.username);
