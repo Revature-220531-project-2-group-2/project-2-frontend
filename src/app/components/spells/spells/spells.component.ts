@@ -2,6 +2,8 @@ import { SpellsService } from '../../../services/spells.service';
 import { Component, OnInit } from '@angular/core';
 import { ClientMessage } from 'src/app/models/ClientMessage';
 import { Spell } from 'src/app/models/Spell';
+import { Index } from 'src/app/models/Index';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-spells',
@@ -10,38 +12,35 @@ import { Spell } from 'src/app/models/Spell';
 })
 export class SpellsComponent implements OnInit {
 
-  title = 'Spells'
+  charClass!: Index
+  levels: string[] = ['Cantrip', '1st-Level', '2nd-Level', '3rd-Level', '4th-Level', '5th-Level', '6th-Level', '7th-Level', '8th-Level', '9th-Level']
   spells: Spell[] = []
-  filteredSpells: Spell[] = this.spells
   search: string = ''
   clientMessage: ClientMessage = new ClientMessage('Sorry, no spells to display')
 
-  constructor(private spellsService: SpellsService) { }
+  constructor(private spellsService: SpellsService, private router : Router) {  }
 
   ngOnInit(): void {
-    this.findAllSpells()
+    this.charClass = history.state
+    this.setSpells()
+
   }
 
-  findAllSpells() {
-    this.spells = this.spellsService.findAllSpells()
-    this.filteredSpells = this.spells
-    console.log(this.spells)
+  setSpells(): void {
+    this.spells = this.spellsService.findSpellsByClassName(this.charClass.index)
   }
 
-  filterSpells() {
-    let regex = new RegExp(`.*${this.search.toLowerCase()}.*`, 'mi')
-    this.filteredSpells = this.spells.filter(s => {
-      let classNames = []
-      for (let c of s.classes) {
-        classNames.push(c.name)
-      }
-      
-      return (regex.test(s.name.toLowerCase()) ||
-          regex.test(s.level.toString()) ||
-          regex.test(s.school.name.toLowerCase()) ||
-          regex.test(classNames.join(''))
-        )
-    })
+  /**
+   * Takes in a level as a number and sets filteredSpells to only spells of that level
+   * @param level 
+   */
+  filterSpellsByLevel(level: number): Spell[] {
+    return this.spells.filter(s => s.level == level)
+  }
+
+  routeToSpell(s: Spell): void {
+    console.log("routing to spell")
+    this.router.navigateByUrl('/spell', { state: s });
   }
 
 }

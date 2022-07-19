@@ -1,3 +1,4 @@
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -7,14 +8,14 @@ import { LoginComponent } from './components/login/login.component';
 import { SpellsComponent } from './components/spells/spells/spells.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpellComponent } from './components/spells/spell/spell.component';
-
+import { MatIconModule } from '@angular/material/icon';
 
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
 import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
 import { RaceComponent } from './components/races/race/race.component';
 import { RacesComponent } from './components/races/races/races.component';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import {MatMenuModule} from '@angular/material/menu';
 
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +27,8 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+
+import { CreateCharacterComponent } from './components/create-character/create-character.component';
 
 
 @NgModule({
@@ -43,6 +46,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     AppNavComponent,
     RegisterModalComponent,
     UserDashboardComponent,
+    CreateCharacterComponent,
 
   ],
   imports: [
@@ -55,6 +59,9 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+  
+    MatIconModule,
+    MatMenuModule,
   ],
   providers: [AppComponent, {
     provide: MatDialogRef,
@@ -65,4 +72,4 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+

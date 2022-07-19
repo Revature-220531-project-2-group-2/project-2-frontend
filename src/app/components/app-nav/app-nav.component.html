@@ -1,25 +1,41 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          
-          
-        </ul>
-        <form class="d-flex">
-          <button class="btn btn-outline-success"><a routerLink="register">Register</a></button>
-          <button class="btn btn-outline-success"><a routerLink="login">Log In</a></button>
-        </form>
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <!-- @Scott: I am using mat-menu for the dropdown menu fuctionality. If you know a better way feel free to change it.-->
+          <button mat-button [matMenuTriggerFor]="spells">Spells</button>
+          <mat-menu #spells="matMenu">
+            <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'bard', name: 'Bard', url: '/api/classes/bard'}" >Bard Spells</button>
+            <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'cleric', name: 'Cleric', url: '/api/classes/cleric'}">Cleric Spells</button>
+            <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'druid', name: 'Druid', url: '/api/classes/druid'}">Druid Spells</button>
+            <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'paladin', name: 'Paladin', url: '/api/classes/paladin'}">Paladin Spells</button>
+            <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'ranger', name: 'Ranger', url: '/api/classes/ranger'}">Ranger Spells</button>
+            <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'sorcerer', name: 'Sorcerer',url: '/api/classes/sorcerer'}">Sorcerer Spells</button>
+            <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'warlock', name: 'Warlock', url: '/api/classes/warlock'}">Warlock Spells</button>
+            <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'wizard', name: 'Wizard', url: '/api/classes/wizard'}">Wizard Spells</button>
+          </mat-menu>
+        </li>
+        <li>
+          <button mat-button [matMenuTriggerFor]="classes">Classes</button>
+          <mat-menu #classes="matMenu">
+            <button mat-menu-item *ngFor="let c of appComponent.classes" [routerLink]="['/class']" [queryParams]="c" >{{c.name}}</button>
+          </mat-menu>
+        </li>
+        
+        
+        
+      </ul>
+      <form class="d-flex nav-buttons">
+        <button *ngIf="!this.appComponent.isLoggedIn" routerLink="register" class="btn btn-primary">Register</button>
+        <button *ngIf="!this.appComponent.isLoggedIn" routerLink="login" class="btn btn-secondary">Log In</button>
+        <button *ngIf="this.appComponent.isLoggedIn" (click)="logOut()" class="btn btn-secondary">Log Out</button>
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>

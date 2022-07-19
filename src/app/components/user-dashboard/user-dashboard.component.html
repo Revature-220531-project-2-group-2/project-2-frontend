@@ -1,8 +1,10 @@
 
-<div class="user-dashboard-container">
+<div class="background">
+    <div class="a">
+        <div class="border">
     <div class="user-dashboard-left">
         <div class="user-dashboard-create-char user-dashboard">
-            <button class="user-dashboard-button">Create a Character</button>
+            <button class="user-dashboard-button button">Create a Character</button>
         </div>
         <div class="user-dashboard-view-chars user-dashboard">
             
@@ -11,7 +13,7 @@
                 {{clientMessage.message}}
             
             </div>
-            <button (click)="findCharacters()" class="user-dashboard-button">Fetch User's Characters</button>
+            <button (click)="findCharacters()" class="user-dashboard-button button">View Thy User's Characters</button>
         </div>
         <ul class="list-group" *ngFor="let c of characters">
 
@@ -28,8 +30,9 @@
     </div>
     <div class="user-dashboard-right">
         <div class="user-dashboard-view-campaigns user-dashboard">
-            <button class="user-dashboard-button">View Campaigns</button>
+            <button class="user-dashboard-button button">View Campaigns</button>
         </div>
     </div>
-    
+    </div>
+    </div>
 </div>

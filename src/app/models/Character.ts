@@ -1,4 +1,5 @@
 
+
 export class Character {
     charId: number;
     charName: string;

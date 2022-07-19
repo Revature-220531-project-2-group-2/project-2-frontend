@@ -14,32 +14,39 @@ import { IndexList } from '../models/IndexList';
 })
 export class SpellsService {
   
-  spellsUrl = dndUrlPrimary + 'spells/'
+  spellsUrl = dndUrlPrimary + "/api/spells/"
+  classUrl = dndUrlPrimary + "/api/classes/"
   spellList!: Index[]
+  spellClass!: Index
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
   }
-
-  constructor(private http: HttpClient) { }
-
   
-  private findSpellList(): Observable<IndexList> {
+  constructor(private http: HttpClient) { }
+  
+  
+  private findSpellAllList(): Observable<IndexList> {
     return this.http.get<IndexList>(this.spellsUrl, this.httpOptions)
     .pipe(catchError(this.handleError))
   }
+  
+  private findSpellListByClass(className:string): Observable<IndexList> {
+    return this.http.get<IndexList>(this.classUrl + className + "/spells", this.httpOptions)
+    .pipe(catchError(this.handleError))
+  }
 
-  findSpell(index: string): Observable<Spell> {
-    return this.http.get<Spell>(this.spellsUrl + index, this.httpOptions)
+  findSpell(url: string): Observable<Spell> {
+    return this.http.get<Spell>(dndUrlPrimary + url, this.httpOptions)
     .pipe(catchError(this.handleError))
   }
 
   findAllSpells(): Spell[] {
     let list: Spell[] = []
-    this.findSpellList()
+    this.findSpellAllList()
       .subscribe(data => {
         for (let si = 0; si < data.results.length; si++) {
-          this.findSpell(data.results[si].index)
+          this.findSpell(data.results[si].url)
           .subscribe(rsp => {
             list.push(rsp)
           })
@@ -47,6 +54,21 @@ export class SpellsService {
       })
     return list
   }
+
+  findSpellsByClassName(classIndex:string): Spell[] {
+    let list: Spell[] = []
+    this.findSpellListByClass(classIndex)
+      .subscribe(data => {
+        for (let si = 0; si < data.results.length; si++) {
+          this.findSpell(data.results[si].url)
+          .subscribe(rsp => {
+            list.push(rsp)
+          })
+        }
+      })
+    return list
+  }
+
 
   private handleError(httpError: HttpErrorResponse) {
 
@@ -62,5 +84,4 @@ export class SpellsService {
     return throwError(() => new Error('something really bad happened'));
   }
 }
-
 

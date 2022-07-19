@@ -1,17 +1,22 @@
 
-
-<h1 mat-dialog-title>Login</h1>
+<div class="background">
+  <div class="a">
+  <div class="border">
+<h1 mat-dialog-title class="h1">Login for the Quest <br /> of a Lifetime</h1>
 <div mat-dialog-content>
   <mat-form-field appearance="fill">
-    <label for="loginInputUsername" class="form-label">Username</label>
+    <label for="loginInputUsername" class="form-label login">Username</label>
     <input matInput [(ngModel)]="username" name="username" type="text" class="form-control" id="loginInputUsername">
-    <label for="loginInputPassword" class="form-label">Password</label>
+    <label for="loginInputPassword" class="form-label login">Password</label>
     <input matInput [(ngModel)]="password" name="password" type="password" class="form-control" id="loginInputPassword">
   </mat-form-field>
 </div>
 
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button routerLink="profile" (click)="onClick()" cdkFocusInitial>Ok</button>
+    <button mat-button (click)="onNoClick()" class="button">I'm Good, Let Me Out Please</button>
+    <button mat-button routerLink="profile" (click)="onClick()" cdkFocusInitial class="button">Let's Get Adventuring!</button>
   </div>
+  </div>
+</div>
+</div>
 

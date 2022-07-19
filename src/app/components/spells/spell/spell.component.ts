@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { Spell } from 'src/app/models/Spell';
 
@@ -8,7 +9,7 @@ import { Spell } from 'src/app/models/Spell';
 })
 export class SpellComponent implements OnInit {
 
-  @Input() spell!: Spell
+  spell!: Spell
   classesNames: string[] = []
   desc: any[] = []
   
@@ -16,9 +17,10 @@ export class SpellComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.spell = history.state
     this.setClassesNames()
     this.findDescHeadings()
-    if (this.spell.name == 'Control Weather') console.log(this.spell.desc)
+    
   }
 
   setClassesNames() {
@@ -59,12 +61,10 @@ export class SpellComponent implements OnInit {
           tableRow: <any>[]
         }
       } 
-      if (this.spell.name == 'Control Weather') console.log(this.spell.desc.length, Number.parseInt(i), Number.parseInt(i) + 1 == this.spell.desc.length)
       let arr = this.spell.desc[i].match(regex)
         if (arr) {
           temp.bold = arr[2]
           if (arr[3].includes('#####')){
-            
             temp.head = arr[3].split('')
               .splice(6)
               .join('')
@@ -84,4 +84,5 @@ export class SpellComponent implements OnInit {
     }
     
   }
+  
   
