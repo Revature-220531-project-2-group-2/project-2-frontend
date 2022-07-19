@@ -11,8 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
 import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
-import { RaceComponent } from './components/races/race/race.component';
-import { RacesComponent } from './components/races/races/races.component';
+import { RaceComponent } from './components/race/race.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
 
@@ -29,6 +28,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { CreateCharacterComponent } from './components/create-character/create-character.component';
+import { CharClassComponent } from './components/char-class/char-class.component';
 
 
 @NgModule({
@@ -40,13 +40,13 @@ import { CreateCharacterComponent } from './components/create-character/create-c
     CreateCampaignComponent,
     CampaignsListComponent,
     RaceComponent,
-    RacesComponent,
     CharacterSheetComponent,
     HomepageComponent,
     AppNavComponent,
     RegisterModalComponent,
     UserDashboardComponent,
     CreateCharacterComponent,
+    CharClassComponent,
 
   ],
   imports: [

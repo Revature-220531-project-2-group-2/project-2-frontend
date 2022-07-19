@@ -1,9 +1,11 @@
 
-<div class="user-dashboard-container">
+<div class="background">
+    <div class="a">
+        <div class="border">
     <div class="user-dashboard-left">
         <!-- Create a new Character-->
         <div class="user-dashboard-create-char user-dashboard">
-            <button routerLink="new-character/{{appComponent.username}}" class="user-dashboard-button">Create a Character</button>
+            <button class="user-dashboard-button button">Create a Character</button>
         </div>
 
         <!-- Fetch/View all a User's Characters-->
@@ -14,7 +16,7 @@
                 {{clientMessage.message}}
             
             </div>
-            <button (click)="findCharacters()" class="user-dashboard-button">Fetch User's Characters</button>
+            <button (click)="findCharacters()" class="user-dashboard-button button">View Thy User's Characters</button>
         </div>
         <!-- Display each Character's ID and Name.-->
         <ul class="list-group" *ngFor="let c of characters">
@@ -25,11 +27,14 @@
     </div>
     <div class="user-dashboard-right">
         <div class="user-dashboard-view-campaigns user-dashboard">
+
             <button routerLink="campaigns" class="user-dashboard-button">View Campaigns</button>
         </div>
         <div class="user-dashboard-create-campaigns user-dashboard">
             <button class="user-dashboard-button" routerLink="new-campaign/{{appComponent.username}}" >Create Campaigns</button>
+
         </div>
     </div>
-    
+    </div>
+    </div>
 </div>

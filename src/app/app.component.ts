@@ -1,5 +1,9 @@
+import { CharClass } from './models/CharClass';
+import { CharClassService } from './services/char-class.service';
 import { User } from './models/User';
 import { Component } from '@angular/core';
+import { Race } from './models/Race';
+import { RaceService } from './services/race-service.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +19,14 @@ export class AppComponent {
 
   username: string = '';
 
+  classes: CharClass[] = []
+  races: Race[] = []
+  constructor(private classServ: CharClassService, private raceServ: RaceService) {}
+
+  ngOnInit() {
+    this.classes = this.classServ.findAllCharClasses()
+    this.races = this.raceServ.findAllRaces()
+  }
   // update the username (user info) based on whoever is stored in the session
   updateUserData(username: string): void {
     this.username = username;

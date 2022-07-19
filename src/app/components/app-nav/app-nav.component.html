@@ -8,16 +8,29 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <button mat-button [matMenuTriggerFor]="menu">Spells</button>
-            <mat-menu #menu="matMenu">
+            <!-- @Scott: I am using mat-menu for the dropdown menu fuctionality. If you know a better way feel free to change it.-->
+            <button mat-button [matMenuTriggerFor]="spells">Spells</button>
+            <mat-menu #spells="matMenu">
               <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'bard', name: 'Bard', url: '/api/classes/bard'}" >Bard Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{ index: 'cleric', name: 'Cleric', url: '/api/classes/cleric'}">Cleric Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'cleric', name: 'Cleric', url: '/api/classes/cleric'}">Cleric Spells</button>
               <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'druid', name: 'Druid', url: '/api/classes/druid'}">Druid Spells</button>
               <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'paladin', name: 'Paladin', url: '/api/classes/paladin'}">Paladin Spells</button>
               <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'ranger', name: 'Ranger', url: '/api/classes/ranger'}">Ranger Spells</button>
               <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'sorcerer', name: 'Sorcerer',url: '/api/classes/sorcerer'}">Sorcerer Spells</button>
               <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'warlock', name: 'Warlock', url: '/api/classes/warlock'}">Warlock Spells</button>
               <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'wizard', name: 'Wizard', url: '/api/classes/wizard'}">Wizard Spells</button>
+            </mat-menu>
+          </li>
+          <li>
+            <button mat-button [matMenuTriggerFor]="classes">Classes</button>
+            <mat-menu #classes="matMenu">
+              <button mat-menu-item *ngFor="let c of appComponent.classes" [routerLink]="['/class']" [queryParams]="c" >{{c.name}}</button>
+            </mat-menu>
+          </li>
+          <li>
+            <button mat-button [matMenuTriggerFor]="races">Races</button>
+            <mat-menu #races="matMenu">
+              <button mat-menu-item *ngFor="let r of appComponent.races" [routerLink]="['/race']" [queryParams]="r">{{r.name}}</button>
             </mat-menu>
           </li>
           
@@ -31,4 +44,4 @@
         </form>
       </div>
     </div>
-  </nav>
+</nav>

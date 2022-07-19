@@ -11,6 +11,7 @@ import { CharClass } from '../models/CharClass';
 export class CharClassService {
 
   classUrl = dndUrlAlternate + 'classes'
+  currentClass?: CharClass;
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -33,9 +34,10 @@ export class CharClassService {
     return list;
   }
 
-  findCharClassByName(name: string): CharClass {
+  findCharClassBySlug(slug: string): CharClass {
     let charClass!: CharClass;
-    this.http.get<CharClass>(this.classUrl + name, this.httpOptions)
+    console.log(`${this.classUrl}/${slug}`)
+    this.http.get<CharClass>(`${this.classUrl}/${slug}`, this.httpOptions)
       .pipe(catchError(this.handleError))
       .subscribe(data => {
         charClass = data

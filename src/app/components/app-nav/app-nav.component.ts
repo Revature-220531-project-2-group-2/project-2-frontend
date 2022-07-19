@@ -2,6 +2,7 @@ import { AppComponent } from 'src/app/app.component';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/User';
 
+
 @Component({
   selector: 'app-nav',
   templateUrl: './app-nav.component.html',
