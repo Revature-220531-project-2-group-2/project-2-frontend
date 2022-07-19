@@ -62,6 +62,7 @@ export class DescriptionParsingService {
           } 
       } else if(/^(\*)(.*)/.test(strArr[i])) {
         temp.listItem = strArr[i].match(/^(\*)(.*)/)![2];
+        temp.listItem = temp.listItem.split("*").join("")
       }else {
         temp.body = strArr[i]
       }
