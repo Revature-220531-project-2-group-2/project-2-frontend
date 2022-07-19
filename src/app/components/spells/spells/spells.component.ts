@@ -1,10 +1,7 @@
-import { CharClassService } from './../../../services/char-class.service';
 import { SpellsService } from '../../../services/spells.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClientMessage } from 'src/app/models/ClientMessage';
 import { Spell } from 'src/app/models/Spell';
-import { CharClass } from 'src/app/models/CharClass';
-import { VirtualTimeScheduler } from 'rxjs';
 import { Index } from 'src/app/models/Index';
 import { Router } from '@angular/router';
 

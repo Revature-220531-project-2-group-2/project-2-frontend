@@ -17,7 +17,7 @@ export class SpellsService {
   spellsUrl = dndUrlPrimary + "/api/spells/"
   classUrl = dndUrlPrimary + "/api/classes/"
   spellList!: Index[]
-  spellClass: string = ''
+  spellClass!: Index
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})

@@ -1,3 +1,5 @@
+import { CharClass } from './models/CharClass';
+import { CharClassService } from './services/char-class.service';
 import { User } from './models/User';
 import { Component } from '@angular/core';
 
@@ -15,6 +17,12 @@ export class AppComponent {
 
   username: string = '';
 
+  classes: CharClass[] = []
+  constructor(private classServ: CharClassService) {}
+
+  ngOnInit() {
+    this.classes = this.classServ.findAllCharClasses()
+  }
   // update the username (user info) based on whoever is stored in the session
   updateUserData(username: string): void {
     this.username = username;
