@@ -3,6 +3,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Roboto:wght@400;500;700&family=Ubuntu:wght@700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Shrikhand&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -10,7 +12,7 @@ body {
 
 .home-container {
 
-    background-image: url('../../../assets/dnd-background.jpeg');
+    background-image: url('../../../assets/fant-7.gif');
     height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
@@ -37,19 +39,25 @@ body {
     background: rgba(95, 92, 92, 0.9);
     margin: 0 auto;
     align-self: center;
-    color: white;
+    color: gold;
     text-align: center;
 
 }
 
 .home-center-title h2{
-    font-family: Ubuntu;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .home-center-title h1 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Shrikhand', cursive;
     margin-top: 10%;
     margin-bottom: 20%;
+    font-size: 50px;
+    line-height: 8vh;
+}
+
+.h1 {
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 /* Styling Character Card */
@@ -65,20 +73,16 @@ body {
     height: 100%;
     box-sizing: border-box;
     padding: 2em;
-    font-family: Ubuntu;
+    font-family: 'Josefin Sans', sans-serif;
     border-radius: 25px;
-    color: white;
-    line-height: 25px;
+    color: gold;
     box-shadow: 5px 5px 10px #ccc;
     float: left;
   }
 
   .card.orange {
-    background: linear-gradient(135deg, #fad961 0%,#f76b1c 100%);
-  }
-
-  .card.purple {
-    background:linear-gradient(135deg, #f02fc2 0%,#6094ea 100%);
+    background-color: darkred;
+    border: 5px solid gold;
   }
 
   .card h1 {
@@ -95,5 +99,13 @@ body {
     min-height: 25%;
     width: 60%;
 }
+
+.border {
+    background-color: darkred;
+    border: 5px solid gold;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px #ccc;
+}
+
 
 /* End of Styling Character Card */

@@ -1,4 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Shrikhand&display=swap');
 
-.nav-buttons {
-    gap: 20px;
+.text{
+    font-family: 'Shrikhand', cursive;
+    font-size: 25px;
+    color: rgb(166, 55, 55);
 }
+
+.button {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(166, 55, 55);
+}
+
+.tabs{
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgb(44, 115, 41);
+    font-size: 20px;
+}
+
+.color{
+    background-color: rgb(237, 208, 120);
+    border-radius: 15px;
+}
+
+.button1{
+    font-family: 'Shrikhand', cursive;
+    margin: 5px;
+    color: darkred;
+    background-color: gold;
+}
+
+.nav{
+    font-family: 'Josefin Sans', sans-serif;
+    color: darkred;
+    background-color:gold;
+}
+
+
+
+
+
+
+

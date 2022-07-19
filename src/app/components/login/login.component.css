@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Shrikhand&display=swap');
+
 .my-card {
     margin-top: 12.5%;
     
@@ -7,4 +9,75 @@
     .my-card {
         width: 50%;
     }
+}
+
+.background {
+    background-image: url('../../../assets/fant-3.gif');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.h1{
+    font-family: 'Shrikhand', cursive;
+    font-size: 50px;
+    color: gray;
+    margin: 25px;
+    line-height: 8vh;
+}
+
+.login{
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgb(129, 122, 122);
+    font-size: 15px;
+    margin: 5px;
+}
+
+.border{
+    border: 5px solid gold;
+    background-color: rgb(219, 227, 233);
+    border-radius: 15px;
+    text-align: center;
+    padding: 25px;
+    min-height: 25%;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 150px;
+}
+
+.a{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2em;
+    border-radius: 25px;
+    line-height: 25px;
+    box-shadow: 5px 5px 10px gray;
+    float: center;
+}
+
+.button {
+  font-family: 'Josefin Sans', sans-serif;;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(106, 100, 100);
+  background-color: rgb(235, 233, 223);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(92, 87, 87);
+  margin: 5px;
+}
+
+.button:hover {background-color: rgb(129, 128, 123)}
+
+.button:active {
+  background-color: rgb(115, 111, 102);
+  box-shadow: 0 5px rgb(223, 209, 209);
+  transform: translateY(4px);
 }
