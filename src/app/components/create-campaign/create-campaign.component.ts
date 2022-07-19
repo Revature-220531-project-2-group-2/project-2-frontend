@@ -61,7 +61,7 @@ export class CreateCampaignComponent implements OnInit {
       .subscribe(data => {
         this.clientMessage.message = ``;
         this.filterForCurrentUser(data);
-      }, error => this.clientMessage.message = `Soemthing went wrong Error ${error}`);
+      }, error => this.clientMessage.message = `Something went wrong Error ${error}`);
   }
 
   asyncActions() {
@@ -83,7 +83,14 @@ export class CreateCampaignComponent implements OnInit {
         this.clientMessage.message = `Successfully Created Campaign ID${this.campaign.campaignId}`;
 
 
-      }, error => this.clientMessage.message = `Soemthing went wrong Error ${error}`)
+      }, error => this.clientMessage.message = `Something went wrong Error ${error}`)
+  }
+
+  joinUserToCampaign(id: number) {
+    this.campaignService.addUserToCampaignByUsername(id, this.appComponent.username)
+      .subscribe(data => {
+        this.clientMessage.message = `Successfully Added ${this.appComponent.username} to Campaign ID ${this.campaign.campaignId};`
+      }, error => this.clientMessage.message = `Something went wrong Error ${error}`)
   }
 
 }

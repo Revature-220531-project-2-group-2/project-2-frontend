@@ -21,16 +21,20 @@
                         </thead>
                         <tbody>
                           <tr let *ngFor="let camp of campaigns; let i = index" class="table-row">
-                            <th scope="row">{{campaigns[i+1].campaignId}}</th>
-                            <td>{{campaigns[i+1].campaignName}}</td>
-                            <td>{{campaigns[i+1].users[0]}}</td>
-                            <td><span *ngFor="let user of campaigns[i+1].users; let j=index">
-                                {{campaigns[i+1].users[j]}}
+                            <th scope="row">{{camp.campaignId}}</th>
+                            <td >{{camp.campaignName}}</td>
+                            <td *ngIf="camp.users[0].username;else camp_content">{{camp.users[0].username}}</td>
+                            <ng-template #camp_content><td>{{camp.users[0]}}</td></ng-template>
+                            <td><span *ngFor="let user of campaigns[i].users; let j=index">
+                                
+                                <span *ngIf="user.username;else camp_content2"><td>{{user.username}}</td></span>
+                                <ng-template class="camp-cell" #camp_content2>{{user}} </ng-template>
                             </span></td>
                             
                             <td>
-                                <button *ngIf="appComponent.isLoggedIn" class="btn btn-secondary btn-sm">Join</button>
+                                <button *ngIf="appComponent.isLoggedIn" (click)="joinUserToCampaign(camp.campaignId)" class="btn btn-secondary btn-sm">Join</button>
                             </td>
+
                           </tr>
                           
                         </tbody>

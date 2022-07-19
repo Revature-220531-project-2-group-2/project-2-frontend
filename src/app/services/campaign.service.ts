@@ -35,6 +35,16 @@ export class CampaignService {
     return this.http.get<Campaign>(campaignUrl + `/${id}`, this.httpOptions).pipe(catchError(this.handleError));
   }
 
+  getAllUserCampaignsByUsername(username: string): Observable<Campaign[]> {
+    return this.http.get<Campaign[]>(url + `/users/${username}/campaigns`, this.httpOptions).pipe(catchError(this.handleError));
+  }
+
+  addUserToCampaignByUsername(id: number, username: string): Observable<Campaign> {
+    // 3 params for POST: url, request body, options (headers)
+    return this.http.post<Campaign>(`${campaignUrl}/${id}/add-${username}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(httpError: HttpErrorResponse) {
     if (httpError.error instanceof ErrorEvent) {
       console.log('an error occurred: ', httpError.error.message)
