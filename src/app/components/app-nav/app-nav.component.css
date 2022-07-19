@@ -3,23 +3,16 @@
 .text{
     font-family: 'Shrikhand', cursive;
     font-size: 25px;
-    color: rgb(166, 55, 55);
+    color: rgb(197, 43, 43);
 }
 
 .button {
     font-family: 'Josefin Sans', sans-serif;
-    margin: 5px;
 }
 
 a {
     text-decoration: none;
     color: rgb(166, 55, 55);
-}
-
-.tabs{
-    font-family: 'Josefin Sans', sans-serif;
-    color: rgb(44, 115, 41);
-    font-size: 20px;
 }
 
 .color{
@@ -39,6 +32,7 @@ a {
     color: darkred;
     background-color:gold;
 }
+
 
 
 

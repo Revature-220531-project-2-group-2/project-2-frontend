@@ -1,32 +1,34 @@
-<h1>{{currentRace.name}}</h1>
+<div class="img">
+<div class="border">
+<h1 class="font2">{{currentRace.name}}</h1>
 
 <div *ngFor="let line of desc">
-    <H2>{{line.threeHead}}</H2>
-    <p>{{line.body}}</p>
+    <H2 class="font1">{{line.threeHead}}</H2>
+    <p class="font1">{{line.body}}</p>
 </div>
 <div *ngFor="let line of ability">
-    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
 </div>
 <div *ngFor="let line of speed">
-    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
 </div>
 <div *ngFor="let line of vision">
-    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
 </div>
 <div *ngFor="let line of age">
-    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
 </div>
 <div *ngFor="let line of alignment">
-    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
 </div>
 <div *ngFor="let line of size">
-    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
 </div>
 <div *ngFor="let line of languages">
-    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
 </div>
 <div *ngFor="let line of traits">
-    <p><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
+    <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -39,4 +41,6 @@
             </tr>
         </tbody>
     </table>
+</div>
+</div>
 </div>
