@@ -29,6 +29,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { CreateCharacterComponent } from './components/create-character/create-character.component';
+import { CharClassComponent } from './components/char-class/char-class.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { CreateCharacterComponent } from './components/create-character/create-c
     RegisterModalComponent,
     UserDashboardComponent,
     CreateCharacterComponent,
+    CharClassComponent,
 
   ],
   imports: [

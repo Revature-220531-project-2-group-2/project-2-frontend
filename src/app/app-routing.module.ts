@@ -1,3 +1,4 @@
+import { CharClassComponent } from './components/char-class/char-class.component';
 import { SpellComponent } from './components/spells/spell/spell.component';
 import { CreateCampaignComponent } from './components/create-campaign/create-campaign.component';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,9 @@ const routes: Routes = [
   { path: 'spell', component: SpellComponent},
   { path: 'login/profile', component: UserDashboardComponent },
   { path: 'login/profile/new-character/:username', component: CreateCharacterComponent },
-  { path: 'login/profile/chars/:id', component: CharacterSheetComponent }
+  { path: 'login/profile/chars/:id', component: CharacterSheetComponent },
+  { path: 'class', component: CharClassComponent },
+
 
 
 ]
