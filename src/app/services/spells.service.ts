@@ -31,13 +31,13 @@ export class SpellsService {
     .pipe(catchError(this.handleError))
   }
   
-  private findSpellListByClass(className:string): Observable<IndexList> {
+  findSpellListByClass(className:string): Observable<IndexList> {
     return this.http.get<IndexList>(this.classUrl + className + "/spells", this.httpOptions)
     .pipe(catchError(this.handleError))
   }
 
-  findSpell(url: string): Observable<Spell> {
-    return this.http.get<Spell>(dndUrlPrimary + url, this.httpOptions)
+  findSpell(name: string): Observable<Spell> {
+    return this.http.get<Spell>(this.spellsUrl + name, this.httpOptions)
     .pipe(catchError(this.handleError))
   }
 
@@ -55,9 +55,9 @@ export class SpellsService {
     return list
   }
 
-  findSpellsByClassName(classIndex:string): Spell[] {
+  findSpellsByClassName(charClass:string): Spell[] {
     let list: Spell[] = []
-    this.findSpellListByClass(classIndex)
+    this.findSpellListByClass(charClass)
       .subscribe(data => {
         for (let si = 0; si < data.results.length; si++) {
           this.findSpell(data.results[si].url)
@@ -67,6 +67,11 @@ export class SpellsService {
         }
       })
     return list
+  }
+
+  findSpellsByClassNameByLevel(className: string, level: number): Observable<IndexList> {
+    return this.http.get<IndexList>(`${dndUrlPrimary}/api/classes/${className}/levels/${level}/spells`, this.httpOptions)
+    .pipe(catchError(this.handleError))
   }
 
 

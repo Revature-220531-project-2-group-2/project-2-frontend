@@ -34,15 +34,9 @@ export class CharClassService {
     return list;
   }
 
-  findCharClassBySlug(slug: string): CharClass {
-    let charClass!: CharClass;
-    console.log(`${this.classUrl}/${slug}`)
-    this.http.get<CharClass>(`${this.classUrl}/${slug}`, this.httpOptions)
+  findCharClassBySlug(slug: string): Observable<CharClass> {
+    return this.http.get<CharClass>(`${this.classUrl}/${slug}`, this.httpOptions)
       .pipe(catchError(this.handleError))
-      .subscribe(data => {
-        charClass = data
-      })
-    return charClass;
   }
 
 
