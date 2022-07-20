@@ -36,8 +36,8 @@ export class SpellsService {
     .pipe(catchError(this.handleError))
   }
 
-  findSpell(url: string): Observable<Spell> {
-    return this.http.get<Spell>(dndUrlPrimary + url, this.httpOptions)
+  findSpell(name: string): Observable<Spell> {
+    return this.http.get<Spell>(this.spellsUrl + name, this.httpOptions)
     .pipe(catchError(this.handleError))
   }
 

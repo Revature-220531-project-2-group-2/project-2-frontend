@@ -8,7 +8,7 @@
       <div class="row">
         <div *ngFor="let level of levels" class="col-4">
             <h4 class="font2"><strong>{{level.name}}</strong></h4>
-            <p *ngFor="let s of level.spells.results"><a class="font1">{{s.name}}</a></p>
+            <p *ngFor="let s of level.spells.results"><a class="font1" [routerLink]="['/spell']" [queryParams]="{name: s.index}">{{s.name}}</a></p>
         </div>
       </div>
     </div>

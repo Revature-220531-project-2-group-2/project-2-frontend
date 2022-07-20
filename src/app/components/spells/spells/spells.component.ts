@@ -1,7 +1,7 @@
 import { SpellsService } from '../../../services/spells.service';
 import { Component } from '@angular/core';
 import { ClientMessage } from 'src/app/models/ClientMessage';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-spells',
@@ -26,7 +26,7 @@ export class SpellsComponent{
   levels: any = []
   clientMessage: ClientMessage = new ClientMessage('Sorry, no spells to display')
 
-  constructor(private spellsService: SpellsService, private router : Router, private route: ActivatedRoute) { 
+  constructor(private spellsService: SpellsService,  private route: ActivatedRoute) { 
     this.route.queryParams
     .subscribe(param => {
       this.levels = []
