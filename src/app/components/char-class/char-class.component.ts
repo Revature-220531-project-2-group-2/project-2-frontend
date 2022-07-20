@@ -2,8 +2,6 @@ import { DescriptionParsingService } from './../../services/description-parsing.
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CharClassService } from 'src/app/services/char-class.service';
-import { throwDialogContentAlreadyAttachedError } from '@angular/cdk/dialog';
-
 
 @Component({
   selector: 'app-char-class',

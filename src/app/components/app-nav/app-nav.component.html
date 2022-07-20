@@ -15,14 +15,14 @@
             <!-- @Scott: I am using mat-menu for the dropdown menu fuctionality. If you know a better way feel free to change it.-->
             <button mat-button [matMenuTriggerFor]="spells" class="button1">Spells</button>
             <mat-menu #spells="matMenu">
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'bard', name: 'Bard', url: '/api/classes/bard'}" class="button">Bard Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'cleric', name: 'Cleric', url: '/api/classes/cleric'}" class="button">Cleric Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'druid', name: 'Druid', url: '/api/classes/druid'}" class="button">Druid Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'paladin', name: 'Paladin', url: '/api/classes/paladin'}" class="button">Paladin Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'ranger', name: 'Ranger', url: '/api/classes/ranger'}" class="button">Ranger Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'sorcerer', name: 'Sorcerer',url: '/api/classes/sorcerer'}" class="button">Sorcerer Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'warlock', name: 'Warlock', url: '/api/classes/warlock'}" class="button">Warlock Spells</button>
-              <button mat-menu-item [routerLink]="['spells']" [state]="{index: 'wizard', name: 'Wizard', url: '/api/classes/wizard'}" class="button">Wizard Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [queryParams]="{charClass: 'bard'}" class="button">Bard Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [queryParams]="{charClass: 'cleric'}" class="button">Cleric Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [queryParams]="{charClass: 'druid'}" class="button">Druid Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [queryParams]="{charClass: 'paladin'}" class="button">Paladin Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [queryParams]="{charClass: 'ranger'}" class="button">Ranger Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [queryParams]="{charClass: 'sorcerer'}" class="button">Sorcerer Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [queryParams]="{charClass: 'warlock'}" class="button">Warlock Spells</button>
+              <button mat-menu-item [routerLink]="['spells']" [queryParams]="{charClass: 'wizard'}" class="button">Wizard Spells</button>
             </mat-menu>
           </li>
           <li>
