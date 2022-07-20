@@ -14,6 +14,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 
 import { SpellsComponent } from './components/spells/spells/spells.component';
 import { CreateCharacterComponent } from './components/create-character/create-character.component';
+import { CampaignRoomComponent } from './components/campaign-room/campaign-room.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterModalComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'new-character', component: CreateCharacterComponent },
   { path: 'new-campaign', component: CreateCampaignComponent },  // will take this path out
   { path: 'campaigns', component: CampaignsListComponent },  // will take this path out
+  { path: 'campaign-room', component: CampaignRoomComponent },  // will take this path out
   { path: 'character-sheet', component: CharacterSheetComponent },
   { path: 'spell', component: SpellComponent },
   { path: 'login/profile', component: UserDashboardComponent },
@@ -34,6 +36,7 @@ const routes: Routes = [
 
   { path: 'class', component: CharClassComponent },
   { path: 'race', component: RaceComponent },
+  
 
 
 

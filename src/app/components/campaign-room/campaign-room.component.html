@@ -1,0 +1,18 @@
+<h1>PlaceHolder Campaign Name</h1>
+<div *ngFor="let post of messages">
+    <span>{{post.poster}}</span>
+    <p>{{post.message}}</p>
+</div>
+
+
+<select>
+    <!-- Add dice icons to each please-->
+    <option>D4</option>
+    <option>D6</option>
+    <option>D10</option>
+    <option>D12</option>
+    <option>D20</option>
+    <option>D100</option>
+</select> <button>Roll</button>
+<input type="text" [(ngModel)]="newPost">
+<button (click)="postMessage()">Post</button>
