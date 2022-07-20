@@ -1,19 +1,10 @@
 import { Router } from '@angular/router';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AppComponent } from 'src/app/app.component';
 import { ClientMessage } from 'src/app/models/ClientMessage';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
-
-/**
- * @title Dialog Overview
- */
 
 
 @Component({
@@ -22,6 +13,8 @@ export interface DialogData {
   styleUrls: ['./register-modal.component.css']
 })
 export class RegisterModalComponent {
+
+  @Input() pwdFocus = false;
 
   title = 'Register User';
   confirmPassword: string = '';
@@ -33,6 +26,11 @@ export class RegisterModalComponent {
     private appComponent: AppComponent,
     private router: Router
   ) { }
+
+  printSomething() {
+    console.log('here');
+
+  }
 
   registerUser(): void {
     let regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/

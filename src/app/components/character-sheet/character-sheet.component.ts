@@ -16,7 +16,7 @@ import { faPlusCircle, faCheck, faX, faMinusCircle } from '@fortawesome/free-sol
 })
 export class CharacterSheetComponent implements OnInit, OnChanges {
   path: any;
-  charId: number = 0;
+
   clientMessage: ClientMessage = new ClientMessage('');
   char: Character = new Character(0, '', '', '', 0, 0, 0, 0, 0, 0, [], []);
 
@@ -40,6 +40,7 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
   intelligenceAttribute: number = 0;
   wisdomAttribute: number = 0;
   charismaAttribute: number = 0;
+  charName: string = '';
 
 
 
@@ -49,8 +50,8 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
     let arrCharPath: any = this.path.split('/');
 
 
-    this.charId = arrCharPath[arrCharPath.length - 1]
-    console.log(this.charId);
+    this.charName = arrCharPath[arrCharPath.length - 1]
+    console.log(this.charName);
 
     this.getCharAttributes();
 
@@ -99,8 +100,6 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
     this.char.equipment.push(this.additionalEquipment);
     this.charService.putCharacter(this.appComponent.username, this.char)
       .subscribe(
-
-
         data => {
           console.log(data);
           this.clientMessage.message = `Successfully Created Character!`
@@ -131,7 +130,7 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
   getCharAttributes() {
     this.username = this.appComponent.username;
 
-    this.charService.findCharByUsernameAndId(this.appComponent.username, this.charId)
+    this.charService.findCharByUsernameAndName(this.appComponent.username, this.char.charName)
       .subscribe(
         data => {
           console.log(data);
@@ -148,7 +147,7 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
           this.charismaAttribute = this.char.charisma;
 
         },
-        () => this.clientMessage.message = `Can't find Character with Username + id=${this.charId}`
+        () => this.clientMessage.message = `Can't find Character with Username + id=${this.charName}`
       )
 
   }

@@ -5,6 +5,25 @@ body {
     padding: 0;
 }
 
+.mat-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.register-form-field {
+  width: 30%;
+
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3em 0 3em;
+}
+
 .button {
   font-family: 'Josefin Sans', sans-serif;;
   display: inline-block;
@@ -54,9 +73,12 @@ h1{
   min-height: 25%;
   margin-left: 250px;
   margin-right: 250px;
-  margin-top: 150px;
+  
 }
 
+.registerInput {
+  font-size: 20px;
+}
 
 .a{
   width: 100%;

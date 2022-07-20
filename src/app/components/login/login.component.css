@@ -5,10 +5,24 @@
     
 }
 
+
 @media (min-width: 1000px) {
     .my-card {
         width: 50%;
     }
+}
+
+
+
+#loginInputUsername, #loginInputPassword {
+    font-size: 20px;
+}
+
+.mat-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
 }
 
 .background {
@@ -30,7 +44,7 @@
 .login{
     font-family: 'Josefin Sans', sans-serif;
     color: rgb(129, 122, 122);
-    font-size: 15px;
+    font-size: 20px;
     margin: 5px;
 }
 

@@ -42,9 +42,9 @@ export class CharacterService {
       .pipe(catchError(this.handleError))
   }
 
-  findCharByUsernameAndId(userName: string, charId: number): Observable<Character> {
+  findCharByUsernameAndName(userName: string, charName: string): Observable<Character> {
     this.requestUrl = this.userBaseUrl;
-    this.requestUrl = this.requestUrl + `/${userName}/characters/get-${charId}`;
+    this.requestUrl = this.requestUrl + `/${userName}/characters/${charName}`;
     console.log(this.requestUrl);
 
     return this.http.get<Character>(this.requestUrl, this.httpOptions)
