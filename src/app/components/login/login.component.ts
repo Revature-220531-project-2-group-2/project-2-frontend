@@ -67,7 +67,7 @@ export class LoginComponent {
         },
         (error) => {
           this.isLoading = false;
-          this.clientMessage.message = `Soemthing went wrong Error ${error}`;
+          this.clientMessage.message = `Something went wrong Error ${error}`;
 
         }
       );

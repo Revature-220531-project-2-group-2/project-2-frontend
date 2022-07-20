@@ -58,6 +58,6 @@ export class RegisterModalComponent {
         this.router.navigateByUrl("/login/profile")
 
         // need to redirect/do something here
-      }, error => this.clientMessage.message = `Soemthing went wrong Error ${error}`)
+      }, error => this.clientMessage.message = `Something went wrong Error ${error}`)
   }
 }
