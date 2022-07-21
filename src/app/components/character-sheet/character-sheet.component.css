@@ -3,9 +3,14 @@
     padding: 20px;
 }
 
-.character-sheet-container {
-    width: 80%;
+.char-sheet-buttons {
+    text-align: center;
+    vertical-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
 }
+
+
 
 
 /*======================= GRID LAYOUT =======================*/
@@ -15,7 +20,7 @@
     width: 100%;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
-    gap: 25px;
+    gap: 40px;
 }
 
 .name-container {
@@ -72,6 +77,7 @@
 
 .title {
     display: flex;
+    grid-row: 1/4;
 }
 
 .description {
@@ -125,6 +131,11 @@ h2 {
     background-color: azure;
     width: 250px;
     height: 40%;
+
+    background-color: rgb(200, 166, 121);
+    width: 350px;
+    height:100px;
+
     border: 1px solid black;
 }
 
@@ -149,6 +160,7 @@ h2 {
     padding-top: 10px;
     box-shadow: 5px 5px 2.5px #aaaaaa;
     border-radius: 2px;
+    float: left;
 }
 
 .attribute-score {
@@ -194,7 +206,7 @@ h2 {
     border: 1px solid black;
     margin: 0 auto;
     justify-content: space-between;
-    height: 90%;
+    height: 125px;
 }
 
 .hitpoints-container h1, .hitpoints-container h2 {
@@ -283,14 +295,27 @@ h2 {
     font-size: 10px;
 }
 
+.skills-table td {
+    height: 20px;
+}
+
 .skills-table-skill {
-    font-size: 12px;
+    font-size: 11px;
+    padding: 4px;
 }
 
 .skills-table-modifier {
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 5px;
     margin-right: 5px;
+    padding: 4px;
+
+}
+
+.skills-table-bonus {
+    padding: 4px;
+    font-size: 12px;
+
 }
 
 /*====================== END OF SKILLS Component ======================== */
@@ -341,9 +366,8 @@ h2 {
 }
 
 .img {
-    background-image: url('../../../assets/fant-2.gif');
-    height: 100vh;
-    width: 100%;
+    background-image: url('../../../assets/fant-4.gif');
+
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -351,19 +375,17 @@ h2 {
 .title {
     font-family:'Josefin Sans', sans-serif;
     font-size: 15px;
-    color: gold;
+    color:rgb(75, 37, 11);
 }
 
 .border{
-    border: 5px solid gold;
-    background-color: darkred;
+    background-color: burlywood;
     border-radius: 15px;
     text-align: center;
     padding: 25px;
     min-height: 25%;
-    margin-left: 250px;
-    margin-right: 250px;
-    
+    width: 80%;
+    margin: 0 auto;
 }
 
 .a{

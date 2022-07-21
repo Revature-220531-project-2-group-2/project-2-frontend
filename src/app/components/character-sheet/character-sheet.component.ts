@@ -69,6 +69,7 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
 
 
 
+
   addAdditionalEquipment() {
     this.char.equipment.push(this.additionalEquipment);
     this.charService.putCharacter(this.appComponent.username, this.char)
