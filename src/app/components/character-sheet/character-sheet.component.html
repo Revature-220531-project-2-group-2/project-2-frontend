@@ -32,7 +32,7 @@
                     <h2>{{modifierBonus[this.char.strength]}}</h2>
                 </div>
                 <div class="attribute-score" id="strength-attribute-score">
-                    <input class="attribute-number-field" [(ngModel)]="this.char.strength" type="number" min="0" max="30" >
+                    <input class="attribute-number-field" [(ngModel)]="char.strength" type="number" min="0" max="30" >
                 </div>
             </div>
             <div class="attribute-container">
@@ -80,7 +80,7 @@
                     <h2>{{modifierBonus[this.char.wisdom]}}</h2>
                 </div>
                 <div class="attribute-score" id="wisdom-attribute-score">
-                    <input [(ngModel)]="this.char.wisdom" class="attribute-number-field" type="number" min="0" max="30" value="{{this.char.wisdom}}">
+                    <input [(ngModel)]="this.char.wisdom" class="attribute-number-field" type="number" min="0" max="30">
                 </div>
             </div>
             <div class="attribute-container">
@@ -88,7 +88,7 @@
                     <h3 class="title">CHARISMA</h3>
                 </div>
                 <div class="attribute-modifier-value" id="charisma-attribute-modifier">
-                    <h2>{{modifierBonus[this.char.charisma]}}</h2>
+                    <h2 >{{modifierBonus[this.char.charisma]}}</h2>
                 </div>
                 <div class="attribute-score" id="charisma-attribute-score">
                     <input [(ngModel)]="this.char.charisma" class="attribute-number-field" type="number" min="0" max="30">
@@ -162,7 +162,7 @@
         <table class="skills-table table table-bordered">
             <thead id="skills-table-heading" class="thead-dark">
                 <tr >
-                    <th>PROF</th>
+                    
                     <th>MOD</th>
                     <th>SKILL</th>
                     <th>BONUS</th>
@@ -170,112 +170,112 @@
             </thead>
             <tbody>
                 <tr>
-                    <td id="prof-acrobatics">✅</td>
+                    
                     <td class="skills-table-modifier">DEX</td>
                     <td class="skills-table-skill">Acrobatics</td>
-                    <td id="prof-acrobatics-bonus">{{modifierBonus[this.char.dexterity]}}</td>
+                    <td class="skills-table-bonus" id="prof-acrobatics-bonus">{{modifierBonus[this.char.dexterity]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-animalhandling"></td>
+                    
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Animal Handling</td>
-                    <td id="prof-animalhandling-bonus">{{modifierBonus[this.char.wisdom]}}</td>
+                    <td class="skills-table-bonus" id="prof-animalhandling-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-arcana"></td>
+                    
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">Arcana</td>
                     <td id="prof-arcana-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-athletics">✅</td>
+                    
                     <td class="skills-table-modifier">STR</td>
                     <td class="skills-table-skill">Athletics</td>
-                    <td id="prof-athletics-bonus">{{modifierBonus[this.char.strength]}}</td>
+                    <td class="skills-table-bonus" id="prof-athletics-bonus">{{modifierBonus[this.char.strength]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-deception"></td>
+                    
                     <td class="skills-table-modifier">CHA</td>
                     <td class="skills-table-skill">Deception</td>
-                    <td id="prof-deception-bonus">{{modifierBonus[this.char.charisma]}}</td>
+                    <td class="skills-table-bonus" id="prof-deception-bonus">{{modifierBonus[this.char.charisma]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-history"></td>
+                    
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">History</td>
-                    <td id="prof-history-bonus">{{modifierBonus[this.char.intelligence]}}</td>
+                    <td class="skills-table-bonus" id="prof-history-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-insight"></td>
+                    
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Insight</td>
-                    <td id="prof-insight-bonus">{{modifierBonus[this.char.wisdom]}}</td>
+                    <td class="skills-table-bonus" id="prof-insight-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-intimidation"></td>
+                    
                     <td class="skills-table-modifier">CHA</td>
                     <td class="skills-table-skill">Intimidation</td>
                     <td id="prof-intimidation-bonus">{{modifierBonus[this.char.charisma]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-investigation"></td>
+                    
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">Investigation</td>
-                    <td id="prof-investigation-bonus">{{modifierBonus[this.char.intelligence]}}</td>
+                    <td class="skills-table-bonus" id="prof-investigation-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-medicine"></td>
+                    
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Medicine</td>
-                    <td id="prof-medicine-bonus">{{modifierBonus[this.char.wisdom]}}</td>
+                    <td class="skills-table-bonus" id="prof-medicine-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-nature"></td>
+                    
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">Nature</td>
-                    <td id="prof-nature-bonus">{{modifierBonus[this.char.intelligence]}}</td>
+                    <td class="skills-table-bonus" id="prof-nature-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-perception"></td>
+                    
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Perception</td>
-                    <td id="prof-perception-bonus">{{modifierBonus[this.char.wisdom]}}</td>
+                    <td class="skills-table-bonus" id="prof-perception-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-performance"></td>
+                    
                     <td class="skills-table-modifier">CHA</td>
                     <td class="skills-table-skill">Performance</td>
-                    <td id="prof-performance-bonus">{{modifierBonus[this.char.charisma]}}</td>
+                    <td class="skills-table-bonus" id="prof-performance-bonus">{{modifierBonus[this.char.charisma]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-persuasion"></td>
+                    
                     <td class="skills-table-modifier">CHA</td>
                     <td class="skills-table-skill">Persuasion</td>
-                    <td id="prof-persuasion-bonus">{{modifierBonus[this.char.charisma]}}</td>
+                    <td class="skills-table-bonus" id="prof-persuasion-bonus">{{modifierBonus[this.char.charisma]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-religion"></td>
+                    
                     <td class="skills-table-modifier">INT</td>
                     <td class="skills-table-skill">Religion</td>
-                    <td id="prof-religion-bonus">{{modifierBonus[this.char.intelligence]}}</td>
+                    <td class="skills-table-bonus" id="prof-religion-bonus">{{modifierBonus[this.char.intelligence]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-slightofhand"></td>
+                    
                     <td class="skills-table-modifier">DEX</td>
                     <td class="skills-table-skill">Slight of Hand</td>
-                    <td id="prof-slightofhand-bonus">{{modifierBonus[this.char.dexterity]}}</td>
+                    <td class="skills-table-bonus" id="prof-slightofhand-bonus">{{modifierBonus[this.char.dexterity]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-stealth"></td>
+                    
                     <td class="skills-table-modifier">DEX</td>
                     <td class="skills-table-skill">Stealth</td>
-                    <td id="prof-stealth-bonus">{{modifierBonus[this.char.dexterity]}}</td>
+                    <td class="skills-table-bonus" id="prof-stealth-bonus">{{modifierBonus[this.char.dexterity]}}</td>
                 </tr>
                 <tr >
-                    <td id="prof-survival"></td>
+                    
                     <td class="skills-table-modifier">WIS</td>
                     <td class="skills-table-skill">Survival</td>
-                    <td id="prof-survival-bonus">{{modifierBonus[this.char.wisdom]}}</td>
+                    <td class="skills-table-bonus" id="prof-survival-bonus">{{modifierBonus[this.char.wisdom]}}</td>
                 </tr>
                 
             </tbody>
@@ -331,6 +331,7 @@
             </mat-tab>
             
           </mat-tab-group>
+          
     </div>
 </div>
 </div>
