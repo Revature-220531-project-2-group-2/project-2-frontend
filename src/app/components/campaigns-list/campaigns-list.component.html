@@ -20,7 +20,6 @@
                           </tr>
                         </thead>
                         <tbody>
-<<<<<<< HEAD
                           <tr class="table-row name">
                             <th scope="row">1</th>
                             <td>Mark</td>
@@ -46,8 +45,11 @@
                             <td>@twitter</td>
                             <td>
                                 <button class="btn btn-secondary btn-sm button">Join</button>
-=======
+
                           <tr let *ngFor="let camp of campaigns; let i = index" class="table-row">
+
+                          <tr let *ngFor="let camp of campaigns; let i = index" class="table-row" [attr.id]="camp.campaignId">
+
                             <th scope="row">{{camp.campaignId}}</th>
                             <td >{{camp.campaignName}}</td>
                             <td *ngIf="camp.users[0].username;else camp_content">{{camp.users[0].username}}</td>
@@ -60,7 +62,7 @@
                             
                             <td>
                                 <button *ngIf="appComponent.isLoggedIn" (click)="joinUserToCampaign(camp.campaignId)" class="btn btn-secondary btn-sm">Join</button>
->>>>>>> 5947814fd247ed1e3015fc74339bb03eb0c911c5
+
                             </td>
 
                           </tr>

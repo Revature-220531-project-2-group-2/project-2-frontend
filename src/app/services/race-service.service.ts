@@ -10,7 +10,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 })
 export class RaceService {
 
-  raceUrl = dndUrlAlternate + 'races'
+  raceUrl = dndUrlAlternate + 'races/'
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -43,14 +43,9 @@ export class RaceService {
    * @param name Race's name
    * @returns named race
    */
-  findRaceByName(name: string): Race {
-    let race!: Race;
-    this.http.get<Race>(this.raceUrl + name, this.httpOptions)
+  findRaceByName(name: string): Observable<Race> {
+    return this.http.get<Race>(this.raceUrl + name, this.httpOptions)
       .pipe(catchError(this.handleError))
-      .subscribe(data => {
-        race = data
-      })
-    return race;
   }
 
 
