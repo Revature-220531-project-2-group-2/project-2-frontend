@@ -56,7 +56,7 @@ export class CampaignService {
   }
 
     postNewMessage(id:number, username:string, message: string): Observable<any> {
-      let body = {username: username, message: message}
+      let body = {username: username, msg: message}
       return this.http.post<void>(`${campaignUrl}/${id}/new-message`, body, this.httpOptions)
       .pipe(catchError(this.handleError));
     }
