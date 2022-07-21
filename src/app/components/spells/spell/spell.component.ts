@@ -1,5 +1,6 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SpellsService } from './../../../services/spells.service';
+import { Component, OnInit } from '@angular/core';
 import { Spell } from 'src/app/models/Spell';
 
 @Component({
@@ -14,12 +15,19 @@ export class SpellComponent implements OnInit {
   desc: any[] = []
   
 
-  constructor() { }
+  constructor(private spellsService: SpellsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.spell = history.state
-    this.setClassesNames()
-    this.findDescHeadings()
+    this.route.queryParams
+    .subscribe(param => {
+      this.spellsService.findSpell(param['name'])
+      .subscribe(data => {
+        this.spell = data
+        this.setClassesNames()
+        this.findDescHeadings()
+      })
+
+    })
     
   }
 
@@ -84,5 +92,7 @@ export class SpellComponent implements OnInit {
     }
     
   }
+  
+  
   
   

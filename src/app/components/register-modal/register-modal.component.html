@@ -2,39 +2,45 @@
   <div class="a">
   <div class="border">
 <h1 mat-dialog-title class="h1">Register for Adventure Here!</h1>
-<div mat-dialog-content>
-  <mat-form-field appearance="fill">
+<div mat-dialog-content class="mat-form-container">
+  <mat-form-field class="register-form-field" appearance="fill">
     <label for="inputUsername" class="form-label t">Username</label>
     <br />
-        <input matInput [(ngModel)]="user.username" name="username" type="text" class="form-control" id="inputUsername">
+        <input matInput  [(ngModel)]="user.username" name="username" type="text" class="form-control registerInput" id="inputUsername" />
         <br>
+      </mat-form-field>
+      <mat-form-field class="register-form-field" appearance="fill">
         <br />
         <label for="inputEmail" class="form-label t">Email</label>
         <br>
-
-        <input matInput [(ngModel)]="user.email" name="email" type="email" class="form-control" id="inputEmail">
+        <input matInput [(ngModel)]="user.email"  name="email" type="email" class="form-control registerInput" id="inputEmail" />
         <br>
+      </mat-form-field>
+      <mat-form-field class="register-form-field" appearance="fill">
         <br />
         <label for="inputPassword" class="form-label t">Password</label>
         <br>
-
-        <input matInput [(ngModel)]="user.pwd" name="password" type="password" class="form-control" id="inputPassword">
+        <input  matInput [(ngModel)]="user.pwd"  name="password" type="password" class="form-control registerInput" id="inputPassword">
         <br>
+      </mat-form-field>
+      <mat-form-field class="register-form-field" appearance="fill">
         <br />
         <label for="inputPassword2" class="form-label t">Re-enter Password</label>
         <br>
-
-        <input matInput name="email" [(ngModel)]="confirmPassword" type="password" class="form-control" id="inputPassword2">
+        <input matInput name="email" [(ngModel)]="confirmPassword" type="password" class="form-control registerInput" id="inputPassword2">
   </mat-form-field>
 
 
 
-<br />
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()" class="button">No Adventuring for Me!</button>
-  <button mat-button (click)="onClick()" cdkFocusInitial class="button">It's Slaying Time!</button>
+  <br />
+  <div mat-dialog-actions class="buttons-container">
+    <button mat-button routerLink="/" class="button">No Adventuring for Me!</button>
+    <button mat-button (click)="registerUser()" cdkFocusInitial class="button">It's Slaying Time!</button>
+    
+  </div>
+  <!-- If there is a message, show it -->
+  <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+    {{clientMessage.message}}
 </div>
 </div>
-</div>
-</div>
-</div>
+

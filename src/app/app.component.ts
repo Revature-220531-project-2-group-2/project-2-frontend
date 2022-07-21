@@ -4,6 +4,7 @@ import { User } from './models/User';
 import { Component } from '@angular/core';
 import { Race } from './models/Race';
 import { RaceService } from './services/race-service.service';
+import { SpellsService } from './services/spells.service';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent {
 
   classes: CharClass[] = []
   races: Race[] = []
+
   constructor(private classServ: CharClassService, private raceServ: RaceService) {}
 
   ngOnInit() {

@@ -27,9 +27,10 @@
 <div *ngFor="let line of languages">
     <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
 </div>
-<div *ngFor="let line of traits">
+<div class="table-color">
+<div *ngFor="let line of traits" class="table-design">
     <p class="font1"><span><strong>{{line.bold}}</strong></span> {{line.body}}</p>
-    <table class="table table-striped">
+    <table class="table table-striped table-color">
         <thead>
             <tr>
                 <th *ngFor="let col of line.tableHead" class="col">{{col}}</th>
@@ -41,6 +42,7 @@
             </tr>
         </tbody>
     </table>
+</div>
 </div>
 </div>
 </div>

@@ -8,7 +8,7 @@
 }
 
 .border{
-    background-color:burlywood;
+    background-color:darkred;
     border: 3px solid saddlebrown;
     padding: 25px;
     margin-top: 5px;
@@ -16,7 +16,7 @@
 
 .font3 {
     font-family: 'Shrikhand', cursive;
-    color:rgb(75, 37, 11);
+    color:gold;
     font-size: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -24,7 +24,7 @@
 
 .font1{
     font-family: 'Josefin Sans', sans-serif;
-    color: rgb(73, 37, 11);
+    color: gold;
     text-decoration: none;
     font-size: 20px;
     line-height: 5vh;
@@ -32,9 +32,16 @@
 
 .font2{
     font-family: 'Shrikhand', cursive;
-    color: rgb(101, 50, 14);
+    color: gold;
     font-size: 30px;
     padding: 3px;
 }
 
+.table-design{
+    font-family:'Josefin Sans', sans-serif;
+}
+
+.table-color{
+    color:gold;
+}
 

@@ -1,4 +1,5 @@
 
+
 import { RaceComponent } from './components/race/race.component';
 import { CharClassComponent } from './components/char-class/char-class.component';
 import { SpellComponent } from './components/spells/spell/spell.component';
@@ -14,6 +15,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 
 import { SpellsComponent } from './components/spells/spells/spells.component';
 import { CreateCharacterComponent } from './components/create-character/create-character.component';
+import { CampaignRoomComponent } from './components/campaign-room/campaign-room.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterModalComponent },
@@ -23,14 +25,20 @@ const routes: Routes = [
   { path: 'new-character', component: CreateCharacterComponent },
   { path: 'new-campaign', component: CreateCampaignComponent },  // will take this path out
   { path: 'campaigns', component: CampaignsListComponent },  // will take this path out
+  { path: 'campaign-room', component: CampaignRoomComponent },  // will take this path out
   { path: 'character-sheet', component: CharacterSheetComponent },
-  { path: 'spell', component: SpellComponent},
+  { path: 'spell', component: SpellComponent },
   { path: 'login/profile', component: UserDashboardComponent },
   { path: 'login/profile/new-character/:username', component: CreateCharacterComponent },
 
-  { path: 'login/profile/chars/:id', component: CharacterSheetComponent },
+  { path: 'login/profile/chars/:charName', component: CharacterSheetComponent },
+  { path: 'login/profile/new-campaign/:username', component: CreateCampaignComponent },
+  { path: 'login/profile/campaigns', redirectTo: 'campaigns' },
+
   { path: 'class', component: CharClassComponent },
   { path: 'race', component: RaceComponent },
+  
+
 
 
 

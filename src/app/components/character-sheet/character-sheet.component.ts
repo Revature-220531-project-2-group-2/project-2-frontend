@@ -1,5 +1,5 @@
 import { AppComponent } from 'src/app/app.component';
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit } from '@angular/core';
 import { CharacterService } from 'src/app/services/character.service';
 import { UserDashboardComponent } from '../user-dashboard/user-dashboard.component';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -16,10 +16,12 @@ import { faPlusCircle, faCheck, faX, faMinusCircle } from '@fortawesome/free-sol
 })
 export class CharacterSheetComponent implements OnInit, OnChanges {
   path: any;
-  charId: number = 0;
+
   clientMessage: ClientMessage = new ClientMessage('');
   char: Character = new Character(0, '', '', '', 0, 0, 0, 0, 0, 0, [], []);
-  value: String = '';
+
+  modifierBonus: number[] = [-5, -5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
+
   username: string = '';
   faPlusCircle = faPlusCircle;
   faPlusCircle2 = faPlusCircle;
@@ -32,23 +34,27 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
   @Input() addSpells: boolean = false;
   @Input() addEquipment: boolean = false;
 
+  strengthAttribute: number = 0;
+  dexterityAttribute: number = 0;
+  constitutionAttribute: number = 0;
+  intelligenceAttribute: number = 0;
+  wisdomAttribute: number = 0;
+  charismaAttribute: number = 0;
+  charName: string = '';
 
-  strengthAbilityModifier: number = 0;
-  dexterityAbilityModifier: number = 0;
-  constitutionAbilityModifier: number = 0;
-  intelligenceAbilityModifier: number = 0;
-  wisdomAbilityModifier: number = 0;
-  charismaAbilityModifier: number = 0;
 
 
-  constructor(private charService: CharacterService, private profile: UserDashboardComponent, private router: Router, private activatedRoute: ActivatedRoute, private appComponent: AppComponent) {
+
+  constructor(private charService: CharacterService, private profile: UserDashboardComponent, private router: Router, private activatedRoute: ActivatedRoute, private appComponent: AppComponent, private elmentRef: ElementRef) {
     this.path = this.router.url;
     let arrCharPath: any = this.path.split('/');
 
 
-    this.charId = arrCharPath[arrCharPath.length - 1]
-    console.log(this.charId);
+    this.charName = arrCharPath[arrCharPath.length - 1]
+    console.log(this.charName);
+
     this.getCharAttributes();
+
   }
 
   addAdditionalSpells() {
@@ -66,12 +72,34 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
     this.additionalEquipment = '';
   }
 
+  changeWisdomStat() {
+    this.char.wisdom++;
+  }
+
+  changeStrengthStat() {
+    this.char.strength++;
+  }
+
+  changeDexterityStat() {
+    this.char.dexterity++;
+  }
+
+  changeConstitutionStat() {
+    this.char.constitution++;
+  }
+
+  changeCharismaStat() {
+    this.char.charisma++;
+  }
+
+  changeIntelligenceStat() {
+    this.char.intelligence++;
+  }
+
   addAdditionalEquipment() {
     this.char.equipment.push(this.additionalEquipment);
     this.charService.putCharacter(this.appComponent.username, this.char)
       .subscribe(
-
-
         data => {
           console.log(data);
           this.clientMessage.message = `Successfully Created Character!`
@@ -102,52 +130,30 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
   getCharAttributes() {
     this.username = this.appComponent.username;
 
-    this.charService.findCharByUsernameAndId(this.appComponent.username, this.charId)
+    this.charService.findCharByUsernameAndName(this.appComponent.username, this.char.charName)
       .subscribe(
         data => {
           console.log(data);
 
           this.char = data;
           console.log(this.char);
-          this.assignAbilityModifiers();
           this.clientMessage.message = '';
+          console.log('\n\n' + this.char.strength + '\n\n');
+          this.strengthAttribute = this.char.strength;
+          this.dexterityAttribute = this.char.dexterity;
+          this.constitutionAttribute = this.char.constitution;
+          this.intelligenceAttribute = this.char.intelligence;
+          this.wisdomAttribute = this.char.wisdom;
+          this.charismaAttribute = this.char.charisma;
+
         },
-        () => this.clientMessage.message = `Can't find Character with Username + id=${this.charId}`
+        () => this.clientMessage.message = `Can't find Character with Username + id=${this.charName}`
       )
 
   }
 
-  calculateAbilityScoreModifiers(score: number): number {
-    if (score <= 1) { return -5 }
-    if (score <= 3) { return -4 }
-    if (score <= 5) { return -3 }
-    if (score <= 7) { return -2 }
-    if (score <= 9) { return -1 }
-    if (score <= 11) { return 0 }
-    if (score <= 13) { return 1 }
-    if (score <= 15) { return 2 }
-    if (score <= 17) { return 3 }
-    if (score <= 19) { return 4 }
-    if (score <= 21) { return 5 }
-    if (score <= 23) { return 6 }
-    if (score <= 25) { return 7 }
-    if (score <= 27) { return 8 }
-    if (score <= 29) { return 9 }
-    else {
-      return 10;
-    }
-  }
-
-  assignAbilityModifiers(): void {
-    this.strengthAbilityModifier = this.calculateAbilityScoreModifiers(this.char.strength);
-    this.dexterityAbilityModifier = this.calculateAbilityScoreModifiers(this.char.strength);
-    this.constitutionAbilityModifier = this.calculateAbilityScoreModifiers(this.char.strength);
-    this.intelligenceAbilityModifier = this.calculateAbilityScoreModifiers(this.char.strength);
-    this.wisdomAbilityModifier = this.calculateAbilityScoreModifiers(this.char.strength);
-    this.charismaAbilityModifier = this.calculateAbilityScoreModifiers(this.char.strength);
 
 
-  }
 
   attributeHasFocus: boolean = false;
 

@@ -3,18 +3,20 @@
   <div class="a">
   <div class="border">
 <h1 mat-dialog-title class="h1">Login for the Quest <br /> of a Lifetime</h1>
-<div mat-dialog-content>
+<div mat-dialog-content class="mat-form-container">
   <mat-form-field appearance="fill">
     <label for="loginInputUsername" class="form-label login">Username</label>
     <input matInput [(ngModel)]="username" name="username" type="text" class="form-control" id="loginInputUsername">
+    </mat-form-field>
+  <mat-form-field appearance="fill">
     <label for="loginInputPassword" class="form-label login">Password</label>
     <input matInput [(ngModel)]="password" name="password" type="password" class="form-control" id="loginInputPassword">
   </mat-form-field>
 </div>
 
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()" class="button">I'm Good, Let Me Out Please</button>
-    <button mat-button routerLink="profile" (click)="onClick()" cdkFocusInitial class="button">Let's Get Adventuring!</button>
+    <button mat-button routerLink="/" class="button">I'm Good, Let Me Out Please</button>
+    <button mat-button (click)="login()" cdkFocusInitial class="button">Let's Get Adventuring!</button>
   </div>
   </div>
 </div>

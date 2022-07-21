@@ -1,0 +1,24 @@
+<div class="img">
+    <div class="a">
+        <div class="border">
+<h1 class="title">Campaign Chatter</h1>
+<div *ngFor="let post of messages" class="text">
+    <span>{{post.poster}}</span>
+    <p>{{post.message}}</p>
+</div>
+
+
+<select class="D20">
+    <!-- Add dice icons to each please-->
+    <option>D4</option>
+    <option>D6</option>
+    <option>D10</option>
+    <option>D12</option>
+    <option>D20</option>
+    <option>D100</option>
+</select> <button class="button">Roll</button>
+<input type="text" [(ngModel)]="newPost" class="margin">
+<button (click)="postMessage()" class="button">Post</button>
+</div>
+</div>
+</div>

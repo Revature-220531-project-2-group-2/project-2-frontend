@@ -1,22 +1,22 @@
 <div class="img">
 <h1 class="font2">{{currentClass.name}}</h1>
 <div class="font1">
-<h2>Class Features</h2>
-<p>As a {{currentClass.name}} you have the following features</p>
+<h2 class="font2">Class Features</h2>
+<p class="font1">As a {{currentClass.name}} you have the following features</p>
 
-<h3>Hit Points</h3>
+<h3 class="font">Hit Points</h3>
 <p><strong>Hit Dice:</strong> {{currentClass.hit_dice}} per {{currentClass.name}} level</p>
 <p><strong>Hit Pionts at 1st Level:</strong> {{currentClass.hp_at_1st_level}}</p>
 <p><strong>Hit Points at Higher Levels:</strong> {{currentClass.hp_at_higher_levels}}</p>
 
-<h3>Proficiencies</h3>
+<h3 class="font">Proficiencies</h3>
 <p><strong>Armor: </strong>{{currentClass.prof_armor}}</p>
 <p><strong>Weapons: </strong>{{currentClass.prof_weapons}}</p>
 <p><strong>Tools: </strong>{{currentClass.prof_tools}}</p>
 <p><strong>Saving Throws: </strong>{{currentClass.prof_saving_throws}}</p>
 <p><strong>Skills: </strong>{{currentClass.prof_skills}}</p>
 
-<h3>Equipment</h3>
+<h3 class="font">Equipment</h3>
 <ul>
     <div *ngFor="let item of equipment">
         <li *ngIf="item.listItem">{{item.listItem}}</li>

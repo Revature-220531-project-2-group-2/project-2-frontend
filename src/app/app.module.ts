@@ -29,6 +29,8 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { CreateCharacterComponent } from './components/create-character/create-character.component';
 import { CharClassComponent } from './components/char-class/char-class.component';
+import { CampaignRoomComponent } from './components/campaign-room/campaign-room.component';
+
 
 
 @NgModule({
@@ -47,6 +49,7 @@ import { CharClassComponent } from './components/char-class/char-class.component
     UserDashboardComponent,
     CreateCharacterComponent,
     CharClassComponent,
+    CampaignRoomComponent,
 
   ],
   imports: [
