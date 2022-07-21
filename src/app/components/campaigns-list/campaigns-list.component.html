@@ -2,95 +2,59 @@
 <div class="a">
 <div class="border">
 <div class="container my-auto">
-    <div>
-        <div class="shadow-lg table-back background">
-                <div class="table-back">
-                    <h2 class="h1">{{title}}</h2>
-                </div>
-            
-                <div class="card-body table-back background">
-                    <table class="table table-hover">
-                        <thead>
-                          <tr class="table-row name">
-                            <th scope="col" style="width: 10.66%">Campaign ID</th>
-                            <th scope="col" style="width: 25%">Name</th>
-                            <th scope="col" style="width: 15%">DM</th>
-                            <th scope="col" style="width:  8.33%">Players</th>
-                            <th scope="col" style="width:  8.33%"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="table-row name">
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>
-                                <button class="btn btn-secondary btn-sm button">Join</button>
-                            </td>
-                          </tr>
-                          <tr class="table-row name">
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <button class="btn btn-secondary btn-sm button">Join</button>
-                            </td>
-                          </tr>
-                          <tr class="table-row name">
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>Marcus</td>
-                            <td>@twitter</td>
-                            <td>
-                                <button class="btn btn-secondary btn-sm button">Join</button>
-
-                          <tr let *ngFor="let camp of campaigns; let i = index" class="table-row">
-
-                          <tr let *ngFor="let camp of campaigns; let i = index" class="table-row" [attr.id]="camp.campaignId">
-
-                            <th scope="row">{{camp.campaignId}}</th>
-                            <td >{{camp.campaignName}}</td>
-                            <td *ngIf="camp.users[0].username;else camp_content">{{camp.users[0].username}}</td>
-                            <ng-template #camp_content><td>{{camp.users[0]}}</td></ng-template>
-                            <td><span *ngFor="let user of campaigns[i].users; let j=index">
-                                
-                                <span *ngIf="user.username;else camp_content2"><td>{{user.username}}</td></span>
-                                <ng-template class="camp-cell" #camp_content2>{{user}} </ng-template>
-                            </span></td>
-                            
-                            <td>
-                                <button *ngIf="appComponent.isLoggedIn" (click)="joinUserToCampaign(camp.campaignId)" class="btn btn-secondary btn-sm">Join</button>
-
-                            </td>
-
-                          </tr>
+  <div>
+      <div class="shadow-lg table-back background">
+              <div class="table-back">
+                  <h2 class="h1">{{title}}</h2>
+              </div>
+          
+              <div class="card-body table-back background">
+                  <table class="table table-hover">
+                      <thead>
+                        <tr class="table-row name">
+                          <th scope="col" style="width: 10.66%">Campaign ID</th>
+                          <th scope="col" style="width: 25%">Name</th>
+                          <th scope="col" style="width: 15%">DM</th>
+                          <th scope="col" style="width:  8.33%">Players</th>
+                          <th scope="col" style="width:  8.33%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr let *ngFor="let camp of campaigns; let i = index" class="table-row name" [attr.id]="camp.campaignId">
+                          <th scope="row">{{camp.campaignId}}</th>
+                          <td >{{camp.campaignName}}</td>
+                          <td *ngIf="camp.users[0].username;else camp_content">{{camp.users[0].username}}</td>
+                          <ng-template #camp_content><td>{{camp.users[0]}}</td></ng-template>
+                          <td><span *ngFor="let user of campaigns[i].users; let j=index">
+                              
+                              <span *ngIf="user.username;else camp_content2"><td>{{user.username}}</td></span>
+                              <ng-template class="camp-cell" #camp_content2>{{user}} </ng-template>
+                          </span></td>
                           
-                        </tbody>
-                      </table>
+                          <td>
+                              <button *ngIf="appComponent.isLoggedIn" (click)="joinUserToCampaign(camp.campaignId)" class="btn btn-secondary btn-sm button">Join</button>
+                          </td>
+
+                        </tr>
                         
-                      <!-- In order to enable ngModel (2 way data binding a.k.a banana box) you MUST go to the GLUE of your application
-                          app.module.ts and import the FormsModule-->
-                        
-            
-                        <!-- If there is a message, show it -->
-                        <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
-                            {{clientMessage.message}}
-                        </div>
-            
-                    
-                </div>
-            
-            
-        
-        </div>
-    </div>
+                      </tbody>
+                    </table>
+                      
+                    <!-- In order to enable ngModel (2 way data binding a.k.a banana box) you MUST go to the GLUE of your application
+                        app.module.ts and import the FormsModule-->
+                      
+          
+                      <!-- If there is a message, show it -->
+                      <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+                          {{clientMessage.message}}
+                      </div>
+          
+                  
+              </div>
+          
+          </div>
+          
+      </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-
-
-
 
