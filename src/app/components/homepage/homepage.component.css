@@ -34,8 +34,8 @@ body {
 }
 
 .home-center-title {
-    height: 400px;
-    width: 500px;
+    height: 40%;
+    width: 80%;
     margin: 0 auto;
     align-self: center;
     color: gold;
@@ -50,7 +50,7 @@ body {
 .home-center-title h1 {
     font-family: 'Shrikhand', cursive;
     margin-top: 10%;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
     font-size: 50px;
     line-height: 8vh;
 }
