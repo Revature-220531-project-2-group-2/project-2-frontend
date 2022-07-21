@@ -4,6 +4,7 @@ import { url } from './../../environments/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, catchError } from 'rxjs';
 import { Campaign } from '../models/Campaign';
+import { User } from '../models/User';
 
 const campaignUrl = url + `/campaigns`
 
