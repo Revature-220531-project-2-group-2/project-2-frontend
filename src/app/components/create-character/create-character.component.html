@@ -3,8 +3,8 @@
     <div class="border">
   <h1 mat-dialog-title class="h1">Create a Character!</h1>
   <div mat-dialog-content class="mat-form-container">
-    <mat-form-field class="new-char-form-field" appearance="fill">
-        <mat-label for="input-char-name" class="form-label t">Name</mat-label>
+    <mat-form-field class="new-char-form-field new-char-form-field-name" appearance="fill">
+        <mat-label for="input-char-name" class="form-label t new-char-form-field-name-label">Name</mat-label>
         
         <input matInput  [(ngModel)]="char.charName" name="charName" type="text" class="form-control new-char-input t" id="input-char-name" placeholder="Name"/>
         
@@ -55,9 +55,9 @@
         
         <mat-label for="inputEmail" class="form-label t">Strength </mat-label>
         
-        <input matInput [(ngModel)]="char.strength"  name="strength" type="number" min="3" max="20" class="form-control new-char-input" [disabled]="true" size="4"/>
+        <input matInput [(ngModel)]="char.strength"  [value]="strengthAmt" name="strength" type="number" min="3" max="20" class="form-control new-char-input" [disabled]="true" size="4"/>
 
-            <button mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+            <button (click)="diceRollStrength()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
                 <mat-icon>casino</mat-icon>
             </button>
 
@@ -68,8 +68,8 @@
         
         <mat-label for="inputEmail" class="form-label t">Dexterity </mat-label>
         
-        <input matInput [(ngModel)]="char.dexterity"  name="dexterity" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
-        <button mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+        <input matInput [(ngModel)]="char.dexterity"  [value]="dexterityAmt" name="dexterity" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
+        <button (click)="diceRollDexterity()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
             <mat-icon>casino</mat-icon>
         </button>
     </mat-form-field>
@@ -77,8 +77,8 @@
         
         <mat-label for="inputEmail" class="form-label t">Constitution </mat-label>
         
-        <input matInput [(ngModel)]="char.constitution"  name="constitution" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
-        <button mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+        <input matInput [(ngModel)]="char.constitution"  name="constitution" class="form-control new-char-input" min="3" max="20" [value]="constitutionAmt" type="number" [disabled]="true"/>
+        <button (click)="diceRollConstitution()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
             <mat-icon>casino</mat-icon>
         </button>
     </mat-form-field>    
@@ -86,8 +86,8 @@
         
         <mat-label for="inputEmail" class="form-label t">Intelligence </mat-label>
         
-        <input matInput [(ngModel)]="char.intelligence"  name="intelligence" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
-        <button mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+        <input matInput [(ngModel)]="char.intelligence" [value]="intelligenceAmt" name="intelligence" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
+        <button (click)="diceRollIntelligence()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
             <mat-icon>casino</mat-icon>
         </button>
     </mat-form-field>
@@ -95,8 +95,8 @@
         
         <mat-label for="inputEmail" class="form-label t">Wisdom </mat-label>
         
-        <input matInput [(ngModel)]="char.wisdom"  name="wisdom" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
-        <button mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+        <input matInput [(ngModel)]="char.wisdom" [value]="wisdomAmt" name="wisdom" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
+        <button (click)="diceRollWisdom()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
             <mat-icon>casino</mat-icon>
         </button>
     </mat-form-field>      
@@ -104,22 +104,31 @@
         
         <mat-label for="inputEmail" class="form-label t">Charisma </mat-label>
         
-        <input matInput [(ngModel)]="char.charisma"  name="charisma" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
-        <button mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+        <input matInput [(ngModel)]="char.charisma" [value]="charismaAmt" name="charisma" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
+        <button (click)="diceRollCharisma()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
             <mat-icon>casino</mat-icon>
         </button>
     </mat-form-field>
+    <div class="create-char-button-wrapper">
+        <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+            {{clientMessage.message}}
+        </div>
+        <div mat-dialog-actions class="buttons-container">
+            <button mat-button (click)="createCharacter()" cdkFocusInitial class="button">It's Slaying Time!</button>
+            
+          </div>
+    </div>
+    
+</div>
+<!-- If there is a message, show it -->
+        
+</div>
     </div>
     
 
-    <div mat-dialog-actions class="buttons-container">
-      <button mat-button (click)="createCharacter()" cdkFocusInitial class="button">It's Slaying Time!</button>
-      
-    </div>
+    
     <!-- If there is a message, show it -->
-    <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
-      {{clientMessage.message}}
-  </div>
+    
   </div>
 
 <!-- <form action="" class="char-create-form">
