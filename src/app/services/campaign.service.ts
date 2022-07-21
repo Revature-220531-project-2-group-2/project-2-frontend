@@ -1,8 +1,8 @@
+import { CampaignMessage } from './../models/CampaignMessage';
 import { Injectable } from '@angular/core';
 import { url } from './../../environments/environment';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError, catchError, Observer } from 'rxjs';
-import { User } from '../models/User';
+import { Observable, throwError, catchError } from 'rxjs';
 import { Campaign } from '../models/Campaign';
 
 const campaignUrl = url + `/campaigns`
@@ -44,6 +44,17 @@ export class CampaignService {
     return this.http.post<Campaign>(`${campaignUrl}/${id}/add-${username}`, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
+
+  getCampaignMessages(id:number): Observable<CampaignMessage[]> {
+    return this.http.get<CampaignMessage[]>(`${campaignUrl}/${id}/messages`)
+      .pipe(catchError(this.handleError));
+  }
+
+    postNewMessage(id:number, username:string, message: string): Observable<any> {
+      let body = {username: username, message: message}
+      return this.http.post<void>(`${campaignUrl}/${id}/new-message`, body, this.httpOptions)
+      .pipe(catchError(this.handleError));
+    }
 
   private handleError(httpError: HttpErrorResponse) {
     if (httpError.error instanceof ErrorEvent) {
