@@ -39,6 +39,10 @@ export class CampaignService {
     return this.http.get<Campaign[]>(url + `/users/${username}/campaigns`, this.httpOptions).pipe(catchError(this.handleError));
   }
 
+  getAllUsersInACampaign(id: number): Observable<User[]> {
+    return this.http.get<User[]>(`${campaignUrl}/${id}/users`, this.httpOptions).pipe(catchError(this.handleError));
+  }
+
   addUserToCampaignByUsername(id: number, username: string): Observable<Campaign> {
     // 3 params for POST: url, request body, options (headers)
     return this.http.post<Campaign>(`${campaignUrl}/${id}/add-${username}`, this.httpOptions)
