@@ -13,7 +13,7 @@ import { CreateCampaignComponent } from './components/create-campaign/create-cam
 import { CampaignsListComponent } from './components/campaigns-list/campaigns-list.component';
 import { RaceComponent } from './components/race/race.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,7 +23,8 @@ import { AppNavComponent } from './components/app-nav/app-nav.component';
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
@@ -62,6 +63,7 @@ import { CharClassComponent } from './components/char-class/char-class.component
     FontAwesomeModule,
     MatIconModule,
     MatMenuModule,
+    MatSelectModule
   ],
   providers: [AppComponent, {
     provide: MatDialogRef,
