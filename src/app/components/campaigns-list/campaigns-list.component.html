@@ -23,7 +23,7 @@
                         <tr let *ngFor="let camp of campaigns; let i = index" class="table-row name" [attr.id]="camp.campaignId">
 
                           <th scope="row">{{camp.campaignId}}</th>
-                          <td >{{camp.campaignName}}</td>
+                          <td ><a [routerLink]="['/campaign-room']" [queryParams]="{id: camp.campaignId}">{{camp.campaignName}}</a></td>
                           
                          <td *ngIf="camp.users[0].username;else camp_content">{{camp.users[0].username}}</td>
                           <ng-template #camp_content><td>{{camp.users[0]}}</td></ng-template>

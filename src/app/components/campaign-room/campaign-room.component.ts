@@ -25,6 +25,7 @@ export class CampaignRoomComponent implements OnInit {
     .subscribe(param => {
       this.campServe.getCampaignMessages(param['id'])
         .subscribe(data => {
+          console.log(data)
           this.messages = data
           this.messages.sort((a, b) => Number.parseInt(a.timeStamp) - Number.parseInt(b.timeStamp))
         })
@@ -41,6 +42,7 @@ export class CampaignRoomComponent implements OnInit {
   refreshMessages():void {
     this.campServe.getCampaignMessages(this.campaign.campaignId)
       .subscribe(data => {
+        console.log(data)
         this.messages = data
         this.messages.sort((a, b) => Number.parseInt(a.timeStamp) - Number.parseInt(b.timeStamp))
       })
