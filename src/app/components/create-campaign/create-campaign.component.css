@@ -8,3 +8,71 @@
         width: 50%;
     }
 }
+
+.title{
+    font-family: 'Shrikhand', cursive;
+    font-size: 30px;
+    color: gold;
+}
+
+.sub-text{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: gold;
+}
+
+.border{
+    border: 5px solid gold;
+    background-color: darkred;
+    border-radius: 15px;
+    text-align: center;
+    padding: 25px;
+    min-height: 25%;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 150px;
+}
+
+.a{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2em;
+    border-radius: 25px;
+    line-height: 25px;
+    box-shadow: 5px 5px 10px gray;
+    float: center;
+}
+
+.button {
+    font-family: 'Josefin Sans', sans-serif;;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: darkred;
+    background-color: gold;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(218, 61, 61);
+    margin: 5px;
+  }
+  
+  .button:hover {background-color: goldenrod;}
+  
+  .button:active {
+      background-color: rgb(232, 190, 93);
+      box-shadow: 0 5px rgb(84, 11, 11);
+    transform: translateY(4px);
+  }
+
+  .background {
+    background-image: url('../../../assets/fant-5.gif');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,11 +1,9 @@
-
-<div class="container my-auto">
-    <div class="card border-0 mx-auto my-card">
-        <div class="shadow-lg">
-            <div>
+<div class="background">
+    <div class="a">
+        <div class="border">
 
                 <div>
-                    <h2 class="card-header text-center">{{title}}</h2>
+                    <h2 class="card-header text-center title">{{title}}</h2>
                 </div>
             
                 <div class="card-body">
@@ -15,14 +13,14 @@
                       <!-- In order to enable ngModel (2 way data binding a.k.a banana box) you MUST go to the GLUE of your application
                           app.module.ts and import the FormsModule-->
                         <div class="col-md-6 mb-3 mx-auto">
-                          <label for="inputUsername" class="form-label">Campaign Name</label>
+                          <label for="inputUsername" class="form-label sub-text">Campaign Name</label>
                           <input [(ngModel)]="campaign.campaignName" name="username" type="text" class="form-control" id="inputUsername">
                         </div>
                         
                         
                         
                         <div class="col-md-6 mb-3 mx-auto">
-                            <button type="submit" class="btn-primary btn" (click)="createCampaign()">Create</button>
+                            <button type="submit" class="btn-primary btn button" (click)="createCampaign()">Create</button>
                         </div>
             
                         <!-- If there is a message, show it -->
@@ -33,10 +31,7 @@
                     </form>
                 </div>
             
-            </div>
-            
         </div>
     </div>
 </div>
-
 

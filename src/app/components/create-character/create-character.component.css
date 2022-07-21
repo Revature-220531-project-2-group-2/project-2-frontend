@@ -25,8 +25,9 @@ body {
 .new-char-attr-item {
     width: 50%;
     /* background: pink; */
-    background-color: rgb(116, 171, 116);
+    background-color: rgb(183, 69, 69);
     border-radius: 10%;
+    margin: -5px;
 }
 
 .new-char-input {
@@ -56,31 +57,6 @@ body {
   margin: 0 3em 0 3em;
 }
 
-.button {
-  font-family: 'Josefin Sans', sans-serif;;
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: rgb(54, 117, 70);
-  background-color: rgb(126, 228, 172);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px rgb(28, 121, 82);
-  margin: 5px;
-}
-
-.button:hover {background-color: rgb(32, 152, 28)}
-
-.button:active {
-  background-color: rgb(23, 80, 46);
-  box-shadow: 0 5px rgb(41, 221, 95);
-  transform: translateY(4px);
-}
-
 .img{
   background-image: url('../../../assets/fant-1.gif');
   height: 100vh;
@@ -92,13 +68,14 @@ body {
 
 h1{
   font-family: 'Shrikhand', cursive;
-  color:rgb(167, 236, 163);
+  color:gold;
   font-size: 50px;
   padding: 5px;
+  margin-bottom: 50px;
 }
 
 .border{
-  background-color: rgb(120, 177, 120);
+  background-color: darkred;
   border-radius: 15px;
   text-align: center;
   padding: 25px;
@@ -131,7 +108,7 @@ h1{
 
 .t {
   font-family: 'Josefin Sans', sans-serif;
-  color:rgb(23, 80, 46);
+  color:gold;
   font-size: 20px;
 }
 
@@ -161,7 +138,7 @@ h1{
     padding: 10%;
     margin: 0;
     margin-top: 15%;
-    background-color: rgb(126, 228, 172);
+    background-color: gold;
     width: 40%;
     text-align: center;
     height: 100%;
@@ -169,7 +146,7 @@ h1{
 }
 
 .dice-button:hover {
-    background-color: rgb(32, 152, 28);
+    background-color: goldenrod;
     color: white;
 
 }
@@ -180,7 +157,7 @@ h1{
 
 .img{
     background-image: url('../../../assets/fant-8.gif');
-  
+    height: fit-content;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -189,7 +166,6 @@ h1{
     border: 5px solid gold;
     background-color: darkred;
     border-radius: 15px;
-    padding: 25px;
     min-height: 25%;
     margin-left: 150px;
     margin-right: 150px;
@@ -229,6 +205,7 @@ img{
     font-family: 'Josefin Sans', sans-serif;
     font-size: 25px;
     color: gold;
+    margin-bottom: 15px;
 }
 
 .info2{
