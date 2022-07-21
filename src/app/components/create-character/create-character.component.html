@@ -1,7 +1,6 @@
 <div class="img">
     <div class="a">
     <div class="border">
-        <img src="../../../assets/fant-ad.jpeg" width="500px">
     <label for="charName" class="info">Name:</label>
   <h1 mat-dialog-title class="h1">Create a Character!</h1>
   <div mat-dialog-content class="mat-form-container">
@@ -15,7 +14,7 @@
     <!--            RACES AND CLASS SHOULD GO HERE -->
     <div class="new-char-options">
         <mat-form-field appearance="fill">
-            <mat-label>Choose a Race</mat-label>
+            <mat-label class="info3">Choose a Race</mat-label>
             <mat-select [(ngModel)]="char.race" name="charRace">
                 <mat-option value="Dwarf">Dwarf</mat-option>
                 <mat-option value="Elf">Elf</mat-option>
@@ -31,7 +30,7 @@
         </mat-form-field>
     
         <mat-form-field appearance="fill">
-            <mat-label>Select a Class</mat-label>
+            <mat-label class="info3">Select a Class</mat-label>
             <mat-select [(ngModel)]="char.charClass" name="charClass">
                 <mat-option value="Barbarian">Barbarian</mat-option>
               <mat-option value="Bard">Bard</mat-option>
@@ -112,7 +111,7 @@
         </button>
     </mat-form-field>
     <div class="create-char-button-wrapper">
-        <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+        <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary button" role="alert">
             {{clientMessage.message}}
         </div>
         <div mat-dialog-actions class="buttons-container">

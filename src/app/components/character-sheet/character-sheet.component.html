@@ -6,7 +6,7 @@
     <div class="character-sheet-grid">
 
         <div class="name-container">
-            <img id="character-image" src="assets/elf.jpeg" alt="">
+            <img id="character-image" src="assets/profile.png" alt="" style="margin: 5px;">
             <div class="description">
                 <div class="title">
                     <h2 id="username">{{this.username}}</h2>
@@ -25,7 +25,7 @@
 
             <div class="attribute-container">
                 <div class="attribute-name">
-                    <h3>STRENGTH</h3>
+                    <h3 class="title">STRENGTH</h3>
                 </div>
                 <!-- Depends on Race/Class/ other stuff-->
                 <div class="attribute-modifier-value" id="strength-attribute-modifier">
@@ -37,7 +37,7 @@
             </div>
             <div class="attribute-container">
                 <div class="attribute-name">
-                    <h3>DEXTERITY</h3>
+                    <h3 class="title">DEXTERITY</h3>
                 </div>
                 <div class="attribute-modifier-value" id="dexterity-attribute-modifier">
                     <h2>{{modifierBonus[this.char.dexterity]}}</h2>
@@ -51,7 +51,7 @@
             </div>
             <div class="attribute-container">
                 <div class="attribute-name">
-                    <h3>CONSTITUTION</h3>
+                    <h3 class="title">CONSTITUTION</h3>
                 </div>
                 <div class="attribute-modifier-value" id="constitution-attribute-modifier">
                     <h2>{{modifierBonus[this.char.constitution]}}</h2>
@@ -62,7 +62,7 @@
             </div>
             <div class="attribute-container">
                 <div class="attribute-name">
-                    <h3>INTELLIGENCE</h3>
+                    <h3 class="title">INTELLIGENCE</h3>
                 </div>
                 <div class="attribute-modifier-value" id="intelligence-attribute-modifier">
                     <h2>{{modifierBonus[this.char.intelligence]}}</h2>
@@ -74,7 +74,7 @@
             </div>
             <div class="attribute-container">
                 <div class="attribute-name">
-                    <h3>WISDOM</h3>
+                    <h3 class="title">WISDOM</h3>
                 </div>
                 <div class="attribute-modifier-value" id="wisdom-attribute-modifier">
                     <h2>{{modifierBonus[this.char.wisdom]}}</h2>
@@ -85,7 +85,7 @@
             </div>
             <div class="attribute-container">
                 <div class="attribute-name">
-                    <h3>CHARISMA</h3>
+                    <h3 class="title">CHARISMA</h3>
                 </div>
                 <div class="attribute-modifier-value" id="charisma-attribute-modifier">
                     <h2>{{modifierBonus[this.char.charisma]}}</h2>
@@ -99,16 +99,16 @@
         <div class="hitpoints-container">
             <div class="hitpoints-top">
                 <div class="hitpoints-current">
-                    <h2 class="top">CURRENT</h2>
-                    <h1 class="bottom" id="hitpoints-current">15</h1>
+                    <h2 class="top" class="title">CURRENT</h2>
+                    <h1 class="bottom title" id="hitpoints-current">15</h1>
                 </div>
                 <h2 class="hitpoints-divider">/</h2>
                 <div class="hitpoints-max">
-                    <h2 class="top">MAX</h2>
-                    <h1 class="bottom" id="hitpoints-max">15</h1>
+                    <h2 class="top title">MAX</h2>
+                    <h1 class="bottom title" id="hitpoints-max">15</h1>
                 </div>
             </div>
-            <div class="hitpoints-bottom">
+            <div class="hitpoints-bottom title">
                 HIT POINTS
             </div>
         </div>
@@ -158,7 +158,7 @@
     
     
         </div> -->
-
+<div class="title">
         <table class="skills-table table table-bordered">
             <thead id="skills-table-heading" class="thead-dark">
                 <tr >
@@ -280,7 +280,7 @@
                 
             </tbody>
         </table>
-
+</div>
         <!-- <app-character-sheet-tabs [charisma]="char.charisma" class="grid-item"></app-character-sheet-tabs> -->
         <mat-tab-group class="grid-item">
             <mat-tab label="Spells">

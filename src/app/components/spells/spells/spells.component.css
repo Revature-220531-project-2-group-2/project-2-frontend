@@ -4,28 +4,30 @@
 }
 
 .img {
-    background-color:darkred;
-    border: 3px solid gold;
+    background-color:burlywood;
 }
 
 .font {
     font-family: 'Shrikhand', cursive;
-    color: gold;
+    color: rgb(75, 37, 11);
     font-size: 25px;
+    
 }
 
 .font1{
     font-family: 'Josefin Sans', sans-serif;
-    color: gold;
+    color: rgb(75, 37, 11);;
     text-decoration: none;
     font-size: 15px;
     margin: 5px;
+    margin-top: 15px;
 }
 
 .font2{
     font-family: 'Shrikhand', cursive;
-    color: gold;
+    color: rgb(75, 37, 11);
     font-size: 20px;
     margin: 3px;
-    padding: 3px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

@@ -24,12 +24,15 @@
 .border{
     background-color:burlywood;
     border: 3px solid saddlebrown;
-    border-radius: 15px;
+    
     padding: 25px;
     min-height: 25%;
     margin-left: 250px;
     margin-right: 250px;
     margin-top: 150px;
+    overflow:scroll;
+    width: 1000px;
+    height: 500px;
 }
 
 .font3 {
