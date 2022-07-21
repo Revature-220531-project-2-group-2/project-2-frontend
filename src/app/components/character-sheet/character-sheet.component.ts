@@ -34,13 +34,8 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
   @Input() addSpells: boolean = false;
   @Input() addEquipment: boolean = false;
 
-  strengthAttribute: number = 0;
-  dexterityAttribute: number = 0;
-  constitutionAttribute: number = 0;
-  intelligenceAttribute: number = 0;
-  wisdomAttribute: number = 0;
-  charismaAttribute: number = 0;
-  charName: string = '';
+
+
 
 
 
@@ -50,10 +45,11 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
     let arrCharPath: any = this.path.split('/');
 
 
-    this.charName = arrCharPath[arrCharPath.length - 1]
-    console.log(this.charName);
-
+    this.char.charName = arrCharPath[arrCharPath.length - 1]
     this.getCharAttributes();
+
+
+
 
   }
 
@@ -64,7 +60,6 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
 
 
         data => {
-          console.log(data);
           this.clientMessage.message = `Successfully Created Character!`
         },
         error => this.clientMessage.message = `Something went wrong.  Error ${error}`
@@ -72,29 +67,7 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
     this.additionalEquipment = '';
   }
 
-  changeWisdomStat() {
-    this.char.wisdom++;
-  }
 
-  changeStrengthStat() {
-    this.char.strength++;
-  }
-
-  changeDexterityStat() {
-    this.char.dexterity++;
-  }
-
-  changeConstitutionStat() {
-    this.char.constitution++;
-  }
-
-  changeCharismaStat() {
-    this.char.charisma++;
-  }
-
-  changeIntelligenceStat() {
-    this.char.intelligence++;
-  }
 
   addAdditionalEquipment() {
     this.char.equipment.push(this.additionalEquipment);
@@ -138,16 +111,10 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
           this.char = data;
           console.log(this.char);
           this.clientMessage.message = '';
-          console.log('\n\n' + this.char.strength + '\n\n');
-          this.strengthAttribute = this.char.strength;
-          this.dexterityAttribute = this.char.dexterity;
-          this.constitutionAttribute = this.char.constitution;
-          this.intelligenceAttribute = this.char.intelligence;
-          this.wisdomAttribute = this.char.wisdom;
-          this.charismaAttribute = this.char.charisma;
+
 
         },
-        () => this.clientMessage.message = `Can't find Character with Username + id=${this.charName}`
+        () => this.clientMessage.message = `Can't find Character with Username + id=${this.char.charName}`
       )
 
   }
@@ -164,7 +131,6 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-
   }
 
   ngOnChanges(): void {

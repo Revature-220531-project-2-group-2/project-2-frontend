@@ -3,12 +3,17 @@
     padding: 20px;
 }
 
+.character-sheet-container {
+    width: 80%;
+}
+
 
 /*======================= GRID LAYOUT =======================*/
 
 .character-sheet-grid {
     display: grid;
-    grid-template-columns: 25% 40% auto;
+    width: 100%;
+    grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
     gap: 25px;
 }
@@ -101,7 +106,7 @@ h2 {
 }
 
 .level-heading h4 {
-    font-size: 12px;
+    font-size: 12px
 }
 
 .description div * {
@@ -109,11 +114,17 @@ h2 {
     margin-bottom: 2px;
 }
 
+.description {
+    align-items: flex-start;
+    margin-left: 1em;
+}
+
 .name-container {
     display: flex;
     align-items: center;
     background-color: azure;
     width: 250px;
+    height: 40%;
     border: 1px solid black;
 }
 
@@ -352,7 +363,7 @@ h2 {
     min-height: 25%;
     margin-left: 250px;
     margin-right: 250px;
-    margin-top: 150px;
+    
 }
 
 .a{
