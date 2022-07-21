@@ -2,92 +2,132 @@
     <div class="a">
     <div class="border">
         <img src="../../../assets/fant-ad.jpeg" width="500px">
-<form action="" class="char-create-form">
     <label for="charName" class="info">Name:</label>
-
-    <input class="formField" [(ngModel)]="char.charName" type="text" placeholder="Name" id="char-create-form-name" name="charName">
-    <label for="race" class="info">Race:</label>
-
-    <input class="formField" [(ngModel)]="char.race" type="text" id="char-create-form-race" placeholder="Class" name="race">
-    <label for="strength" class="info">Class:</label>
-
-    <select class="formField" [(ngModel)]="char.charClass" name="charClass" id="char-create-form-class">
-        <option value="Barbarian">Barbarian</option>
-        <option value="Bard">Bard</option>
-        <option value="Cleric">Cleric</option>
-        <option value="Druid">Druid</option>
-        <option value="Fighter">Fighter</option>
-        <option value="Monk">Monk</option>
-        <option value="Paladin">Paladin</option>
-        <option value="Ranger">Ranger</option>
-        <option value="Rogue">Rogue</option>
-        <option value="Sorcerer">Sorcerer</option>
-        <option value="Warlock">Warlock</option>
-        <option value="Wizard">Wizard</option>
-
-    </select>
-    <div class="formField">
-        <label for="strength" class="info2">Strength (between 3 and 20):</label>
-        <input type="number" [(ngModel)]="char.strength" [value]="strengthAmt" 
-        (input)="strengthAmt=getStrengthValue($event)" id="strength" name="strength" min="3" max="20">
-        <div *ngIf="strengthMessage.message.length" class="alert alert-danger" role="alert">
-            {{strengthMessage.message}}
-        </div>
-    </div>
-    <div class="formField">
-        <label for="dexterity" class="info2">Dexterity (between 3 and 20):</label>
-        <input type="number" [(ngModel)]="char.dexterity" [value]="dexterityAmt" 
-        (input)="dexterityAmt=getDexterityValue($event)" id="dexterity" name="dexterity" min="3" max="20">
-        <div *ngIf="dexterityMessage.message.length" class="alert alert-danger" role="alert">
-            {{dexterityMessage.message}}
-        </div>
-    </div>
-    <div class="formField">
-        <label for="constitution" class="info2">Constitution (between 3 and 20):</label>
-        <input type="number" [(ngModel)]="char.constitution" [value]="constitutionAmt" 
-        (input)="constitutionAmt=getConstitutionValue($event)" id="constitution" name="constitution" min="3" max="20">
-        <div *ngIf="constitutionMessage.message.length" class="alert alert-danger" role="alert">
-            {{constitutionMessage.message}}
-        </div>
-    </div>
-    <div class="formField">
-        <label for="intelligence" class="info2">Intelligence (between 3 and 20):</label>
-        <input type="number" [(ngModel)]="char.intelligence" [value]="intelligenceAmt" 
-        (input)="intelligenceAmt=getIntelligenceValue($event)" id="intelligence" name="intelligence" min="3" max="20">
-        <div *ngIf="intelligenceMessage.message.length" class="alert alert-danger" role="alert">
-            {{intelligenceMessage.message}}
-        </div>
-    </div>
-    <div class="formField">
-        <label for="wisdom" class="info2">Wisdom (between 3 and 20):</label>
-        <input type="number" [(ngModel)]="char.wisdom" [value]="wisdomAmt" 
-        (input)="wisdomAmt=getWisdomValue($event)" id="wisdom" name="wisdom" min="3" max="20">
-        <div *ngIf="wisdomMessage.message.length" class="alert alert-danger" role="alert">
-            {{wisdomMessage.message}}
-        </div>
-    </div>
-    <div class="formField">
-        <label for="charisma" class="info2">Charisma (between 3 and 20):</label>
-        <input type="number" [value]="charismaAmt" [(ngModel)]="char.charisma"
-        (input)="charismaAmt=getCharismaValue($event)" id="charisma" name="charisma" min="3" max="20">
-        <div *ngIf="charismaMessage.message.length" class="alert alert-danger" role="alert">
-            {{charismaMessage.message}}
-        </div>
-    </div>
-    <div class="formField info3">
-        <p class=>Characters can add Equipment and Spells by viewing their character after creation</p>
-    </div>
-    <input class="formField button" type="submit" (click)="createCharacter()" value="Submit">
-
-    <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
-        {{clientMessage.message}}
+  <h1 mat-dialog-title class="h1">Create a Character!</h1>
+  <div mat-dialog-content class="mat-form-container">
+    <mat-form-field class="new-char-form-field new-char-form-field-name" appearance="fill">
+        <mat-label for="input-char-name" class="form-label t new-char-form-field-name-label">Name</mat-label>
+        
+        <input matInput  [(ngModel)]="char.charName" name="charName" type="text" class="form-control new-char-input t" id="input-char-name" placeholder="Name"/>
+        
+    </mat-form-field>
+    
+    <!--            RACES AND CLASS SHOULD GO HERE -->
+    <div class="new-char-options">
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a Race</mat-label>
+            <mat-select [(ngModel)]="char.race" name="charRace">
+                <mat-option value="Dwarf">Dwarf</mat-option>
+                <mat-option value="Elf">Elf</mat-option>
+                <mat-option value="Halfling">Halfling</mat-option>
+                <mat-option value="Human">Human</mat-option>
+                <mat-option value="Dragonborn">Dragonborn</mat-option>
+                <mat-option value="Gnome">Gnome</mat-option>
+                <mat-option value="Half-Elf">Half-Elf</mat-option>
+                <mat-option value="Half-Orc">Half-Orc</mat-option>
+                <mat-option value="Tiefling">Tiefling</mat-option>
+    
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Select a Class</mat-label>
+            <mat-select [(ngModel)]="char.charClass" name="charClass">
+                <mat-option value="Barbarian">Barbarian</mat-option>
+              <mat-option value="Bard">Bard</mat-option>
+              <mat-option value="Cleric">Cleric</mat-option>
+              <mat-option value="Druid">Druid</mat-option>
+              <mat-option value="Fighter">Fighter</mat-option>
+              
+              <mat-option value="Monk">Monk</mat-option>
+              <mat-option value="Paladin">Paladin</mat-option>
+              <mat-option value="Ranger">Ranger</mat-option>
+              <mat-option value="Rogue">Rogue</mat-option>
+              <mat-option value="Sorcerer">Sorcerer</mat-option>
+              <mat-option value="Warlock">Warlock</mat-option>
+              <mat-option value="Wizard">Wizard</mat-option>
+    
+            </mat-select>
+          </mat-form-field>
     </div>
     
+    <div class="new-char-attr-grid">
+        <div class="new-char-attr-heading t"><h1>Roll for your Attributes!</h1></div>
+      <mat-form-field class="new-char-attr-item" appearance="fill">
+        
+        <mat-label for="inputEmail" class="form-label t">Strength </mat-label>
+        
+        <input matInput [(ngModel)]="char.strength"  [value]="strengthAmt" name="strength" type="number" min="3" max="20" class="form-control new-char-input" [disabled]="true" size="4"/>
+
+            <button (click)="diceRollStrength()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+                <mat-icon>casino</mat-icon>
+            </button>
+
+        
+    </mat-form-field>
+
+    <mat-form-field class="new-char-attr-item" appearance="fill">
+        
+        <mat-label for="inputEmail" class="form-label t">Dexterity </mat-label>
+        
+        <input matInput [(ngModel)]="char.dexterity"  [value]="dexterityAmt" name="dexterity" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
+        <button (click)="diceRollDexterity()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+            <mat-icon>casino</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field class="new-char-attr-item" appearance="fill">
+        
+        <mat-label for="inputEmail" class="form-label t">Constitution </mat-label>
+        
+        <input matInput [(ngModel)]="char.constitution"  name="constitution" class="form-control new-char-input" min="3" max="20" [value]="constitutionAmt" type="number" [disabled]="true"/>
+        <button (click)="diceRollConstitution()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+            <mat-icon>casino</mat-icon>
+        </button>
+    </mat-form-field>    
+    <mat-form-field class="new-char-attr-item" appearance="fill">
+        
+        <mat-label for="inputEmail" class="form-label t">Intelligence </mat-label>
+        
+        <input matInput [(ngModel)]="char.intelligence" [value]="intelligenceAmt" name="intelligence" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
+        <button (click)="diceRollIntelligence()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+            <mat-icon>casino</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field class="new-char-attr-item" appearance="fill">
+        
+        <mat-label for="inputEmail" class="form-label t">Wisdom </mat-label>
+        
+        <input matInput [(ngModel)]="char.wisdom" [value]="wisdomAmt" name="wisdom" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
+        <button (click)="diceRollWisdom()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+            <mat-icon>casino</mat-icon>
+        </button>
+    </mat-form-field>      
+    <mat-form-field class="new-char-attr-item" appearance="fill">
+        
+        <mat-label for="inputEmail" class="form-label t">Charisma </mat-label>
+        
+        <input matInput [(ngModel)]="char.charisma" [value]="charismaAmt" name="charisma" class="form-control new-char-input" min="3" max="20" type="number" [disabled]="true"/>
+        <button (click)="diceRollCharisma()" mat-icon-button color="primary" class="dice-button" aria-label="Example icon button with a dice icon">
+            <mat-icon>casino</mat-icon>
+        </button>
+    </mat-form-field>
+    <div class="create-char-button-wrapper">
+        <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
+            {{clientMessage.message}}
+        </div>
+        <div mat-dialog-actions class="buttons-container">
+            <button mat-button (click)="createCharacter()" cdkFocusInitial class="button">It's Slaying Time!</button>
+            
+          </div>
+    </div>
     
-    
-    
-    
-</form>
 </div>
+<!-- If there is a message, show it -->
+        
 </div>
-</div>
+    
+    
+
+    
+
+

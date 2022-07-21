@@ -27,24 +27,12 @@ export class LoginComponent {
   constructor(
     private authService: AuthService,
     private appComponent: AppComponent,
-    public dialogRef: MatDialogRef<LoginComponent>,
     private router: Router) { }
 
-  onNoClick(): void {
-  }
-
-  onClick(): void {
-    this.login();
-
-
-  }
 
   // pass thru the username & string from the template,
   // and call teh auth service
   login() {
-
-
-
     // first check for empty values
     if (!this.username.trim() || !this.password.trim()) {
       this.loginErrMsg = 'Failed Login';
@@ -72,7 +60,6 @@ export class LoginComponent {
           this.appComponent.username = response.body.username;
           this.router.navigate(['login/profile'])
 
-
           console.log(this.appComponent.username);
 
           // send User object back to app.component
@@ -80,7 +67,7 @@ export class LoginComponent {
         },
         (error) => {
           this.isLoading = false;
-          this.clientMessage.message = `Soemthing went wrong Error ${error}`;
+          this.clientMessage.message = `Something went wrong Error ${error}`;
 
         }
       );

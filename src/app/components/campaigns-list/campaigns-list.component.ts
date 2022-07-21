@@ -38,6 +38,8 @@ export class CampaignsListComponent implements OnInit {
       })
   }
 
+
+
   findAllUsersCampaigns(): void {
     this.campService.getAllUserCampaignsByUsername(this.appComponent.username)
       .subscribe(data => {
@@ -56,9 +58,19 @@ export class CampaignsListComponent implements OnInit {
   joinUserToCampaign(id: number): void {
     this.campService.addUserToCampaignByUsername(id, this.appComponent.username)
       .subscribe(data => {
+        // this.campaigns.filter(e => !(e.campaignId === id));
+        this.deleteRow(id);
         this.campaigns.push(data);
 
       })
+  }
+
+  deleteRow(id: number) {
+    for (let i = 0; i < this.campaigns.length; ++i) {
+      if (this.campaigns[i].campaignId === id) {
+        this.campaigns.splice(i, 1);
+      }
+    }
   }
 
 

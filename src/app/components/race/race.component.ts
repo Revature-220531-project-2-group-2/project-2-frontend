@@ -1,3 +1,4 @@
+import { RaceService } from './../../services/race-service.service';
 import { DescriptionParsingService } from './../../services/description-parsing.service';
 import { ActivatedRoute } from '@angular/router';
 import { Race } from './../../models/Race';
@@ -22,21 +23,24 @@ export class RaceComponent implements OnInit {
   traits: any[] =[]
 
 
-  constructor(private route: ActivatedRoute, private parserServ: DescriptionParsingService) { }
+  constructor(private route: ActivatedRoute, private parserServ: DescriptionParsingService, private raceServ: RaceService) { }
 
   ngOnInit(): void {
     this.route.queryParams
-    .subscribe(data => {
-      this.currentRace = data
-      this.desc = this.parserServ.parseDesc(data['desc'])
-      this.ability = this.parserServ.parseDesc(data['asi_desc'])
-      this.speed = this.parserServ.parseDesc(data['speed_desc'])
-      this.vision = this.parserServ.parseDesc(data['vision'])
-      this.age = this.parserServ.parseDesc(data['age'])
-      this.alignment = this.parserServ.parseDesc(data['alignment'])
-      this.size = this.parserServ.parseDesc(data['size'])
-      this.languages = this.parserServ.parseDesc(data['languages'])
-      this.traits = this.parserServ.parseDesc(data['traits'])
+    .subscribe(param => {
+      this.raceServ.findRaceByName(param['race'])
+      .subscribe(data => {
+        this.currentRace = data
+        this.desc = this.parserServ.parseDesc(data['desc'])
+        this.ability = this.parserServ.parseDesc(data['asi_desc'])
+        this.speed = this.parserServ.parseDesc(data['speed_desc'])
+        this.vision = this.parserServ.parseDesc(data['vision'])
+        this.age = this.parserServ.parseDesc(data['age'])
+        this.alignment = this.parserServ.parseDesc(data['alignment'])
+        this.size = this.parserServ.parseDesc(data['size'])
+        this.languages = this.parserServ.parseDesc(data['languages'])
+        this.traits = this.parserServ.parseDesc(data['traits'])
+      })
     })
   } 
 
