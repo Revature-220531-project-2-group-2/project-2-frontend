@@ -80,7 +80,10 @@ export class CreateCampaignComponent implements OnInit {
 
     this.campaignService.createCampaign(this.campaign)
       .subscribe(data => {
-        this.clientMessage.message = `Successfully Created Campaign ID${this.campaign.campaignId}`;
+        this.campaignService.addUserToCampaignByUsername(data.campaignId, this.appComponent.username).subscribe(data2 => {
+          this.clientMessage.message = `Successfully Created Campaign ID${this.campaign.campaignId}`;
+        })
+
 
 
       }, error => this.clientMessage.message = `Something went wrong Error ${error}`)
