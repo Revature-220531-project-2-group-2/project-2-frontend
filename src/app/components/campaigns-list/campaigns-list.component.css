@@ -7,6 +7,10 @@
     vertical-align: middle;
 }
 
+.camp-cell:hover {
+    background-color: #212529;
+}
+
 @media (min-width: 1000px) {
     .my-card {
         width: 50%;

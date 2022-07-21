@@ -21,13 +21,28 @@ export class CampaignService {
   // creates a new Campaign on the server. Passes the form attr as request body
   createCampaign(campaign: Campaign): Observable<Campaign> {
     // 3 params for POST: url, request body, options (headers)
-    return this.http.post<Campaign>(`${campaignUrl}/add`, campaign, this.httpOptions)
+    return this.http.post<Campaign>(`${campaignUrl}/new-campaign`, campaign, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 
   // get's all active campaigns available on server
-  getAllCampaigns(): Observable<Campaign> {
-    return this.http.get<Campaign>(campaignUrl, this.httpOptions).pipe(catchError(this.handleError));
+  getAllCampaigns(): Observable<Campaign[]> {
+    return this.http.get<Campaign[]>(campaignUrl, this.httpOptions).pipe(catchError(this.handleError));
+  }
+
+  // get's all active campaigns available on server
+  getCampaignById(id: number): Observable<Campaign> {
+    return this.http.get<Campaign>(campaignUrl + `/${id}`, this.httpOptions).pipe(catchError(this.handleError));
+  }
+
+  getAllUserCampaignsByUsername(username: string): Observable<Campaign[]> {
+    return this.http.get<Campaign[]>(url + `/users/${username}/campaigns`, this.httpOptions).pipe(catchError(this.handleError));
+  }
+
+  addUserToCampaignByUsername(id: number, username: string): Observable<Campaign> {
+    // 3 params for POST: url, request body, options (headers)
+    return this.http.post<Campaign>(`${campaignUrl}/${id}/add-${username}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(httpError: HttpErrorResponse) {
