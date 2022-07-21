@@ -34,8 +34,18 @@ export class CampaignsListComponent implements OnInit {
     this.campService.getAllCampaigns()
       .subscribe(data => {
         this.campaigns = data;
-
+        for (let i = 0; i < this.campaigns.length; i++) {
+          this.populateCampaignUsers(this.campaigns[i].campaignId, i);
+        }
       })
+  }
+
+  populateCampaignUsers(campaignId: number, campaignIndex: number): void {
+    this.campService.getAllUsersInACampaign(campaignId).subscribe(
+      data => {
+        this.campaigns[campaignIndex].users = data;
+      }
+    );
   }
 
 
