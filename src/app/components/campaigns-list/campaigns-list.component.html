@@ -1,17 +1,17 @@
-
+<div class="img">
+<div class="a">
+<div class="border">
 <div class="container my-auto">
-    <div class="card border-0 mx-auto my-card w-100">
-        <div class="shadow-lg">
-            <div>
-
-                <div>
-                    <h2 class="card-header text-center">{{title}}</h2>
+    <div>
+        <div class="shadow-lg table-back background">
+                <div class="table-back">
+                    <h2 class="h1">{{title}}</h2>
                 </div>
             
-                <div class="card-body">
+                <div class="card-body table-back background">
                     <table class="table table-hover">
                         <thead>
-                          <tr class="table-row">
+                          <tr class="table-row name">
                             <th scope="col" style="width: 10.66%">Campaign ID</th>
                             <th scope="col" style="width: 25%">Name</th>
                             <th scope="col" style="width: 15%">DM</th>
@@ -20,7 +20,36 @@
                           </tr>
                         </thead>
                         <tbody>
+                          <tr class="table-row name">
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm button">Join</button>
+                            </td>
+                          </tr>
+                          <tr class="table-row name">
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm button">Join</button>
+                            </td>
+                          </tr>
+                          <tr class="table-row name">
+                            <th scope="row">3</th>
+                            <td>Larry the Bird</td>
+                            <td>Marcus</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm button">Join</button>
+
+                          <tr let *ngFor="let camp of campaigns; let i = index" class="table-row">
+
                           <tr let *ngFor="let camp of campaigns; let i = index" class="table-row" [attr.id]="camp.campaignId">
+
                             <th scope="row">{{camp.campaignId}}</th>
                             <td >{{camp.campaignName}}</td>
                             <td *ngIf="camp.users[0].username;else camp_content">{{camp.users[0].username}}</td>
@@ -33,6 +62,7 @@
                             
                             <td>
                                 <button *ngIf="appComponent.isLoggedIn" (click)="joinUserToCampaign(camp.campaignId)" class="btn btn-secondary btn-sm">Join</button>
+
                             </td>
 
                           </tr>
@@ -52,10 +82,13 @@
                     
                 </div>
             
-            </div>
             
+        
         </div>
     </div>
+</div>
+</div>
+</div>
 </div>
 
 

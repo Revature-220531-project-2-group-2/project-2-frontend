@@ -36,21 +36,23 @@
 .h1{
     font-family: 'Shrikhand', cursive;
     font-size: 50px;
-    color: gray;
+    color: gold;
     margin: 25px;
     line-height: 8vh;
 }
 
 .login{
     font-family: 'Josefin Sans', sans-serif;
-    color: rgb(129, 122, 122);
+
+    color: gold;
+
     font-size: 20px;
     margin: 5px;
 }
 
 .border{
     border: 5px solid gold;
-    background-color: rgb(219, 227, 233);
+    background-color: darkred;
     border-radius: 15px;
     text-align: center;
     padding: 25px;
@@ -80,18 +82,18 @@
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: rgb(106, 100, 100);
-  background-color: rgb(235, 233, 223);
+  color: darkred;
+  background-color: gold;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px rgb(92, 87, 87);
+  box-shadow: 0 9px rgb(218, 61, 61);
   margin: 5px;
 }
 
-.button:hover {background-color: rgb(129, 128, 123)}
+.button:hover {background-color: goldenrod;}
 
 .button:active {
-  background-color: rgb(115, 111, 102);
-  box-shadow: 0 5px rgb(223, 209, 209);
+    background-color: rgb(232, 190, 93);
+    box-shadow: 0 5px rgb(84, 11, 11);
   transform: translateY(4px);
 }

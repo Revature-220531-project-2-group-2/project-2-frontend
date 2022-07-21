@@ -89,4 +89,3 @@ export class SpellsService {
     return throwError(() => new Error('something really bad happened'));
   }
 }
-

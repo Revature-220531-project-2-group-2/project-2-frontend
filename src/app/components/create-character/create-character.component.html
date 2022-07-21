@@ -1,6 +1,11 @@
 <div class="img">
     <div class="a">
     <div class="border">
+
+        <img src="../../../assets/fant-ad.jpeg" width="500px">
+<form action="" class="char-create-form">
+    <label for="charName" class="info">Name:</label>
+
   <h1 mat-dialog-title class="h1">Create a Character!</h1>
   <div mat-dialog-content class="mat-form-container">
     <mat-form-field class="new-char-form-field new-char-form-field-name" appearance="fill">
@@ -134,11 +139,12 @@
 <!-- <form action="" class="char-create-form">
     <label for="charName">Name:</label>
 
+
     <input class="formField" [(ngModel)]="char.charName" type="text" placeholder="Name" id="char-create-form-name" name="charName">
-    <label for="race">Race:</label>
+    <label for="race" class="info">Race:</label>
 
     <input class="formField" [(ngModel)]="char.race" type="text" id="char-create-form-race" placeholder="Class" name="race">
-    <label for="strength">Class:</label>
+    <label for="strength" class="info">Class:</label>
 
     <select class="formField" [(ngModel)]="char.charClass" name="charClass" id="char-create-form-class">
         <option value="Barbarian">Barbarian</option>
@@ -168,7 +174,8 @@
 
     </select>
     <div class="formField">
-        <label for="strength">Strength :</label>
+
+        <label for="strength" class="info2">Strength :</label>
         <input type="number" [(ngModel)]="char.strength" [value]="strengthAmt" 
         (input)="strengthAmt=getStrengthValue($event)" id="strength" name="strength" min="3" max="20">
         <div *ngIf="strengthMessage.message.length" class="alert alert-danger" role="alert">
@@ -176,6 +183,7 @@
         </div>
     </div>
     <div class="formField">
+
         <label for="dexterity">Dexterity :</label>
         <input type="number" [(ngModel)]="char.dexterity" [value]="dexterityAmt" 
         (input)="dexterityAmt=getDexterityValue($event)" id="dexterity" name="dexterity" min="3" max="20">
@@ -184,7 +192,9 @@
         </div>
     </div>
     <div class="formField">
+
         <label for="constitution">Constitution :</label>
+
         <input type="number" [(ngModel)]="char.constitution" [value]="constitutionAmt" 
         (input)="constitutionAmt=getConstitutionValue($event)" id="constitution" name="constitution" min="3" max="20">
         <div *ngIf="constitutionMessage.message.length" class="alert alert-danger" role="alert">
@@ -192,7 +202,9 @@
         </div>
     </div>
     <div class="formField">
+
         <label for="intelligence">Intelligence :</label>
+
         <input type="number" [(ngModel)]="char.intelligence" [value]="intelligenceAmt" 
         (input)="intelligenceAmt=getIntelligenceValue($event)" id="intelligence" name="intelligence" min="3" max="20">
         <div *ngIf="intelligenceMessage.message.length" class="alert alert-danger" role="alert">
@@ -200,7 +212,9 @@
         </div>
     </div>
     <div class="formField">
+
         <label for="wisdom">Wisdom :</label>
+
         <input type="number" [(ngModel)]="char.wisdom" [value]="wisdomAmt" 
         (input)="wisdomAmt=getWisdomValue($event)" id="wisdom" name="wisdom" min="3" max="20">
         <div *ngIf="wisdomMessage.message.length" class="alert alert-danger" role="alert">
@@ -208,17 +222,19 @@
         </div>
     </div>
     <div class="formField">
+
         <label for="charisma">Charisma :</label>
+
         <input type="number" [value]="charismaAmt" [(ngModel)]="char.charisma"
         (input)="charismaAmt=getCharismaValue($event)" id="charisma" name="charisma" min="3" max="20">
         <div *ngIf="charismaMessage.message.length" class="alert alert-danger" role="alert">
             {{charismaMessage.message}}
         </div>
     </div>
-    <div class="formField">
-        <p>Characters can add Equipment and Spells by viewing their character after creation</p>
+    <div class="formField info3">
+        <p class=>Characters can add Equipment and Spells by viewing their character after creation</p>
     </div>
-    <input class="formField" type="submit" (click)="createCharacter()" value="Submit">
+    <input class="formField button" type="submit" (click)="createCharacter()" value="Submit">
 
     <div *ngIf="clientMessage.message.length > 0" class="alert alert-secondary" role="alert">
         {{clientMessage.message}}
@@ -228,4 +244,9 @@
     
     
     
-</form> -->
+
+</form>
+</div>
+</div>
+</div>
+

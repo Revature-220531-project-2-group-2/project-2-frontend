@@ -1,4 +1,5 @@
 
+
 import { RaceComponent } from './components/race/race.component';
 import { CharClassComponent } from './components/char-class/char-class.component';
 import { SpellComponent } from './components/spells/spell/spell.component';
@@ -37,8 +38,6 @@ const routes: Routes = [
   { path: 'class', component: CharClassComponent },
   { path: 'race', component: RaceComponent },
   
-
-
 
 
 

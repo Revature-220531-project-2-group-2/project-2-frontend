@@ -3,7 +3,7 @@
 .text{
     font-family: 'Shrikhand', cursive;
     font-size: 25px;
-    color: rgb(197, 43, 43);
+    color:gold;
 }
 
 .button {
@@ -23,19 +23,20 @@ a {
 .button1{
     font-family: 'Shrikhand', cursive;
     margin: 5px;
-    color: darkred;
-    background-color: gold;
+    color: gold;
+    background-color: darkred;
+    font-size: 15px;
 }
 
-.nav{
-    font-family: 'Josefin Sans', sans-serif;
-    color: darkred;
-    background-color:gold;
+.nav-back{
+    background-color: darkred;
+    background-size: cover;
 }
 
 .campaigns-nav {
     margin-left: 12px;
 }
+
 
 
 

@@ -22,3 +22,4 @@ export class CampaignRoomComponent implements OnInit {
     console.log(this.newPost)
   }
 }
+

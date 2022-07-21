@@ -174,16 +174,98 @@ h1{
 
 }
 
-::ng-deep .new-char-form-field-name {
-    font-size: 10px;
+#char-create-form-class, #char-create-form-race {
+    width: 150px;
 }
 
-.create-char-button-wrapper {
-    grid-column: 2 / 6;
-    grid-row: 3/4;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    justify-self: flex-end;
+.img{
+    background-image: url('../../../assets/fant-8.gif');
+  
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.border{
+    border: 5px solid gold;
+    background-color: darkred;
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 25%;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.a{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2em;
+    border-radius: 25px;
+    line-height: 25px;
+    box-shadow: 5px 5px 10px rgb(168, 63, 63);
+    float: center;
+}
+
+img{
+    float: right;
+}
+
+.home-center-title {
+    height: 400px;
+    width: 500px;
+    margin: 0 auto;
+    align-self: center;
+    color: gold;
+    text-align: center;
+}
+
+.table-back{
+    background-color: gold;
+}
+
+.info{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    color: gold;
+}
+
+.info2{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    color: gold;
+    margin-right: 10px;
+}
+
+.info3{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    color: gold;
+}
+
+.button {
+  font-family: 'Josefin Sans', sans-serif;;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: darkred;
+  background-color: gold;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(218, 61, 61);
+  margin: 5px;
+}
+
+.button:hover {background-color: goldenrod}
+
+.button:active {
+  background-color: rgb(232, 190, 93);
+  box-shadow: 0 5px rgb(84, 11, 11);
+  transform: translateY(4px);
+}
+
