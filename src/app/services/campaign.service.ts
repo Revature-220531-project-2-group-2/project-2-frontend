@@ -50,16 +50,18 @@ export class CampaignService {
       .pipe(catchError(this.handleError));
   }
 
-  getCampaignMessages(id:number): Observable<CampaignMessage[]> {
+  getCampaignMessages(id: number): Observable<CampaignMessage[]> {
     return this.http.get<CampaignMessage[]>(`${campaignUrl}/${id}/messages`)
       .pipe(catchError(this.handleError));
   }
 
-    postNewMessage(id:number, username:string, message: string): Observable<any> {
-      let body = {username: username, msg: message}
-      return this.http.post<void>(`${campaignUrl}/${id}/new-message`, body, this.httpOptions)
+  postNewMessage(id: number, username: string, message: string): Observable<CampaignMessage> {
+    console.log(username + ' iss username');
+
+    let body = { username: username, msg: message }
+    return this.http.post<CampaignMessage>(`${campaignUrl}/${id}/new-message`, body, this.httpOptions)
       .pipe(catchError(this.handleError));
-    }
+  }
 
   private handleError(httpError: HttpErrorResponse) {
     if (httpError.error instanceof ErrorEvent) {

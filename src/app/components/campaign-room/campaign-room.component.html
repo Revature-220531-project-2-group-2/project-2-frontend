@@ -3,9 +3,11 @@
         <div class="border">
             <h1 class="title">{{campaign.campaignName}}</h1>
             <div *ngFor="let post of messages" class="text">
-                <span>{{post.username}}</span>
-                <p>{{post.message}}</p>
+                <span>{{post.username}}:&nbsp;&nbsp;</span>
+                <span>{{post.msg}}</span>
+            
             </div>
+            
 
 
             <select class="D20" [(ngModel)]="currentDie">

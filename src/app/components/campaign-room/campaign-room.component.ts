@@ -17,29 +17,28 @@ export class CampaignRoomComponent implements OnInit {
     new CampaignMessage("Merlin", "Est obcaecati eligendi dolores. Molestias expedita sit iure facilis ullam nobis! Eius, sapiente exercitationem quas voluptates eum labore voluptatem ut dolor? Voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit.", "2234")
   ]
   newPost: string = ''
-  campaign!: Campaign
+  campaign: Campaign = new Campaign(0, '', [])
   currentDie: string = 'D4'
 
   constructor(private appComponent: AppComponent, private route: ActivatedRoute, private campServe: CampaignService) {
     this.route.queryParams
-    .subscribe(param => {
-      this.campServe.getCampaignMessages(param['id'])
-        .subscribe(data => {
-          console.log(data)
-          this.messages = data
-          this.messages.sort((a, b) => Number.parseInt(a.timeStamp) - Number.parseInt(b.timeStamp))
-        })
-      this.campServe.getCampaignById(param['id'])
-        .subscribe(data => {
-          this.campaign = data
-        })
-    })
-   }
+      .subscribe(param => {
+        this.campServe.getCampaignMessages(param['id'])
+          .subscribe(data => {
+            this.messages = data
+            this.messages.sort((a, b) => Number.parseInt(a.timeStamp) - Number.parseInt(b.timeStamp))
+          })
+        this.campServe.getCampaignById(param['id'])
+          .subscribe(data => {
+            this.campaign = data
+          })
+      })
+  }
 
   ngOnInit(): void {
   }
 
-  refreshMessages():void {
+  refreshMessages(): void {
     this.campServe.getCampaignMessages(this.campaign.campaignId)
       .subscribe(data => {
         console.log(data)
@@ -49,8 +48,11 @@ export class CampaignRoomComponent implements OnInit {
   }
 
   postMessage(message: string): void {
-    this.campServe.postNewMessage(this.campaign.campaignId, this.appComponent.user.username, message)
-      .subscribe(() => {
+    this.campServe.postNewMessage(this.campaign.campaignId, this.appComponent.username, message)
+      .subscribe(data => {
+
+        this.messages.push(data);
+
         this.newPost = ''
         this.refreshMessages()
       })
