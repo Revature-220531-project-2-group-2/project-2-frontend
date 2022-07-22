@@ -23,7 +23,7 @@ export class CreateCampaignComponent implements OnInit {
   // will take this out later. need currently logged in user here
   tempUser: User = new User('', '', '');
   // replace tempUser with currently logged in User
-  campaign: Campaign = new Campaign(0, '', [this.tempUser]);
+  campaign: Campaign = new Campaign(0, '', [this.tempUser], '');
 
   private _clientMessage: ClientMessage = new ClientMessage('');
   public get clientMessage(): ClientMessage {
@@ -68,7 +68,7 @@ export class CreateCampaignComponent implements OnInit {
 
 
     this.campaign.users = [];
-
+    this.campaign.usernameOfCreator = this.appComponent.username;
     this.campaign.users.push(this.tempUser);
   }
 
@@ -80,10 +80,8 @@ export class CreateCampaignComponent implements OnInit {
 
     this.campaignService.createCampaign(this.campaign)
       .subscribe(data => {
-        this.campaignService.addUserToCampaignByUsername(data.campaignId, this.appComponent.username).subscribe(data2 => {
-          this.clientMessage.message = `Successfully Created Campaign ID${this.campaign.campaignId}`;
-        })
-
+        this.campaign = data;
+        this.clientMessage.message = `Successfully created campaign with id: ${this.campaign.campaignId}`
 
 
       }, error => this.clientMessage.message = `Something went wrong Error ${error}`)

@@ -17,7 +17,7 @@ export class CampaignRoomComponent implements OnInit {
     new CampaignMessage("Merlin", "Est obcaecati eligendi dolores. Molestias expedita sit iure facilis ullam nobis! Eius, sapiente exercitationem quas voluptates eum labore voluptatem ut dolor? Voluptatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit.", "2234")
   ]
   newPost: string = ''
-  campaign: Campaign = new Campaign(0, '', [])
+  campaign: Campaign = new Campaign(0, '', [], '')
   currentDie: string = 'D4'
 
   constructor(private appComponent: AppComponent, private route: ActivatedRoute, private campServe: CampaignService) {

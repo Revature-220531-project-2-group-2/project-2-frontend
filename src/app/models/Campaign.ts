@@ -5,16 +5,18 @@ export class Campaign {
     campaignId: number;
     campaignName: string;
     users: User[];
-
+    usernameOfCreator: string;
 
     constructor(
         id: number,
         name: string,
-        players: User[]
+        players: User[],
+        usernameOfCreator: string
     ) {
         this.campaignId = id
         this.campaignName = name
         this.users = players
+        this.usernameOfCreator = usernameOfCreator
     }
 
 
